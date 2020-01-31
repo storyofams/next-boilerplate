@@ -1,0 +1,44 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#252525",
+    "activityBar.activeBorder": "#18ECC0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#18ECC0",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "titleBar.activeBackground": "#1f1f1f",
+    "titleBar.inactiveBackground": "#1f1f1f99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#1f1f1f",
+    "statusBarItem.hoverBackground": "#383838",
+    "statusBar.foreground": "#e7e7e7"
+  },
+  "files.watcherExclude": {
+    "**/.cache/**": true,
+    "storybook-static": true
+  },
+  "files.exclude": {
+    "**/storybook-static": true,
+    "**/.next": true,
+    "**/yarn-error.log": true,
+    "**/public": true,
+    "**/.cache": true,
+    "**/coverage": true,
+    "**/.github": true,
+    "**/.commitlintrc.js": true,
+    "**/.babelrc": true,
+    "**/.eslintignore": true,
+    "**/.eslintrc.js": true,
+    "**/next-env.d.ts": true,
+    "**/yarn.lock": true,
+    "**/.gitignore": true,
+    "**/.prettierignore": true,
+    "**/.prettierrc": true,
+    "**/next.config.js": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "storybook-static": true
+  }
+}

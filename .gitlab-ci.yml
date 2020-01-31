@@ -1,0 +1,17 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+
+test:
+  before_script:
+    - yarn config set cache-folder .yarn
+    - yarn install
+  stage: test
+  script: yarn jest --coverage
+  only:
+    - merge_requests
