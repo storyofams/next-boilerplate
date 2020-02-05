@@ -13,7 +13,7 @@ module.exports = {
     body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
     breaking: 'List any BREAKING CHANGES (optional):\n',
     footer: 'List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n',
-    confirmCommit: 'Are you sure you the the above looks right?',
+    confirmCommit: 'Are you sure you the above looks right?',
   },
   types: [
     {
