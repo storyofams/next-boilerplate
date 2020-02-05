@@ -171,8 +171,8 @@ open an issue on the repo with your proposed change.
 
 ## Roadmap
 
-[] authentication wrapper
-[] extend @styled-system/css with custom system
-[] circular dependencies handler
-[] extract All components into styleable base components (aka ACL reborn)
-[] make a helper for omiting all the conflicting props from default html types
+- [ ] authentication wrapper
+- [ ] extend @styled-system/css with custom system
+- [ ] circular dependencies handler
+- [ ] extract All components into styleable base components (aka ACL reborn)
+- [ ] make a helper for omiting all the conflicting props from default html types
