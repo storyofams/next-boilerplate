@@ -61,6 +61,6 @@ module.exports = {
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix', 'chore'],
   breakingPrefix: '🚧 BREAKING CHANGES 🚧',
-  footerPrefix: 'CLOSED ISSUE:',
+  footerPrefix: 'CLOSES ISSUE:',
   subjectLimit: 77,
 }
