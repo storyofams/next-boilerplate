@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "commit": "npx git-cz",
+    "commit": "./node_modules/cz-customizable/standalone.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint --ext .ts --ext .tsx ./src",
