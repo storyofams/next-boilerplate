@@ -28,13 +28,13 @@ module.exports = {
     },
     {
       value: 'refactor',
-      name: '🤷‍♂️   refactor:   Changes that fix a bug nor adds a feature',
-      emoji: '🤷‍♂️',
+      name: '🔍   refactor:   Changes that fix a bug nor adds a feature',
+      emoji: '🔍',
     },
     {
       value: 'test',
-      name: '🧪   test:       Adding missing tests',
-      emoji: '🧪',
+      name: '💡   test:       Adding missing tests',
+      emoji: '💡',
     },
     {
       value: 'style',
