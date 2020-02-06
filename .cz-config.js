@@ -62,5 +62,5 @@ module.exports = {
   allowBreakingChanges: ['feat', 'fix', 'chore'],
   breakingPrefix: '🚧 BREAKING CHANGES 🚧',
   footerPrefix: 'CLOSES ISSUE:',
-  subjectLimit: 77,
+  subjectLimit: 100,
 }
