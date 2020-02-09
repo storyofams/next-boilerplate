@@ -4,7 +4,7 @@ import {Icon} from '@components'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // All ButtonBase takes care of all the default stuff
-export const ChakraButton = styled(ButtonBase)`
+export const PrimaryButton = styled(ButtonBase)`
   background: #38b2ac;
   font-weight: 500;
   box-shadow: ${p => p.theme.shadows.sm};
@@ -14,7 +14,7 @@ export const ChakraButton = styled(ButtonBase)`
 `
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const BlossomSecondaryButton = styled(ButtonBase).attrs({
+export const SecondaryButton = styled(ButtonBase).attrs({
   baseColor: 'white',
 })`
   font-size: 14px;

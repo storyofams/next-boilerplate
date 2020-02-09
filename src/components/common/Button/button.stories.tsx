@@ -1,20 +1,20 @@
 import React from 'react'
 import {Stack} from '@components'
-import {ChakraButton, BlossomSecondaryButton, UnderlineButton} from './Button'
+import {PrimaryButton, SecondaryButton, UnderlineButton} from './Button'
 
 export default {
-  component: ChakraButton,
+  component: PrimaryButton,
   title: 'Button',
 }
 
 export const examples = () => (
   <Stack alignItems="center" space={3} flexDir="column">
-    <ChakraButton>Lorem Ipsum</ChakraButton>
-    <ChakraButton isLoading>Lorem Ipsum</ChakraButton>
-    <ChakraButton disabled>Lorem Ipsum</ChakraButton>
-    <BlossomSecondaryButton>Lorem Ipsum</BlossomSecondaryButton>
-    <BlossomSecondaryButton isLoading>Lorem Ipsum</BlossomSecondaryButton>
-    <BlossomSecondaryButton width="100%">Lorem Ipsum</BlossomSecondaryButton>
+    <PrimaryButton>Lorem Ipsum</PrimaryButton>
+    <PrimaryButton isLoading>Lorem Ipsum</PrimaryButton>
+    <PrimaryButton disabled>Lorem Ipsum</PrimaryButton>
+    <SecondaryButton>Lorem Ipsum</SecondaryButton>
+    <SecondaryButton isLoading>Lorem Ipsum</SecondaryButton>
+    <SecondaryButton width="100%">Lorem Ipsum</SecondaryButton>
     <UnderlineButton>Lorem Ipsum</UnderlineButton>
   </Stack>
 )
