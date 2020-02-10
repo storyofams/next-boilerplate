@@ -28,7 +28,7 @@ module.exports = {
     },
     {
       value: 'refactor',
-      name: '🔍   refactor:   Changes that fix a bug nor adds a feature',
+      name: '🔍   refactor:   Changes that neither fixes a bug nor adds a feature',
       emoji: '🔍',
     },
     {
