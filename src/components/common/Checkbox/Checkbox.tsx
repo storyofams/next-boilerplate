@@ -27,7 +27,7 @@ const Checkbox: React.FC<ICheckbox> = ({label, status, statusMessage, id: givenI
       <Flex alignItems="center">
         <StyledCheckbox id={id} {...omit(props)} />
         {!!label && (
-          <Text ml={2} htmlFor={id} as="label" variant="label">
+          <Text ml={2} htmlFor={id} as="label">
             {label}
           </Text>
         )}
