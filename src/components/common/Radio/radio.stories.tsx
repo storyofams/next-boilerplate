@@ -11,7 +11,6 @@ export const InRadioGroup = () => {
 
   return (
     <>
-      <Text variant="h3">Radio Group, value is {`${val}`}</Text>
       <RadioGroup value={val} onChange={setVal}>
         <Radio value="1">one</Radio>
         <Radio value="2">two</Radio>
