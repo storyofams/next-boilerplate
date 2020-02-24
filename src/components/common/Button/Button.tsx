@@ -58,3 +58,5 @@ export const UnderlineButton: React.FC = ({children, ...props}) => {
     </UnderlineButtonStyles>
   )
 }
+
+export default PrimaryButton
