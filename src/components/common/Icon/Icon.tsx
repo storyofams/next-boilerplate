@@ -24,7 +24,7 @@ export interface IconProps
   extends ISystem,
     Omit<Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>, 'css'> {
   icon: string
-  as?: string
+  as?: string5
   href?: string
   onClick?: () => void
 }
