@@ -43,7 +43,7 @@ import {
 } from 'styled-system'
 import {css} from 'styled-components'
 
-const _customSystem: Config = {
+export const _customSystem: Config = {
   roundedTop: {
     properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
     scale: 'radii',
@@ -200,7 +200,7 @@ export interface ColorProps extends BackgroundColorProps, OpacityProps {
   color?: any // @todo find a proper fix for this
 }
 
-export interface ISystem
+export interface System
   extends BackgroundProps,
     BorderProps,
     FlexboxProps,
@@ -309,3 +309,5 @@ export interface ISystem
   size?: any
   width?: any
 }
+
+export type ISystem<T = undefined> = T extends {} ? System & Omit<Omit<T, 'color'>, 'css'> : System

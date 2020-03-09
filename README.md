@@ -23,7 +23,13 @@ If you build a primitive, always include the entire system like this:
 ```
 import {system, ISystem} from '@lib'
 
-const Button = styled.button<ISystem>`
+const Button = styled.button<ISystem<React.HTMLAttributes<HTMLDivElement>>>`
+    ...
+    ${system}
+`
+
+
+const Box = styled.button<ISystem>`
     ...
     ${system}
 `
