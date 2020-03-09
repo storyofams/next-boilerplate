@@ -43,7 +43,7 @@ import {
 } from 'styled-system'
 import {css} from 'styled-components'
 
-const _customSystem: Config = {
+export const _customSystem: Config = {
   roundedTop: {
     properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
     scale: 'radii',

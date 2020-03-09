@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {Box} from '@components'
-import {variant, ResponsiveValue} from 'styled-system'
+import {ResponsiveValue} from 'styled-system'
+import {variant} from '@lib'
 
 type CSS = React.CSSProperties
 type Variant = 'center'
