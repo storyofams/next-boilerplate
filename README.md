@@ -97,12 +97,11 @@ you can then use them like this
   |- common // for all reused components
     |- Box
       |- components
-        |- MySubcomponent.tsx
-// if your component file grows too large you can put subcomponents in here. This includes styles (styled components).
-    |- box.test.tsx
-    |- box.stories.tsx
-    |- Box.tsx // actual component lives here
-    |- index.ts // exports the component, types and everything else
+        |- MySubcomponent.tsx  // if your component file grows too large you can put subcomponents in here. This includes styles (styled components).
+      |- box.test.tsx
+      |- box.stories.tsx
+      |- Box.tsx // actual component lives here
+      |- index.ts // exports the component, types and everything else
   |- landing // components specific to the landing page
 |- lib // utils, yup schemas etc
 |- pages
