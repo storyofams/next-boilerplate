@@ -54,7 +54,7 @@ this will automatically create a styled component that takes its properties from
 
 ## Variants
 
-Sometimes its good to have multiple `variants` of a single component. In this case use the `variant` prop like this:
+Sometimes its good to have multiple variantions (or `variants`) of a single component. In this case use the `variant` prop like this:
 
 ```
 import styled from 'styled-components'
@@ -94,16 +94,16 @@ you can then use them like this
 ```
 |- src
 |- components
-|- common // for all reused components
-|- Box
-|- components
-|- MySubcomponent.tsx
+  |- common // for all reused components
+    |- Box
+      |- components
+        |- MySubcomponent.tsx
 // if your component file grows too large you can put subcomponents in here. This includes styles (styled components).
-|- box.test.tsx
-|- box.stories.tsx
-|- Box.tsx // actual component lives here
-|- index.ts // exports the component, types and everything else
-|- landing // components specific to the landing page
+    |- box.test.tsx
+    |- box.stories.tsx
+    |- Box.tsx // actual component lives here
+    |- index.ts // exports the component, types and everything else
+  |- landing // components specific to the landing page
 |- lib // utils, yup schemas etc
 |- pages
 |- styles
