@@ -17,7 +17,11 @@ const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children}) => 
       mt={modifyResponsiveValue(rowGap, val => -val)}
     >
       {React.Children.map(children, child => (
-        <Box width={modifyResponsiveValue(rowSize, size => 1 / size)} pl={columnGap} pt={rowGap}>
+        <Box
+          width={modifyResponsiveValue(rowSize, size => 1 / size)}
+          pl={modifyResponsiveValue(columnGap, val => val)}
+          pt={modifyResponsiveValue(rowGap, val => val)}
+        >
           {child}
         </Box>
       ))}
