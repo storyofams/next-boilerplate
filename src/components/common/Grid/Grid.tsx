@@ -1,31 +1,29 @@
 import React, {FC} from 'react'
 import {ResponsiveValue} from 'styled-system'
 import {Flex, Box} from '@components'
-import {modifyResponsiveValue} from '@lib'
+import {modifyResponsiveValue, ISystem} from '@lib'
 
-interface GridProps {
+interface GridProps extends ISystem {
   rowSize: ResponsiveValue<number>
   rowGap?: ResponsiveValue<number>
   columnGap?: ResponsiveValue<number>
 }
 
-const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children}) => {
+const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children, ...props}) => {
   return (
-    <Flex
-      flexWrap="wrap"
-      ml={modifyResponsiveValue(columnGap, val => -val)}
-      mt={modifyResponsiveValue(rowGap, val => -val)}
-    >
-      {React.Children.map(children, child => (
-        <Box
-          width={modifyResponsiveValue(rowSize, size => 1 / size)}
-          pl={modifyResponsiveValue(columnGap, val => val)}
-          pt={modifyResponsiveValue(rowGap, val => val)}
-        >
-          {child}
-        </Box>
-      ))}
-    </Flex>
+    <Box {...props}>
+      <Flex
+        flexWrap="wrap"
+        ml={modifyResponsiveValue(columnGap, val => -val)}
+        mt={modifyResponsiveValue(rowGap, val => -val)}
+      >
+        {React.Children.map(children, child => (
+          <Box width={modifyResponsiveValue(rowSize, size => 1 / size)} pl={columnGap} pt={rowGap}>
+            {child}
+          </Box>
+        ))}
+      </Flex>
+    </Box>
   )
 }
 
