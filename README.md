@@ -42,12 +42,12 @@ sometimes you need to only add props from the theme, in those cases its often ea
 ```
 import {css} from '@lib'
 
-const Button = css({
+const Button = styled.button(css({
     color: 'grey400',
     borderRadius: 'sm',
     p: [1,2,3], // can take responsive arrays just like styled-system
     d: 'inline-flex'
-})
+}))
 ```
 
 this will automatically create a styled component that takes its properties from the theme
