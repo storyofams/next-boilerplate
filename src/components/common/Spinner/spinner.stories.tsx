@@ -1,9 +1,10 @@
 import React from 'react'
+import {Spinner} from '@components'
 
-import {storiesOf} from '@storybook/react'
+export default {
+  component: Spinner,
+  title: 'Spinner',
+}
 
-import {Spinner} from './Spinner'
-
-storiesOf('Spinner', module)
-  .add('default', () => <Spinner />)
-  .add('modified', () => <Spinner stroke="8px" fontSize="100px" color="blue" />)
+export const Basic = () => <Spinner />
+export const Custom = () => <Spinner stroke="8px" fontSize="100px" color="blue" />

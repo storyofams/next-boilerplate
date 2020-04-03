@@ -24,7 +24,8 @@
       "@hooks": ["src/hooks"],
       "@config": ["src/config"],
       "@styles": ["src/styles"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "test-utils": ["src/lib/test-utils"]
     }
   },
   "exclude": ["node_modules"],
