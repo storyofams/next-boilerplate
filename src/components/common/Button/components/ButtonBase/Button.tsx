@@ -12,19 +12,23 @@ interface ButtonProps
   baseColor?: string
   disabled?: boolean
   spinner?: JSX.Element
+  customSpinner?: JSX.Element
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const Button: React.FC<ButtonProps> = (
-  {isLoading, spinner: customSpinner, disabled, children, baseColor = 'brand', ...props},
-  ref,
-) => {
+const Button: React.FC<ButtonProps> = ({
+  isLoading,
+  spinner: customSpinner,
+  disabled,
+  children,
+  baseColor = 'brand',
+  ...props
+}) => {
   const _props = {
     ...props,
     disabled: disabled || isLoading,
     baseColor,
-    ref,
   }
 
   if (isLoading) {
@@ -41,4 +45,4 @@ const Button: React.FC<ButtonProps> = (
   return <ButtonBase {..._props}>{children}</ButtonBase>
 }
 
-export default React.forwardRef(Button)
+export default Button

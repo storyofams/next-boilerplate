@@ -1,9 +1,9 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': 'babel-jest',
   },
-  testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`, '.stories.js'],
   moduleNameMapper: {
     '^@lib(.*)$': '<rootDir>/src/lib$1',
     '^@styles(.*)$': '<rootDir>/src/styles$1',
@@ -11,6 +11,10 @@ module.exports = {
     '^@hooks(.*)$': '<rootDir>/src/hooks$1',
     '^@config(.*)$': '<rootDir>/src/config$1',
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  moduleDirectories: [
+    'node_modules',
+    'src/lib', // a utility folder
+    __dirname, // the root directory
+  ],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', './jest.setup.js'],
 }

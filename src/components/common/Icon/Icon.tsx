@@ -1,7 +1,8 @@
-import React, {FC} from 'react'
+import React, {FC, forwardRef} from 'react'
 import styled from 'styled-components'
 import {ISystem} from '@lib'
-import {Box} from '@components'
+import {Box} from '../Box'
+import req from './req'
 
 export const StyledIcon = styled(Box)`
   display: inline-flex;
@@ -14,21 +15,17 @@ export const StyledIcon = styled(Box)`
   }
 `
 
-const req = require.context(
-  '!@svgr/webpack?{"icon":"true","svgo":"true"}!./library',
-  false,
-  /\.svg$/,
-)
-
-export interface IconProps extends ISystem<React.HTMLAttributes<HTMLDivElement>> {
+export interface IconProps
+  extends ISystem,
+    Omit<Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>, 'css'> {
   icon: string
   as?: string
   href?: string
-  onClick?: () => void
+  className?: string
 }
 
-export const Icon: FC<IconProps> = ({icon, color, ...props}) => {
-  if (typeof window === 'undefined') return null
+export const Icon: FC<IconProps> = forwardRef(({icon, color, ...props}, ref) => {
+  // if (typeof window === 'undefined') return null
 
   function getAs(): any {
     switch (true) {
@@ -46,10 +43,10 @@ export const Icon: FC<IconProps> = ({icon, color, ...props}) => {
   const IconSvg = req(`./${icon}.svg`)
 
   return (
-    <StyledIcon as={getAs()} color={color} {...props}>
+    <StyledIcon ref={ref} aria-hidden as={getAs()} color={color} {...props}>
       <IconSvg.default />
     </StyledIcon>
   )
-}
+})
 
 export default Icon
