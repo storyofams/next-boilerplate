@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {forwardRef} from 'react'
 import {ISystem} from '@lib'
 import {Box, Spinner} from '@components'
 
@@ -17,18 +17,15 @@ interface ButtonProps
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const Button: React.FC<ButtonProps> = ({
-  isLoading,
-  spinner: customSpinner,
-  disabled,
-  children,
-  baseColor = 'brand',
-  ...props
-}) => {
+const Button: React.FC<ButtonProps> = (
+  {isLoading, spinner: customSpinner, disabled, children, baseColor = 'brand', ...props},
+  ref,
+) => {
   const _props = {
     ...props,
     disabled: disabled || isLoading,
     baseColor,
+    ref,
   }
 
   if (isLoading) {
@@ -45,4 +42,4 @@ const Button: React.FC<ButtonProps> = ({
   return <ButtonBase {..._props}>{children}</ButtonBase>
 }
 
-export default Button
+export default forwardRef(Button as any)
