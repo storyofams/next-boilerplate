@@ -35,7 +35,7 @@
     "**/.gitignore": true,
     "**/.prettierignore": true,
     "**/.prettierrc": true,
-    "**/next.config.js": true,
+    // "**/next.config.js": true,
     "**/jest.setup.js": true
   },
   "search.exclude": {
