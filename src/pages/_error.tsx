@@ -3,7 +3,9 @@ import {Flex, Text} from '@components'
 const getError = ({res, err}) => {
   let statusCode = 404
 
-  if (res) statusCode = res.statusCode || err.statusCode
+  if (res) {
+    statusCode = res?.statusCode || err?.statusCode || 500
+  }
 
   return {statusCode}
 }
