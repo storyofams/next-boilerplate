@@ -302,6 +302,7 @@ export interface System
 
   //css
   css?: any
+  ref?: any
 
   // override any that cause interference
   // @todo type this properly

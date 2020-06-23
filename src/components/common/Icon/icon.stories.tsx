@@ -8,53 +8,47 @@ export default {
   title: 'Icon',
 }
 
-const allIcons = require
+const allIcons = (require as any)
   .context('./library', false, /\.svg$/)
   .keys()
   .map(k => k.replace('./', '').replace('.svg', ''))
 
 export const library = () => (
-  <>
-    <h1>
-      to add an icon simply drop the svg file in ./library and change the stroke/fill to
-      "currentColor"
-    </h1>
-    <table>
+  <table>
+    <tr
+      style={{
+        border: '1px solid #222',
+        textAlign: 'left',
+        padding: '8px',
+      }}
+    >
+      <th>name</th>
+      <th>default</th>
+      <th>larger</th>
+    </tr>
+    {allIcons.map(name => (
       <tr
         style={{
           border: '1px solid #222',
           textAlign: 'left',
           padding: '8px',
         }}
+        key={name}
       >
-        <th>name</th>
-        <th>default</th>
-        <th>larger</th>
+        <td>
+          <Text mr="40px" fontSize="20px" lineHeight={1}>
+            {name}
+          </Text>
+        </td>
+        <td>
+          <Icon icon={name} color="grey" mr="90px" fontSize="20px" />
+        </td>
+        <td>
+          <Icon icon={name} color="primary500" fontSize="30px" />
+        </td>
       </tr>
-      {allIcons.map(name => (
-        <tr
-          style={{
-            border: '1px solid #222',
-            textAlign: 'left',
-            padding: '8px',
-          }}
-          key={name}
-        >
-          <td>
-            <Text mr="40px" fontSize="20px" lineHeight={1}>
-              {name}
-            </Text>
-          </td>
-          <td>
-            <Icon icon={name} color="grey" mr="90px" fontSize="20px" />
-          </td>
-          <td>
-            <Icon icon={name} color="primary500" fontSize="30px" />
-          </td>
-        </tr>
-      ))}
-    </table>
-  </>
+    ))}
+  </table>
 )
 
 const commonProps = {

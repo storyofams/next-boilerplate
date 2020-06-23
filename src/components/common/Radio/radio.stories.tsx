@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Stack, Radio, RadioGroup, Text} from '@components'
+import {Radio, RadioGroup} from '@components'
 
 export default {
   component: Radio,
@@ -12,9 +12,13 @@ export const InRadioGroup = () => {
   return (
     <>
       <RadioGroup value={val} onChange={setVal}>
-        <Radio value="1">one</Radio>
+        <Radio data-testid="radio-1" value="1">
+          one
+        </Radio>
         <Radio value="2">two</Radio>
-        <Radio value="3">three</Radio>
+        <Radio data-testid="radio-3" value="3">
+          three
+        </Radio>
       </RadioGroup>
     </>
   )

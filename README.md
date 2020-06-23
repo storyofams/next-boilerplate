@@ -146,6 +146,10 @@ good test:
 
 > test if item with data-testid='modal' is in the dom after data-testid='edit-btn' was clicked
 
+**you can find a simple test example in the radio component.**
+
+testing examples for pretty much every use case are [here](https://github.com/kentcdodds/react-testing-library-course)
+
 ## Commit messages
 
 uses [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) and husky to enforce them.

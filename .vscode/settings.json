@@ -1,11 +1,11 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.background": "#242424",
-    "activityBar.activeBorder": "#606020",
+    "activityBar.background": "#1A1D21",
+    "activityBar.activeBorder": "#1CEDC7",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#606020",
-    "activityBarBadge.foreground": "#e7e7e7",
+    "activityBarBadge.background": "#1CEDC7",
+    "activityBarBadge.foreground": "#0b0b0b",
     "titleBar.activeBackground": "#0b0b0b",
     "titleBar.inactiveBackground": "#0b0b0b99",
     "titleBar.activeForeground": "#e7e7e7",
@@ -35,7 +35,8 @@
     "**/.gitignore": true,
     "**/.prettierignore": true,
     "**/.prettierrc": true,
-    "**/next.config.js": true
+    // "**/next.config.js": true,
+    "**/jest.setup.js": true
   },
   "search.exclude": {
     "**/.next": true,
