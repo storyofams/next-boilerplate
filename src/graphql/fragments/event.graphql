@@ -1,0 +1,6 @@
+fragment EventFragment on Event {
+  title
+  location {
+    name
+  }
+}
