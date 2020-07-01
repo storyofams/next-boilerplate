@@ -1,0 +1,10 @@
+#import "../queries/events.graphql"
+
+mutation createEvent($input: CreateEventInput!) {
+  createEvent(input: $input) {
+    location {
+      name
+    }
+    title
+  }
+}

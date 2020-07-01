@@ -29,10 +29,11 @@ module.exports = {
     'import/resolver': {
       alias: [
         ['@components', './src/components'],
-        ['@styles', './src/styles'],
-        ['@hooks', './src/hooks'],
         ['@config', './src/config'],
+        ['@graphQL', './src/graphql'],
+        ['@hooks', './src/hooks'],
         ['@lib', './src/lib'],
+        ['@styles', './src/styles'],
       ],
     },
   },

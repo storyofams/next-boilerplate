@@ -1,0 +1,8 @@
+query allEvents($page: Int, $limit: Int) {
+  events(page: $page, limit: $limit) {
+    location {
+      name
+    }
+    title
+  }
+}

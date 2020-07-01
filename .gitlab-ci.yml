@@ -1,17 +1,40 @@
-image: node:latest
-
+image: node:lts
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
+    - .yarn
+    - .next/cache
+    - src/graphql/sdk.ts
 
 stages:
+  - setup
   - test
+  - deploy
+
+setup:
+  stage: setup
+  script:
+    - yarn
+    - yarn codegen
+  only:
+    - merge_requests
+    - master
 
 test:
-  before_script:
-    - yarn config set cache-folder .yarn
-    - yarn install
   stage: test
   script: yarn jest --coverage
   only:
     - merge_requests
+
+deploy:
+  stage: deploy
+  script: yarn now --token $NOW_DEPLOY_TOKEN --confirm
+  only:
+    - merge_requests
+
+production:
+  stage: deploy
+  script: yarn now --token $NOW_DEPLOY_TOKEN --confirm --prod
+  only:
+    - master

@@ -17,12 +17,13 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
       "@components": ["src/components"],
-      "@lib/*": ["src/lib/*"],
-      "@lib": ["src/lib"],
-      "@hooks": ["src/hooks"],
+      "@components/*": ["src/components/*"],
       "@config": ["src/config"],
+      "@graphql/*": ["src/graphql/*"],
+      "@hooks": ["src/hooks"],
+      "@lib": ["src/lib"],
+      "@lib/*": ["src/lib/*"],
       "@styles": ["src/styles"],
       "@styles/*": ["src/styles/*"],
       "test-utils": ["src/lib/test-utils"]

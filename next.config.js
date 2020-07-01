@@ -23,4 +23,7 @@ module.exports = {
 
     return config
   },
+  env: {
+    GRAPH_URL: process.env.GRAPH_URL,
+  },
 }

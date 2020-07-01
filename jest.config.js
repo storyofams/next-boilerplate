@@ -5,11 +5,12 @@ module.exports = {
     '^.+\\.tsx?$': 'babel-jest',
   },
   moduleNameMapper: {
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@config(.*)$': '<rootDir>/src/config$1',
+    '^@graphql(.*)$': '<rootDir>/src/graphql$1',
+    '^@hooks(.*)$': '<rootDir>/src/hooks$1',
     '^@lib(.*)$': '<rootDir>/src/lib$1',
     '^@styles(.*)$': '<rootDir>/src/styles$1',
-    '^@components(.*)$': '<rootDir>/src/components$1',
-    '^@hooks(.*)$': '<rootDir>/src/hooks$1',
-    '^@config(.*)$': '<rootDir>/src/config$1',
   },
   moduleDirectories: [
     'node_modules',
