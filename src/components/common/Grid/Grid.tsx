@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {ResponsiveValue} from 'styled-system'
 import {Flex, Box} from '@components'
-import {modifyResponsiveValue, ISystem} from '@lib'
+import {modifyResponsiveValue, ISystem, css} from '@lib'
 
 interface GridProps extends ISystem {
   rowSize: ResponsiveValue<number>
@@ -11,17 +11,20 @@ interface GridProps extends ISystem {
 
 const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children, ...props}) => {
   return (
-    <Box {...props}>
+    <Box className="grid" {...props}>
       <Flex
         flexWrap="wrap"
         ml={modifyResponsiveValue(columnGap, val => -val)}
         mt={modifyResponsiveValue(rowGap, val => -val)}
+        css={css({
+          '& > *': {
+            flex: modifyResponsiveValue(rowSize, size => `0 1 ${(1 / size) * 100}%`),
+            pl: columnGap,
+            pt: rowGap,
+          },
+        })}
       >
-        {React.Children.map(children, child => (
-          <Box width={modifyResponsiveValue(rowSize, size => 1 / size)} pl={columnGap} pt={rowGap}>
-            {child}
-          </Box>
-        ))}
+        {children}
       </Flex>
     </Box>
   )
