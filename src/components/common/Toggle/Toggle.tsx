@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {system, ISystem} from '@lib'
+import {system, ISystem} from '@/lib'
 
 const Wrapper = styled.label<ISystem>`
   position: relative;

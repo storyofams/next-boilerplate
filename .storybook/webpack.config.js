@@ -20,11 +20,7 @@ module.exports = ({config}) => {
     resolve: {
       ...config.resolve,
       alias: {
-        '@components': path.resolve(__dirname, '../src/components'),
-        '@lib': path.resolve(__dirname, '../src/lib'),
-        '@hooks': path.resolve(__dirname, '../src/hooks'),
-        '@config': path.resolve(__dirname, '../src/config'),
-        '@styles': path.resolve(__dirname, '../src/styles'),
+        '@': path.resolve(__dirname, '../src'),
       },
     },
   }

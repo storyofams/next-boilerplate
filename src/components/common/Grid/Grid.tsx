@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {ResponsiveValue} from 'styled-system'
-import {Flex, Box} from '@components'
-import {modifyResponsiveValue, ISystem, css} from '@lib'
+import {Flex, Box} from '@/components'
+import {modifyResponsiveValue, ISystem, css} from '@/lib'
 
 interface GridProps extends ISystem {
   rowSize: ResponsiveValue<number>

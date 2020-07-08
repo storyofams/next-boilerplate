@@ -1,7 +1,7 @@
 import Alert from '@reach/alert'
 import styled from 'styled-components'
 import css from '@styled-system/css'
-import {system, ISystem} from '@lib'
+import {system, ISystem} from '@/lib'
 
 type status = 'default' | 'success' | 'warning' | 'error'
 

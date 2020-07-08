@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {ButtonBase} from './components/ButtonBase'
-import {Icon} from '@components'
+import {Icon} from '@/components'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // All ButtonBase takes care of all the default stuff
@@ -43,7 +43,7 @@ const UnderlineButtonStyles = styled(ButtonBase)`
     transition: transform 0.2s;
   }
   &:hover:enabled {
-    border-color: ${p => p.theme.colors.yellow600};
+    border-color: ${p => p.theme.colors.grey700};
     .arrow {
       transform: translate(3px);
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {StatusMessage, Stack} from '@components'
+import {StatusMessage, Stack} from '@/components'
 
 export default {
   component: StatusMessage,

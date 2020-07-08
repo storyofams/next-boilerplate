@@ -1,10 +1,5 @@
 import 'styled-components'
 
-type ObjectOfStrings = {
-  [key: string]: any
-  [key: number]: any
-}
-
 interface Breakpoints extends Array<string> {
   sm?: string
   md?: string
@@ -13,31 +8,8 @@ interface Breakpoints extends Array<string> {
 }
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    colors: ObjectOfStrings
-    fontWeights: {
-      regular: string | number
-      medium: string | number
-      bold: string | number
-    }
-    fonts: {
-      heading: string
-      body: string
-      mono: string
-    }
-    fontSizes: ObjectOfStrings
-    space: ObjectOfStrings
-    sizes: ObjectOfStrings
+  type Theme = typeof import('./theme').default
+  export interface DefaultTheme extends Theme {
     breakpoints: Breakpoints
-    zIndices: ObjectOfStrings
-    radii: {
-      none: string
-      sm: string
-      md: string
-      lg: string
-      full: string
-    }
-    borders: ObjectOfStrings
-    shadows: ObjectOfStrings
   }
 }

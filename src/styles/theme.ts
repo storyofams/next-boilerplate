@@ -1,6 +1,6 @@
-import {DefaultTheme} from 'styled-components'
+import {Breakpoints} from './styled'
 
-const theme: DefaultTheme = {
+const theme = {
   // colors
   colors: {
     primary500: '#3461eb',
@@ -66,7 +66,7 @@ const theme: DefaultTheme = {
   sizes: {
     maxWidth: 1140,
   },
-  breakpoints: ['768px', '1024px', '1280px'],
+  breakpoints: ['768px', '1024px', '1280px'] as Breakpoints,
   zIndices: {
     hide: -1,
     auto: 'auto',
@@ -104,9 +104,9 @@ const theme: DefaultTheme = {
   },
 }
 
-theme.breakpoints.sm = '640px'
-theme.breakpoints.md = '768px'
-theme.breakpoints.lg = '1024px'
-theme.breakpoints.xl = '1280px'
+theme.breakpoints.sm = theme.breakpoints[0]
+theme.breakpoints.md = theme.breakpoints[1]
+theme.breakpoints.lg = theme.breakpoints[2]
+theme.breakpoints.xl = '1440px'
 
 export default theme

@@ -1,6 +1,6 @@
 import React, {forwardRef} from 'react'
-import {ISystem} from '@lib'
-import {Box, Spinner} from '@components'
+import {ISystem} from '@/lib'
+import {Box, Spinner} from '@/components'
 
 import ButtonBase from './ButtonBase'
 

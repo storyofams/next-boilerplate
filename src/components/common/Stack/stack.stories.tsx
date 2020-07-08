@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Stack, Text} from '@components'
+import {Box, Stack, Text} from '@/components'
 
 export default {
   component: Stack,

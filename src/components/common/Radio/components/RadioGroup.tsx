@@ -1,6 +1,6 @@
 import React, {Children, cloneElement} from 'react'
-import {Box} from '@components'
-import {ISystem} from '@lib'
+import {Box} from '@/components'
+import {ISystem} from '@/lib'
 
 interface RadioElement {
   onChange?: any

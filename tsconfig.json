@@ -17,14 +17,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@components": ["src/components"],
-      "@lib/*": ["src/lib/*"],
-      "@lib": ["src/lib"],
-      "@hooks": ["src/hooks"],
-      "@config": ["src/config"],
-      "@styles": ["src/styles"],
-      "@styles/*": ["src/styles/*"],
+      "@/*": ["src/*"],
       "test-utils": ["src/lib/test-utils"]
     }
   },
