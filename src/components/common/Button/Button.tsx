@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {ButtonBase} from './components/ButtonBase'
-import {Icon} from '../Icon'
+import {Icon} from '@/components'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // All ButtonBase takes care of all the default stuff

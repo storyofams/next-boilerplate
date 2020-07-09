@@ -1,8 +1,8 @@
 import React, {forwardRef} from 'react'
 import {ISystem} from '@/lib'
+import {Box, Spinner} from '@/components'
+
 import ButtonBase from './ButtonBase'
-import {Box} from '../../../Box'
-import {Spinner} from '../../../Spinner'
 
 interface ButtonProps
   extends Omit<Omit<React.HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,

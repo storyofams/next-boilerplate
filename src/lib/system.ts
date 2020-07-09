@@ -24,6 +24,7 @@ import {
   ResponsiveValue,
   BorderRadiusProps,
   HeightProps,
+  BoxShadowProps,
   FlexDirectionProps,
   BackgroundPositionProps,
   BackgroundSizeProps,

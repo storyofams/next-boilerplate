@@ -2,10 +2,8 @@ import React from 'react'
 import {Props} from 'react-select'
 import {ISystem} from '@/lib'
 import {useId} from '@/hooks'
+import {Box, Text, StatusMessage} from '@/components'
 import StyledSelect from './components/StyledSelect'
-import {Box} from '../Box'
-import {Text} from '../Text'
-import {StatusMessage} from '../StatusMessage'
 
 export type status = 'default' | 'success' | 'warning' | 'error'
 

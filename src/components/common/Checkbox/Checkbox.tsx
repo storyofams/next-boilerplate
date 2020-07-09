@@ -2,13 +2,9 @@ import React from 'react'
 import {FormikHandlers} from 'formik'
 import {pick, omit} from '@styled-system/props'
 import {ISystem} from '@/lib'
+import {StatusMessage, Flex, Text, status, Box} from '@/components'
 import StyledCheckbox from './components/StyledCheckbox'
 import {useId} from '@/hooks'
-import {Box} from '../Box'
-import {Flex} from '../Flex'
-import {Text} from '../Text'
-import {status} from '../Select'
-import {StatusMessage} from '../StatusMessage'
 
 interface ICheckbox extends ISystem {
   checked?: boolean

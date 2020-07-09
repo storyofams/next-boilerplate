@@ -1,5 +1,5 @@
 import React, {Children, cloneElement} from 'react'
-import {Box} from '../../Box'
+import {Box} from '@/components'
 import {ISystem} from '@/lib'
 
 interface RadioElement {
