@@ -8,7 +8,7 @@ export default {
 
 export const BasicExamples = () => (
   <Box d="flex">
-    <Box mr={{sm: 0, md: 5, lg: 9}} h={100} w={100} bg="#00f" />
-    <Box h={100} w={100} borderRadius="full" bg={['grey800', '#ff1']} />
+    <Box mr={[7, 5, 9]} h={100} w={100} bg="primary500" />
+    <Box h={100} w={100} borderRadius="full" bg={['grey800', 'success500']} />
   </Box>
 )
