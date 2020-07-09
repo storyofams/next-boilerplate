@@ -22,10 +22,8 @@ const theme = {
     error500: '#CA1818',
     transparent: 'rgba(255, 255, 255, 0);',
   },
-
-  // typography
   fontWeights: {
-    regular: 'normal',
+    regular: 400,
     medium: 500,
     bold: 700,
   },
@@ -46,6 +44,9 @@ const theme = {
     7: '2.3rem', //40px
     8: '2.75rem', //48px
     heading: '1.85rem',
+  },
+  lineHeights: {
+    normal: 100,
   },
   // sizes
   space: {
@@ -69,7 +70,6 @@ const theme = {
   breakpoints: ['768px', '1024px', '1280px'] as Breakpoints,
   zIndices: {
     hide: -1,
-    auto: 'auto',
     base: 0,
     docked: 10,
     dropdown: 1000,

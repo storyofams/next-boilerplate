@@ -1,4 +1,4 @@
-import {_customSystem} from '../system'
+import {_customSystem} from './system'
 
 // Transform the custom alias to a format that styled-system CSS supports
 

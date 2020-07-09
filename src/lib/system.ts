@@ -22,14 +22,9 @@ import {
   SpaceProps,
   TypographyProps,
   ResponsiveValue,
-  FontSizeProps,
-  BorderColorProps,
   BorderRadiusProps,
-  BackgroundColorProps,
-  OpacityProps,
   HeightProps,
   BoxShadowProps,
-  OverflowProps,
   FlexDirectionProps,
   BackgroundPositionProps,
   BackgroundSizeProps,
@@ -40,8 +35,9 @@ import {
   MaxWidthProps,
   MinWidthProps,
   WidthProps,
+  ColorProps,
 } from 'styled-system'
-import {css} from 'styled-components'
+import {css, DefaultTheme} from 'styled-components'
 
 export const _customSystem: Config = {
   roundedTop: {
@@ -191,28 +187,21 @@ export const system = p => css`
     )(p)}
   }
 `
-
 type CSS = React.CSSProperties
 type borderRadius = BorderRadiusProps['borderRadius']
-type borderColor = BorderColorProps['borderColor']
-
-export interface ColorProps extends BackgroundColorProps, OpacityProps {
-  color?: any // @todo find a proper fix for this
-}
 
 export interface System
-  extends BackgroundProps,
-    BorderProps,
-    FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
-    SpaceProps,
-    ColorProps,
-    OverflowProps,
-    TypographyProps {
-  fontSize?: ResponsiveValue<string | number> | FontSizeProps['fontSize']
+  extends LayoutProps,
+    ColorProps<DefaultTheme>,
+    SpaceProps<DefaultTheme>,
+    BackgroundProps<DefaultTheme>,
+    BorderProps<DefaultTheme>,
+    FlexboxProps<DefaultTheme>,
+    GridProps<DefaultTheme>,
+    PositionProps<DefaultTheme>,
+    ShadowProps<DefaultTheme>,
+    TypographyProps<DefaultTheme> {
+  color?: keyof DefaultTheme['colors']
 
   // Custom borderRadius alias
   rounded?: borderRadius
@@ -224,12 +213,6 @@ export interface System
   roundedTopLeft?: borderRadius
   roundedBottomRight?: borderRadius
   roundedBottomLeft?: borderRadius
-
-  // Custom borderColor alias
-  borderBottomColor?: borderColor
-  borderTopColor?: borderColor
-  borderRightColor?: borderColor
-  borderLeftColor?: borderColor
 
   // Custom width alias
   w?: WidthProps['width']
@@ -280,7 +263,8 @@ export interface System
   stroke?: ColorProps['color']
 
   bgAttachment?: ResponsiveValue<CSS['backgroundAttachment']>
-  shadow?: BoxShadowProps['boxShadow']
+  shadow?: ResponsiveValue<keyof DefaultTheme['shadows']>
+  boxShadow?: ResponsiveValue<keyof DefaultTheme['shadows']>
 
   // List properties
   listStyleType?: ResponsiveValue<CSS['listStyleType']>
@@ -294,12 +278,6 @@ export interface System
   float?: ResponsiveValue<CSS['float']>
   willChange?: ResponsiveValue<CSS['willChange']>
 
-  // Border Width props
-  borderTopWidth?: ResponsiveValue<CSS['borderTopWidth']>
-  borderBottomWidth?: ResponsiveValue<CSS['borderBottomWidth']>
-  borderLeftWidth?: ResponsiveValue<CSS['borderLeftWidth']>
-  borderRightWidth?: ResponsiveValue<CSS['borderRightWidth']>
-
   //css
   css?: any
   ref?: any
@@ -311,4 +289,6 @@ export interface System
   width?: any
 }
 
-export type ISystem<T = undefined> = T extends {} ? System & Omit<Omit<T, 'color'>, 'css'> : System
+export type ISystem<T = undefined> = T extends {}
+  ? System & Omit<Omit<T, 'color'>, 'css' | 'ref'>
+  : System

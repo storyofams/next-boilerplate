@@ -15,9 +15,7 @@ export const StyledIcon = styled(Box)`
   }
 `
 
-export interface IconProps
-  extends ISystem,
-    Omit<Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>, 'css'> {
+export interface IconProps extends ISystem<React.HTMLAttributes<HTMLDivElement>> {
   icon: string
   as?: string
   href?: string

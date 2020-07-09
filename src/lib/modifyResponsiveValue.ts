@@ -1,4 +1,4 @@
-export default function modifyResponsiveValue(value, cb) {
+export const modifyResponsiveValue = (value, cb) => {
   if (typeof value === 'string' || typeof value === 'number') {
     return cb(value)
   } else if (Array.isArray(value)) {
