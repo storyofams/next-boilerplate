@@ -1,21 +1,21 @@
 import styled from 'styled-components'
-import {Box} from '@components'
+import {Box} from '@/components'
 import {variant} from 'styled-system'
 
-export type TextProps = {
-  variant?: 'ellipsis'
+const variants = {
+  ellipsis: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+}
+
+export interface TextProps {
+  variant?: keyof typeof variants
 }
 
 const Text = styled(Box)<TextProps>`
-  ${variant({
-    variants: {
-      ellipsis: {
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-      },
-    },
-  })}
+  ${variant({variants})}
 `
 
 export default Text

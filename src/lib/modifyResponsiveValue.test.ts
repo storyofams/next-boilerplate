@@ -1,4 +1,4 @@
-import modifyResponsiveValue from './modifyResponsiveValue'
+import {modifyResponsiveValue} from './modifyResponsiveValue'
 
 test('works for all kind of responsive data structures', () => {
   expect(modifyResponsiveValue([1, 2, 3], n => n + 1)).toEqual([2, 3, 4])

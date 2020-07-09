@@ -1,4 +1,4 @@
-import {Flex, Text} from '@components'
+import {Flex, Text} from '@/components'
 
 const getError = ({res, err}) => {
   let statusCode = 404
@@ -27,12 +27,12 @@ const Error = ({statusCode}) => {
     <Flex
       flex={1}
       height="100vh"
-      backgroundColor="#000"
-      justifyContent="center"
+      backgroundColor="grey900"
+      justifyContent=""
       alignItems="center"
       flexDirection="column"
     >
-      <Text fontFamily="mono" fontSize="8" color="grey800">
+      <Text fontFamily="mono" fontSize={8} color="grey800">
         {statusCode}
       </Text>
       <Text fontFamily="mono" color="white">

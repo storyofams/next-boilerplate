@@ -1,6 +1,6 @@
 import React from 'react'
 import {action} from '@storybook/addon-actions'
-import {Text} from '@components'
+import {Text} from '@/components'
 import Icon from './Icon'
 
 export default {
@@ -36,15 +36,15 @@ export const library = () => (
         key={name}
       >
         <td>
-          <Text mr="40px" fontSize="20px" lineHeight={1}>
+          <Text mr="mobileGutter" fontSize={20 as any} lineHeight="normal" textShadow="">
             {name}
           </Text>
         </td>
         <td>
-          <Icon icon={name} color="grey" mr="90px" fontSize="20px" />
+          <Icon icon={name} color="grey100" px="mobileGutter" mr={8} fontSize={7} />
         </td>
         <td>
-          <Icon icon={name} color="primary500" fontSize="30px" />
+          <Icon icon={name} color="primary500" fontSize={2} />
         </td>
       </tr>
     ))}
@@ -53,7 +53,7 @@ export const library = () => (
 
 const commonProps = {
   icon: 'account',
-  fontSize: '60px',
+  fontSize: '60px' as any,
 }
 // different semantics
 export const asButton = () => <Icon {...commonProps} onClick={action('clicked')} />

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import ReactSelect, {Props} from 'react-select'
-import {system, ISystem} from '@lib'
+import {system, ISystem} from '@/lib'
 import styled, {css, ThemeContext} from 'styled-components'
 
 const StyledSelect = styled(ReactSelect).attrs({
@@ -62,8 +62,8 @@ export const Select: React.FC<ISelect> = props => {
         ...t,
         colors: {
           ...t.colors,
-          primary25: styledTheme.colors.primary100,
-          primary50: styledTheme.colors.primary300,
+          primary25: styledTheme.colors.primary500,
+          primary50: styledTheme.colors.primary500,
           primary: styledTheme.colors.primary500,
         },
       })}

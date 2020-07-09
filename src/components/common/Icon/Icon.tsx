@@ -1,6 +1,6 @@
 import React, {FC, forwardRef} from 'react'
 import styled from 'styled-components'
-import {ISystem} from '@lib'
+import {ISystem} from '@/lib'
 import {Box} from '../Box'
 import req from './req'
 
@@ -15,9 +15,7 @@ export const StyledIcon = styled(Box)`
   }
 `
 
-export interface IconProps
-  extends ISystem,
-    Omit<Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>, 'css'> {
+export interface IconProps extends ISystem<React.HTMLAttributes<HTMLDivElement>> {
   icon: string
   as?: string
   href?: string

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react'
-import {render, fireEvent} from '@lib'
+import {render, fireEvent} from '@/lib'
 
 import Button from './Button'
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {system, ISystem} from '@lib'
+import {system, ISystem} from '@/lib'
 
 const ButtonBase = styled.button<ISystem>`
   border-radius: ${p => p.theme.radii.sm};
