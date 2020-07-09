@@ -1,5 +1,4 @@
 const path = require('path')
-const CircularDependencyPlugin = require('circular-dependency-plugin')
 
 module.exports = {
   webpack(config, options) {
@@ -8,14 +7,6 @@ module.exports = {
       test: /\.svg$/,
       use: [{loader: '@svgr/webpack', options: {icon: true, svgo: false}}],
     })
-
-    config.plugins.push(
-      new CircularDependencyPlugin({
-        exclude: /node_modules/,
-        failOnError: false,
-      }),
-    )
-
     return config
   },
 }
