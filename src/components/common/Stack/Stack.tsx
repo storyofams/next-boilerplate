@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {ResponsiveValue} from 'styled-system'
 import css from '@styled-system/css'
-import {Box} from '@/components'
+import {Box} from '../Box'
 import {modifyResponsiveValue, ISystem} from '@/lib'
 // layout utility
 

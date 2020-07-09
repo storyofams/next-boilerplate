@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Box} from '@/components'
+import {Box} from '../Box'
 import {variant} from 'styled-system'
 
 const variants = {
