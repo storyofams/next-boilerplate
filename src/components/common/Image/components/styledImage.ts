@@ -1,22 +1,22 @@
-import styled from 'styled-components'
-import {system, ISystem} from '@/lib'
+import styled from 'styled-components';
+import { system, ISystem } from '@/lib';
 
 const objectFitPolyfill = p => {
-  let res = []
+  let res = [];
   if (p.objectFit) {
-    res.push(`object-fit: ${p.objectFit}`)
+    res.push(`object-fit: ${p.objectFit}`);
   }
   if (p.objectPosition) {
-    res.push(`object-fit: ${p.objectPosition}`)
+    res.push(`object-fit: ${p.objectPosition}`);
   }
   if (res.length > 0) {
-    return `font-family: '${res.join(' ')}';`
+    return `font-family: '${res.join(' ')}';`;
   }
-  return ''
-}
+  return '';
+};
 
 interface IStyledImage extends ISystem {
-  loading?: 'lazy' | 'eager'
+  loading?: 'lazy' | 'eager';
 }
 
 const StyledImage = styled.img<IStyledImage>`
@@ -24,6 +24,6 @@ const StyledImage = styled.img<IStyledImage>`
 
   ${objectFitPolyfill}
   ${system}
-`
+`;
 
-export default StyledImage
+export default StyledImage;

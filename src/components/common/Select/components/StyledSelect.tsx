@@ -1,13 +1,13 @@
-import React, {useContext} from 'react'
-import ReactSelect, {Props} from 'react-select'
-import {system, ISystem} from '@/lib'
-import styled, {css, ThemeContext} from 'styled-components'
+import React, { useContext } from 'react';
+import ReactSelect, { Props } from 'react-select';
+import { system, ISystem } from '@/lib';
+import styled, { css, ThemeContext } from 'styled-components';
 
 const StyledSelect = styled(ReactSelect).attrs({
   className: 'react-select',
   classNamePrefix: 'react-select',
 })<ISystem>(
-  ({styledTheme: theme}) => css`
+  ({ styledTheme: theme }) => css`
     ${system}
 
     font-size: 14px;
@@ -46,14 +46,14 @@ const StyledSelect = styled(ReactSelect).attrs({
       }
     }
   `,
-)
+);
 
 export interface ISelect extends Props {
-  theme?: any
+  theme?: any;
 }
 
 export const Select: React.FC<ISelect> = props => {
-  const styledTheme = useContext(ThemeContext) // react-select and styled-components both need a theme so it needs to be renamed
+  const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (
     <StyledSelect
@@ -69,7 +69,7 @@ export const Select: React.FC<ISelect> = props => {
       })}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default Select
+export default Select;

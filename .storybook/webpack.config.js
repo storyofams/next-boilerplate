@@ -1,19 +1,19 @@
-const path = require('path')
+const path = require('path');
 
-module.exports = ({config}) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve('babel-loader'),
     options: {
-      presets: [['react-app', {flow: false, typescript: true}]],
+      presets: [['react-app', { flow: false, typescript: true }]],
     },
-  })
-  config.resolve.extensions.push('.ts', '.tsx')
+  });
+  config.resolve.extensions.push('.ts', '.tsx');
 
   config.module.rules.push({
     test: /\.svg$/,
-    use: [{loader: '@svgr/webpack', options: {icon: true, svgo: true}}],
-  })
+    use: [{ loader: '@svgr/webpack', options: { icon: true, svgo: true } }],
+  });
 
   return {
     ...config,
@@ -23,5 +23,5 @@ module.exports = ({config}) => {
         '@': path.resolve(__dirname, '../src'),
       },
     },
-  }
-}
+  };
+};

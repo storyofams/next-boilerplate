@@ -1,6 +1,6 @@
-import React from 'react'
-import {Providers} from '../src/components'
-import CSSreset from '../src/styles/CSSreset'
+import React from 'react';
+import { Providers } from '../src/components';
+import CSSreset from '../src/styles/CSSreset';
 
 const ProviderDecorator = storyFn => (
   <Providers>
@@ -9,6 +9,6 @@ const ProviderDecorator = storyFn => (
       {storyFn()}
     </>
   </Providers>
-)
+);
 
-export default ProviderDecorator
+export default ProviderDecorator;

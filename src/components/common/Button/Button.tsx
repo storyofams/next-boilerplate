@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import {ButtonBase} from './components/ButtonBase'
-import {Icon} from '@/components'
+import styled from 'styled-components';
+import { ButtonBase } from './components/ButtonBase';
+import { Icon } from '@/components';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // All ButtonBase takes care of all the default stuff
@@ -11,7 +11,7 @@ export const PrimaryButton = styled(ButtonBase)`
   &:hover:enabled {
     background: #319795;
   }
-`
+`;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const SecondaryButton = styled(ButtonBase).attrs({
@@ -28,7 +28,7 @@ export const SecondaryButton = styled(ButtonBase).attrs({
     background: ${p => p.theme.colors.warning100};
     color: ${p => p.theme.colors.grey700};
   }
-`
+`;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const UnderlineButtonStyles = styled(ButtonBase)`
@@ -48,15 +48,15 @@ const UnderlineButtonStyles = styled(ButtonBase)`
       transform: translate(3px);
     }
   }
-`
+`;
 
-export const UnderlineButton: React.FC = ({children, ...props}) => {
+export const UnderlineButton: React.FC = ({ children, ...props }) => {
   return (
     <UnderlineButtonStyles {...props}>
       {children}
       <Icon icon="arrow" className="arrow" />
     </UnderlineButtonStyles>
-  )
-}
+  );
+};
 
-export default PrimaryButton
+export default PrimaryButton;

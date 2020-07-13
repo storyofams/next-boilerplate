@@ -1,29 +1,32 @@
-import React, {FC} from 'react'
-import {ResponsiveValue} from 'styled-system'
-import css from '@styled-system/css'
-import {Box} from '@/components'
-import {modifyResponsiveValue, ISystem} from '@/lib'
+import React, { FC } from 'react';
+import { ResponsiveValue } from 'styled-system';
+import css from '@styled-system/css';
+import { Box } from '@/components';
+import { modifyResponsiveValue, ISystem } from '@/lib';
 // layout utility
 
-type CSS = React.CSSProperties
+type CSS = React.CSSProperties;
 
 interface StackProps extends ISystem {
-  space: ResponsiveValue<CSS['margin']>
+  space: ResponsiveValue<CSS['margin']>;
 }
 
-const Stack: FC<StackProps> = ({space, flexDirection, flexDir, ...props}) => {
-  const commonDirectionProp = flexDir || flexDirection || 'row'
+const Stack: FC<StackProps> = ({ space, flexDirection, flexDir, ...props }) => {
+  const commonDirectionProp = flexDir || flexDirection || 'row';
 
   function parseDirection(direction) {
-    const isRow = direction.startsWith('row')
-    const isReversed = direction.endsWith('reverse')
+    const isRow = direction.startsWith('row');
+    const isReversed = direction.endsWith('reverse');
 
     return isRow
-      ? {[isReversed ? 'mr' : 'ml']: space, mb: 0, mt: 0}
-      : {[isReversed ? 'mb' : 'mt']: space, ml: 0, mr: 0}
+      ? { [isReversed ? 'mr' : 'ml']: space, mb: 0, mt: 0 }
+      : { [isReversed ? 'mb' : 'mt']: space, ml: 0, mr: 0 };
   }
 
-  const spacingProp = modifyResponsiveValue(commonDirectionProp, parseDirection)
+  const spacingProp = modifyResponsiveValue(
+    commonDirectionProp,
+    parseDirection,
+  );
 
   return (
     <Box
@@ -34,7 +37,7 @@ const Stack: FC<StackProps> = ({space, flexDirection, flexDir, ...props}) => {
       })}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default Stack
+export default Stack;

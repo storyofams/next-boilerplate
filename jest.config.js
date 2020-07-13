@@ -12,5 +12,8 @@ module.exports = {
     'src/lib', // a utility folder
     __dirname, // the root directory
   ],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', './jest.setup.js'],
-}
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom/extend-expect',
+    './jest.setup.js',
+  ],
+};

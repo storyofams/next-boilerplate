@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
-import {Radio, RadioGroup} from '@/components'
+import React, { useState } from 'react';
+import { Radio, RadioGroup } from '@/components';
 
 export default {
   component: Radio,
   title: 'Radio',
-}
+};
 
 export const InRadioGroup = () => {
-  const [val, setVal] = useState(null)
+  const [val, setVal] = useState(null);
 
   return (
     <>
@@ -21,5 +21,5 @@ export const InRadioGroup = () => {
         </Radio>
       </RadioGroup>
     </>
-  )
-}
+  );
+};

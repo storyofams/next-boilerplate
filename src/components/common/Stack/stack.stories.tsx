@@ -1,10 +1,10 @@
-import React from 'react'
-import {Box, Stack, Text} from '@/components'
+import React from 'react';
+import { Box, Stack, Text } from '@/components';
 
 export default {
   component: Stack,
   title: 'Stack',
-}
+};
 
 export const Row = () => (
   <>
@@ -18,7 +18,7 @@ export const Row = () => (
       <Box size="40px" bg="warning500" />
     </Stack>
   </>
-)
+);
 
 export const ResponsiveArray = () => (
   <Stack space={[0, 5, 9]}>
@@ -27,7 +27,7 @@ export const ResponsiveArray = () => (
     <Box size="40px" bg="primary500" />
     <Box size="40px" bg="primary500" />
   </Stack>
-)
+);
 
 export const ResponsiveDirection = () => (
   <>
@@ -50,7 +50,7 @@ export const ResponsiveDirection = () => (
       <Box size="40px" bg="primaryAlpha40" />
     </Stack>
   </>
-)
+);
 
 export const OverwritingMargin = () => (
   <Stack space={[0, 5, 9]}>
@@ -58,4 +58,4 @@ export const OverwritingMargin = () => (
     <Box mr={5} mt={5} size="40px" bg="grey900" />
     <Box ml={0} size="40px" bg="grey900" />
   </Stack>
-)
+);

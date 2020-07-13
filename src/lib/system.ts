@@ -36,8 +36,8 @@ import {
   MinWidthProps,
   WidthProps,
   ColorProps,
-} from 'styled-system'
-import {css, DefaultTheme} from 'styled-components'
+} from 'styled-system';
+import { css, DefaultTheme } from 'styled-components';
 
 export const _customSystem: Config = {
   roundedTop: {
@@ -128,7 +128,7 @@ export const _customSystem: Config = {
     property: 'boxShadow',
     scale: 'shadows',
   },
-  textDecoration: {property: 'textDecoration'},
+  textDecoration: { property: 'textDecoration' },
   overflowX: true,
   overflowY: true,
   textTransform: true,
@@ -166,9 +166,9 @@ export const _customSystem: Config = {
   outline: true,
   float: true,
   willChange: true,
-}
+};
 
-const customSystem = styledSystem(_customSystem)
+const customSystem = styledSystem(_customSystem);
 
 export const system = p => css`
   &&&& {
@@ -186,9 +186,9 @@ export const system = p => css`
       customSystem,
     )(p)}
   }
-`
-type CSS = React.CSSProperties
-type borderRadius = BorderRadiusProps['borderRadius']
+`;
+type CSS = React.CSSProperties;
+type borderRadius = BorderRadiusProps['borderRadius'];
 
 export interface System
   extends LayoutProps,
@@ -201,94 +201,94 @@ export interface System
     PositionProps<DefaultTheme>,
     ShadowProps<DefaultTheme>,
     TypographyProps<DefaultTheme> {
-  color?: keyof DefaultTheme['colors']
+  color?: keyof DefaultTheme['colors'];
 
   // Custom borderRadius alias
-  rounded?: borderRadius
-  roundedTop?: borderRadius
-  roundedBottom?: borderRadius
-  roundedLeft?: borderRadius
-  roundedRight?: borderRadius
-  roundedTopRight?: borderRadius
-  roundedTopLeft?: borderRadius
-  roundedBottomRight?: borderRadius
-  roundedBottomLeft?: borderRadius
+  rounded?: borderRadius;
+  roundedTop?: borderRadius;
+  roundedBottom?: borderRadius;
+  roundedLeft?: borderRadius;
+  roundedRight?: borderRadius;
+  roundedTopRight?: borderRadius;
+  roundedTopLeft?: borderRadius;
+  roundedBottomRight?: borderRadius;
+  roundedBottomLeft?: borderRadius;
 
   // Custom width alias
-  w?: WidthProps['width']
-  minW?: MinWidthProps['minWidth']
-  maxW?: MaxWidthProps['maxWidth']
+  w?: WidthProps['width'];
+  minW?: MinWidthProps['minWidth'];
+  maxW?: MaxWidthProps['maxWidth'];
 
   // Custom height alias
-  h?: HeightProps['height']
-  minH?: MinHeightProps['minHeight']
-  maxH?: MaxHeightProps['maxHeight']
+  h?: HeightProps['height'];
+  minH?: MinHeightProps['minHeight'];
+  maxH?: MaxHeightProps['maxHeight'];
 
   // Custom display alias
-  d?: DisplayProps['display']
+  d?: DisplayProps['display'];
 
   // Custom background alias
-  backgroundAttachment?: ResponsiveValue<CSS['backgroundAttachment']>
-  bgImg?: BackgroundImageProps['backgroundImage']
-  bgImage?: BackgroundImageProps['backgroundImage']
-  bgSize?: BackgroundSizeProps['backgroundSize']
-  bgPos?: BackgroundPositionProps['backgroundPosition']
-  pos?: PositionProps['position']
-  flexDir?: FlexDirectionProps['flexDirection']
+  backgroundAttachment?: ResponsiveValue<CSS['backgroundAttachment']>;
+  bgImg?: BackgroundImageProps['backgroundImage'];
+  bgImage?: BackgroundImageProps['backgroundImage'];
+  bgSize?: BackgroundSizeProps['backgroundSize'];
+  bgPos?: BackgroundPositionProps['backgroundPosition'];
+  pos?: PositionProps['position'];
+  flexDir?: FlexDirectionProps['flexDirection'];
 
   // CSS properties
-  textDecoration?: ResponsiveValue<CSS['textDecoration']>
-  textDecor?: ResponsiveValue<CSS['textDecoration']>
-  textTransform?: ResponsiveValue<CSS['textTransform']>
-  appearance?: ResponsiveValue<CSS['appearance']>
-  transform?: ResponsiveValue<CSS['transform']>
-  transformOrigin?: ResponsiveValue<CSS['transformOrigin']>
-  animation?: ResponsiveValue<CSS['animation']>
-  userSelect?: ResponsiveValue<CSS['userSelect']>
-  pointerEvents?: ResponsiveValue<CSS['pointerEvents']>
-  boxSizing?: ResponsiveValue<CSS['boxSizing']>
-  cursor?: ResponsiveValue<CSS['cursor']>
-  resize?: ResponsiveValue<CSS['resize']>
-  transition?: ResponsiveValue<CSS['transition']>
-  objectFit?: ResponsiveValue<CSS['objectFit']>
-  objectPosition?: ResponsiveValue<CSS['objectPosition']>
+  textDecoration?: ResponsiveValue<CSS['textDecoration']>;
+  textDecor?: ResponsiveValue<CSS['textDecoration']>;
+  textTransform?: ResponsiveValue<CSS['textTransform']>;
+  appearance?: ResponsiveValue<CSS['appearance']>;
+  transform?: ResponsiveValue<CSS['transform']>;
+  transformOrigin?: ResponsiveValue<CSS['transformOrigin']>;
+  animation?: ResponsiveValue<CSS['animation']>;
+  userSelect?: ResponsiveValue<CSS['userSelect']>;
+  pointerEvents?: ResponsiveValue<CSS['pointerEvents']>;
+  boxSizing?: ResponsiveValue<CSS['boxSizing']>;
+  cursor?: ResponsiveValue<CSS['cursor']>;
+  resize?: ResponsiveValue<CSS['resize']>;
+  transition?: ResponsiveValue<CSS['transition']>;
+  objectFit?: ResponsiveValue<CSS['objectFit']>;
+  objectPosition?: ResponsiveValue<CSS['objectPosition']>;
 
   // Ellipsis alias
-  wordBreak?: ResponsiveValue<CSS['wordBreak']>
-  overflowWrap?: ResponsiveValue<CSS['overflowWrap']>
-  whiteSpace?: ResponsiveValue<CSS['whiteSpace']>
+  wordBreak?: ResponsiveValue<CSS['wordBreak']>;
+  overflowWrap?: ResponsiveValue<CSS['overflowWrap']>;
+  whiteSpace?: ResponsiveValue<CSS['whiteSpace']>;
 
   // SVG color properties
-  fill?: ColorProps['color']
-  stroke?: ColorProps['color']
+  fill?: ColorProps['color'];
+  stroke?: ColorProps['color'];
 
-  bgAttachment?: ResponsiveValue<CSS['backgroundAttachment']>
-  shadow?: ResponsiveValue<keyof DefaultTheme['shadows']>
-  boxShadow?: ResponsiveValue<keyof DefaultTheme['shadows']>
+  bgAttachment?: ResponsiveValue<CSS['backgroundAttachment']>;
+  shadow?: ResponsiveValue<keyof DefaultTheme['shadows']>;
+  boxShadow?: ResponsiveValue<keyof DefaultTheme['shadows']>;
 
   // List properties
-  listStyleType?: ResponsiveValue<CSS['listStyleType']>
-  listStylePosition?: ResponsiveValue<CSS['listStylePosition']>
-  listStyleImage?: ResponsiveValue<CSS['listStyleImage']>
-  listStyleImg?: ResponsiveValue<CSS['listStyleImage']>
-  listStylePos?: ResponsiveValue<CSS['listStylePosition']>
+  listStyleType?: ResponsiveValue<CSS['listStyleType']>;
+  listStylePosition?: ResponsiveValue<CSS['listStylePosition']>;
+  listStyleImage?: ResponsiveValue<CSS['listStyleImage']>;
+  listStyleImg?: ResponsiveValue<CSS['listStyleImage']>;
+  listStylePos?: ResponsiveValue<CSS['listStylePosition']>;
 
   // Outline prop
-  outline?: ResponsiveValue<CSS['outline']>
-  float?: ResponsiveValue<CSS['float']>
-  willChange?: ResponsiveValue<CSS['willChange']>
+  outline?: ResponsiveValue<CSS['outline']>;
+  float?: ResponsiveValue<CSS['float']>;
+  willChange?: ResponsiveValue<CSS['willChange']>;
 
   //css
-  css?: any
-  ref?: any
+  css?: any;
+  ref?: any;
 
   // override any that cause interference
   // @todo type this properly
-  height?: any
-  size?: any
-  width?: any
+  height?: any;
+  size?: any;
+  width?: any;
 }
 
 export type ISystem<T = undefined> = T extends {}
   ? System & Omit<Omit<T, 'color'>, 'css' | 'ref'>
-  : System
+  : System;

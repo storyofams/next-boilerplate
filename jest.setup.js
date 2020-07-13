@@ -1,1 +1,1 @@
-jest.mock('./src/components/common/Icon/req')
+jest.mock('./src/components/common/Icon/req');

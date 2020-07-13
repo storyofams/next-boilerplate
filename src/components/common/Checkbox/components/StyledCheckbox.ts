@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {system, ISystem} from '@/lib'
+import styled from 'styled-components';
+import { system, ISystem } from '@/lib';
 
 const CheckboxInput = styled.input.attrs({
   type: 'checkbox',
@@ -39,6 +39,6 @@ const CheckboxInput = styled.input.attrs({
   }
 
   ${system}
-`
+`;
 
-export default CheckboxInput
+export default CheckboxInput;

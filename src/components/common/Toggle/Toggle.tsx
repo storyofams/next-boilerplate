@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import {system, ISystem} from '@/lib'
+import React from 'react';
+import styled from 'styled-components';
+import { system, ISystem } from '@/lib';
 
 const Wrapper = styled.label<ISystem>`
   position: relative;
@@ -53,20 +53,24 @@ const Wrapper = styled.label<ISystem>`
   }
 
   ${system}
-`
+`;
 
 export interface IToggle extends ISystem {
-  checked?: boolean
-  onChange?(boolean): void
+  checked?: boolean;
+  onChange?(boolean): void;
 }
 
-export const Toggle: React.FC<IToggle> = ({checked, onChange}) => {
+export const Toggle: React.FC<IToggle> = ({ checked, onChange }) => {
   return (
     <Wrapper>
-      <input onChange={e => onChange(e.target.checked)} checked={checked} type="checkbox" />
+      <input
+        onChange={e => onChange(e.target.checked)}
+        checked={checked}
+        type="checkbox"
+      />
       <span className="slider" />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Toggle
+export default Toggle;
