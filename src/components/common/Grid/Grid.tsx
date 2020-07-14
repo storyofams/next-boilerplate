@@ -1,15 +1,21 @@
-import React, {FC} from 'react'
-import {ResponsiveValue} from 'styled-system'
-import {Flex, Box} from '@/components'
-import {modifyResponsiveValue, System, css} from '@/lib'
+import React, { FC } from 'react';
+import { ResponsiveValue } from 'styled-system';
+import { Flex, Box } from '@/components';
+import { modifyResponsiveValue, System, css } from '@/lib';
 
 interface GridProps extends System {
-  rowSize: ResponsiveValue<number>
-  rowGap?: ResponsiveValue<number>
-  columnGap?: ResponsiveValue<number>
+  rowSize: ResponsiveValue<number>;
+  rowGap?: ResponsiveValue<number>;
+  columnGap?: ResponsiveValue<number>;
 }
 
-const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children, ...props}) => {
+const Grid: FC<GridProps> = ({
+  rowSize,
+  rowGap = 0,
+  columnGap = 0,
+  children,
+  ...props
+}) => {
   return (
     <Box className="grid" {...props}>
       <Flex
@@ -18,7 +24,10 @@ const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children, ...p
         mt={modifyResponsiveValue(rowGap, val => -val)}
         css={css({
           '& > *': {
-            flex: modifyResponsiveValue(rowSize, size => `0 1 ${(1 / size) * 100}%`),
+            flex: modifyResponsiveValue(
+              rowSize,
+              size => `0 1 ${(1 / size) * 100}%`,
+            ),
             pl: columnGap,
             pt: rowGap,
           },
@@ -27,7 +36,7 @@ const Grid: FC<GridProps> = ({rowSize, rowGap = 0, columnGap = 0, children, ...p
         {children}
       </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default Grid
+export default Grid;

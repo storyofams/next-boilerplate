@@ -1,13 +1,13 @@
-import Alert from '@reach/alert'
-import styled from 'styled-components'
-import css from '@styled-system/css'
-import {system, ISystem} from '@/lib'
+import Alert from '@reach/alert';
+import styled from 'styled-components';
+import css from '@styled-system/css';
+import { system, ISystem } from '@/lib';
 
-type status = 'default' | 'success' | 'warning' | 'error'
+type status = 'default' | 'success' | 'warning' | 'error';
 
 interface IStatusMessage extends ISystem {
-  status: status | Boolean
-  type?: 'polite' | 'assertive'
+  status: status | Boolean;
+  type?: 'polite' | 'assertive';
 }
 // this component alerts screen readers when its rendered.
 // should be used together with a formfield + formik
@@ -23,6 +23,6 @@ const StatusMessage = styled(Alert).attrs(p => ({
       mt: '2px',
     })(p),
   system,
-)
+);
 
-export default StatusMessage
+export default StatusMessage;

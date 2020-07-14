@@ -1,64 +1,70 @@
-import React, {useRef, useEffect} from 'react'
-import {ISystem} from '@/lib'
-import StyledImage from './components/styledImage'
+import React, { useRef, useEffect } from 'react';
+import { ISystem } from '@/lib';
+import StyledImage from './components/styledImage';
 
 export interface IImage extends ISystem {
-  objectFit?: 'cover' | 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
-  objectPosition?: string
-  loading?: 'lazy' | 'eager'
-  src: string
-  placeholder?: string
+  objectFit?: 'cover' | 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  objectPosition?: string;
+  loading?: 'lazy' | 'eager';
+  src: string;
+  placeholder?: string;
 }
 
 const hasNativeLazyLoadSupport =
-  typeof HTMLImageElement !== `undefined` && `loading` in HTMLImageElement.prototype && false
+  typeof HTMLImageElement !== `undefined` &&
+  `loading` in HTMLImageElement.prototype &&
+  false;
 
-const cache = {}
+const cache = {};
 function addToCache(src) {
-  cache[src] = true
+  cache[src] = true;
 }
 function isInCache(src) {
-  return cache[src]
+  return cache[src];
 }
 
 function fetchImage(url) {
   return new Promise((resolve, reject) => {
-    const image = new Image()
-    image.src = url
-    image.onload = resolve
-    image.onerror = reject
-  })
+    const image = new Image();
+    image.src = url;
+    image.onload = resolve;
+    image.onerror = reject;
+  });
 }
 
 function loadImage(target) {
-  const image = target.src ? target : target.querySelector('img')
+  const image = target.src ? target : target.querySelector('img');
   // eslint-disable-next-line prefer-destructuring
-  const src = image.dataset.src
+  const src = image.dataset.src;
   fetchImage(src).then(() => {
-    addToCache(src)
-    image.src = src
-  })
+    addToCache(src);
+    image.src = src;
+  });
 }
 
-let io
+let io;
 
 function getIO() {
-  if (typeof io === `undefined` && typeof window !== `undefined` && window.IntersectionObserver) {
+  if (
+    typeof io === `undefined` &&
+    typeof window !== `undefined` &&
+    window.IntersectionObserver
+  ) {
     io = new window.IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            loadImage(entry.target)
-            console.log('loaded')
-            io.unobserve(entry.target)
+            loadImage(entry.target);
+            console.log('loaded');
+            io.unobserve(entry.target);
           }
-        })
+        });
       },
-      {rootMargin: `200px`},
-    )
+      { rootMargin: `200px` },
+    );
   }
 
-  return io
+  return io;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,37 +77,43 @@ export const Img: React.FC<IImage> = ({
   src,
   ...rest
 }) => {
-  const imgref = useRef()
+  const imgref = useRef();
 
   useEffect(() => {
     if (!hasNativeLazyLoadSupport) {
-      const observer = getIO()
+      const observer = getIO();
 
       if (observer) {
-        const target = imgref.current
+        const target = imgref.current;
         if (target) {
-          observer.observe(target)
+          observer.observe(target);
           return () => {
-            observer.unobserve(target)
-          }
+            observer.unobserve(target);
+          };
         }
       }
     } else {
-      loadImage(imgref.current)
+      loadImage(imgref.current);
     }
-  }, [])
+  }, []);
 
-  const props = {objectFit, objectPosition, ...rest}
+  const props = { objectFit, objectPosition, ...rest };
 
-  const hasIO = typeof window !== `undefined` && window.IntersectionObserver
+  const hasIO = typeof window !== `undefined` && window.IntersectionObserver;
 
   if (loading === 'eager' || !hasIO || isInCache(src)) {
-    return <StyledImage src={src} {...props} />
+    return <StyledImage src={src} {...props} />;
   }
 
   return (
-    <StyledImage loading={loading} ref={imgref} src={placeholder || ''} data-src={src} {...props} />
-  )
-}
+    <StyledImage
+      loading={loading}
+      ref={imgref}
+      src={placeholder || ''}
+      data-src={src}
+      {...props}
+    />
+  );
+};
 
-export default Img
+export default Img;

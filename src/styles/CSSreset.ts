@@ -1,6 +1,6 @@
-import {createGlobalStyle, css} from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components';
 
-const themeStyles = ({theme}) => css`
+const themeStyles = ({ theme }) => css`
   /* typograhpy */
   body.font-loaded {
     font-family: ${theme.fonts.body};
@@ -45,10 +45,10 @@ const themeStyles = ({theme}) => css`
     overflow: hidden;
     position: absolute;
   }
-`
+`;
 
 const CSSreset = createGlobalStyle(
-  ({theme}) => css`
+  ({ theme }) => css`
     html {
       line-height: 1.15;
       -webkit-text-size-adjust: 100%;
@@ -308,6 +308,6 @@ const CSSreset = createGlobalStyle(
     }
     ${themeStyles}
   `,
-)
+);
 
-export default CSSreset
+export default CSSreset;

@@ -1,4 +1,4 @@
-import {Breakpoints} from './styled'
+import { Breakpoints } from './styled';
 
 const theme = {
   // colors
@@ -99,14 +99,15 @@ const theme = {
     sm: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     normal: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     big: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
-    primary: '0px 10px 16px rgba(240, 96, 57, 0.16), 0px 4px 6px rgba(0, 0, 0, 0.06)',
+    primary:
+      '0px 10px 16px rgba(240, 96, 57, 0.16), 0px 4px 6px rgba(0, 0, 0, 0.06)',
     none: 'none',
   },
-}
+};
 
-theme.breakpoints.sm = theme.breakpoints[0]
-theme.breakpoints.md = theme.breakpoints[1]
-theme.breakpoints.lg = theme.breakpoints[2]
-theme.breakpoints.xl = '1440px'
+theme.breakpoints.sm = theme.breakpoints[0];
+theme.breakpoints.md = theme.breakpoints[1];
+theme.breakpoints.lg = theme.breakpoints[2];
+theme.breakpoints.xl = '1440px';
 
-export default theme
+export default theme;

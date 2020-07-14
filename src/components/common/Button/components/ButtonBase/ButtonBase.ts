@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {system, ISystem} from '@/lib'
+import styled from 'styled-components';
+import { system, ISystem } from '@/lib';
 
 const ButtonBase = styled.button<ISystem>`
   border-radius: ${p => p.theme.radii.sm};
@@ -33,6 +33,6 @@ const ButtonBase = styled.button<ISystem>`
   }
 
   ${system}
-`
+`;
 
-export default ButtonBase
+export default ButtonBase;

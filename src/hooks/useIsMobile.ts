@@ -1,21 +1,23 @@
-import {useEffect, useState, useContext} from 'react'
-import {ThemeContext} from 'styled-components'
+import { useEffect, useState, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 const useIsMobile = () => {
-  const theme = useContext(ThemeContext)
-  const [isMobile, setIsMobile] = useState(false)
+  const theme = useContext(ThemeContext);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkIfMobile = () =>
-      setIsMobile(window.innerWidth < Number(theme.breakpoints.md.replace(/\D/g, '')))
+      setIsMobile(
+        window.innerWidth < Number(theme.breakpoints.md.replace(/\D/g, '')),
+      );
 
-    checkIfMobile()
+    checkIfMobile();
 
-    window.addEventListener('resize', checkIfMobile)
-    return () => window.removeEventListener('resize', checkIfMobile)
-  }, [theme.breakpoints.md])
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, [theme.breakpoints.md]);
 
-  return isMobile
-}
+  return isMobile;
+};
 
-export default useIsMobile
+export default useIsMobile;

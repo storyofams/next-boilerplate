@@ -1,11 +1,11 @@
-import React from 'react'
-import {Stack} from '@/components'
-import {PrimaryButton, SecondaryButton, UnderlineButton} from './Button'
+import React from 'react';
+import { Stack } from '@/components';
+import { PrimaryButton, SecondaryButton, UnderlineButton } from './Button';
 
 export default {
   component: PrimaryButton,
   title: 'Button',
-}
+};
 
 export const examples = () => (
   <Stack alignItems="center" space={3} flexDir="column">
@@ -17,4 +17,4 @@ export const examples = () => (
     <SecondaryButton width="100%">Lorem Ipsum</SecondaryButton>
     <UnderlineButton>Lorem Ipsum</UnderlineButton>
   </Stack>
-)
+);

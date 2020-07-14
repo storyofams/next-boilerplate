@@ -1,38 +1,38 @@
-import {_customSystem} from './system'
+import { _customSystem } from './system';
 
 // Transform the custom alias to a format that styled-system CSS supports
 
 const transformAlias = (prop, propValue) => {
-  const configKeys = Object.keys(_customSystem)
-  let result = {}
+  const configKeys = Object.keys(_customSystem);
+  let result = {};
 
   if (configKeys.includes(prop)) {
     if (typeof _customSystem[prop] === 'boolean') {
-      result[prop] = propValue
+      result[prop] = propValue;
     } else {
-      const key: any = _customSystem[prop]
-      const {properties, property} = key
+      const key: any = _customSystem[prop];
+      const { properties, property } = key;
       if (properties) {
-        properties.forEach(_cssProp => (result[_cssProp] = propValue))
+        properties.forEach(_cssProp => (result[_cssProp] = propValue));
       }
       if (property) {
-        result[property] = propValue
+        result[property] = propValue;
       }
     }
   } else {
-    result[prop] = propValue
+    result[prop] = propValue;
   }
-  return result
-}
+  return result;
+};
 
 export const transformAliasProps = props => {
-  let result = {}
+  let result = {};
   for (let prop in props) {
     if (typeof props[prop] === 'object') {
-      result = {...result, [prop]: transformAliasProps(props[prop])}
+      result = { ...result, [prop]: transformAliasProps(props[prop]) };
     } else {
-      result = {...result, ...transformAlias(prop, props[prop])}
+      result = { ...result, ...transformAlias(prop, props[prop]) };
     }
   }
-  return result
-}
+  return result;
+};

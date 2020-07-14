@@ -117,7 +117,7 @@ module.exports = {
   rules: {
     // http://eslint.org/docs/rules/
     'array-callback-return': 'error',
-    'default-case': ['error', {commentPattern: '^no default$'}],
+    'default-case': ['error', { commentPattern: '^no default$' }],
     'dot-location': ['error', 'property'],
     eqeqeq: ['error', 'smart'],
     'new-parens': 'error',
@@ -144,7 +144,7 @@ module.exports = {
     'no-invalid-regexp': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
-    'no-labels': ['error', {allowLoop: true, allowSwitch: false}],
+    'no-labels': ['error', { allowLoop: true, allowSwitch: false }],
     'no-lone-blocks': 'error',
     'no-loop-func': 'error',
     'no-mixed-operators': [
@@ -171,7 +171,7 @@ module.exports = {
     'no-octal-escape': 'error',
     // TODO: Remove this option in the next major release of CRA.
     // https://eslint.org/docs/user-guide/migrating-to-6.0.0#-the-no-redeclare-rule-is-now-more-strict-by-default
-    'no-redeclare': ['error', {builtinGlobals: false}],
+    'no-redeclare': ['error', { builtinGlobals: false }],
     'no-regex-spaces': 'error',
     'no-restricted-syntax': ['error', 'WithStatement'],
     'no-script-url': 'error',
@@ -253,7 +253,7 @@ module.exports = {
     'import/no-webpack-loader-syntax': 'error',
 
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/forbid-foreign-prop-types': ['error', {allowInPropTypes: true}],
+    'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
     'react/jsx-no-comment-textnodes': 'error',
     'react/jsx-no-duplicate-props': 'error',
     'react/jsx-no-target-blank': 'error',
@@ -286,7 +286,7 @@ module.exports = {
     'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
     'jsx-a11y/aria-props': 'error',
     'jsx-a11y/aria-proptypes': 'error',
-    'jsx-a11y/aria-role': ['error', {ignoreNonDOM: true}],
+    'jsx-a11y/aria-role': ['error', { ignoreNonDOM: true }],
     'jsx-a11y/aria-unsupported-elements': 'error',
     'jsx-a11y/heading-has-content': 'error',
     'jsx-a11y/iframe-has-title': 'error',
@@ -300,4 +300,4 @@ module.exports = {
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
   },
-}
+};

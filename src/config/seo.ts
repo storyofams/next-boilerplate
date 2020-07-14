@@ -1,4 +1,4 @@
-const siteTitle = 'Boilerplate'
+const siteTitle = 'Boilerplate';
 
 const defaultSeo = {
   openGraph: {
@@ -12,10 +12,10 @@ const defaultSeo = {
     cardType: 'summary_large_image',
   },
   titleTemplate: `%s | ${siteTitle}`,
-}
+};
 
 if (process.env.NODE_ENV === 'development') {
-  defaultSeo.titleTemplate = `%s | dev-${siteTitle}`
+  defaultSeo.titleTemplate = `%s | dev-${siteTitle}`;
 }
 
-export default defaultSeo
+export default defaultSeo;

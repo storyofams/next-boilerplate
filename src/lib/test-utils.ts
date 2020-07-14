@@ -1,10 +1,11 @@
-import {render} from '@testing-library/react'
-import {Providers} from '@/components'
+import { render } from '@testing-library/react';
+import { Providers } from '@/components';
 
-const customRender = (ui, options?) => render(ui, {wrapper: Providers, ...options})
+const customRender = (ui, options?) =>
+  render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
-export * from '@testing-library/react'
+export * from '@testing-library/react';
 
 // override render method
-export {customRender as render}
+export { customRender as render };

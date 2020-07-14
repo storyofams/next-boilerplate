@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import {pick, omit} from '@styled-system/props'
-import {system, ISystem} from '@/lib'
-import {useId} from '@/hooks'
+import React from 'react';
+import styled from 'styled-components';
+import { pick, omit } from '@styled-system/props';
+import { system, ISystem } from '@/lib';
+import { useId } from '@/hooks';
 
 const Wrapper = styled.div<ISystem>`
   font-size: ${p => p.theme.fontSizes[2]};
@@ -54,22 +54,26 @@ const Wrapper = styled.div<ISystem>`
       }
     }
   }
-`
+`;
 
 export interface IRadio {
-  id?: string
-  value: string
+  id?: string;
+  value: string;
 }
-export const Radio: React.FC<IRadio> = ({children, id: initialId, ...props}) => {
-  const autoId = useId()
-  const id = initialId || `radio=${autoId}`
+export const Radio: React.FC<IRadio> = ({
+  children,
+  id: initialId,
+  ...props
+}) => {
+  const autoId = useId();
+  const id = initialId || `radio=${autoId}`;
 
   return (
     <Wrapper {...pick(props)}>
       <input {...omit(props)} type="radio" id={id} />
       <label htmlFor={id}>{children}</label>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Radio
+export default Radio;
