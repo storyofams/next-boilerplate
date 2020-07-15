@@ -171,21 +171,19 @@ export const _customSystem: Config = {
 const customSystem = styledSystem(_customSystem);
 
 export const system = p => css`
-  &&&& {
-    ${compose(
-      layout,
-      color,
-      space,
-      background,
-      border,
-      grid,
-      position,
-      shadow,
-      typography,
-      flexbox,
-      customSystem,
-    )(p)}
-  }
+  ${compose(
+    layout,
+    color,
+    space,
+    background,
+    border,
+    grid,
+    position,
+    shadow,
+    typography,
+    flexbox,
+    customSystem,
+  )(p)}
 `;
 type CSS = React.CSSProperties;
 type borderRadius = BorderRadiusProps['borderRadius'];
