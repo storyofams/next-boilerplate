@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Box } from '@/components';
+import { Box } from '~/components';
 import { ResponsiveValue } from 'styled-system';
-import { variant } from '@/lib';
+import { variant } from '~/lib';
 
 type CSS = React.CSSProperties;
 

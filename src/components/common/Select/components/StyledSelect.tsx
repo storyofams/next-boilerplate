@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ReactSelect, { Props } from 'react-select';
-import { system, ISystem } from '@/lib';
+import { system, ISystem } from '~/lib';
 import styled, { css, ThemeContext } from 'styled-components';
 
 const StyledSelect = styled(ReactSelect).attrs({

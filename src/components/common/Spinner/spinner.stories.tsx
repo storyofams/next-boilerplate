@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '@/components';
+import { Spinner } from '~/components';
 
 export default {
   component: Spinner,

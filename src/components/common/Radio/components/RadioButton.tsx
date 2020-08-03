@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { pick, omit } from '@styled-system/props';
-import { system, ISystem } from '@/lib';
-import { useId } from '@/hooks';
+import { system, ISystem } from '~/lib';
+import { useId } from '~/hooks';
 
 const Wrapper = styled.div<ISystem>`
   font-size: ${p => p.theme.fontSizes[2]};

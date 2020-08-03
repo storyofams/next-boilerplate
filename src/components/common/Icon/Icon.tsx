@@ -1,6 +1,6 @@
 import React, { FC, forwardRef } from 'react';
 import styled from 'styled-components';
-import { ISystem } from '@/lib';
+import { ISystem } from '~/lib';
 import { Box } from '../Box';
 import req from './req';
 

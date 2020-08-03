@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack } from '@/components';
+import { Stack } from '~/components';
 import { PrimaryButton, SecondaryButton, UnderlineButton } from './Button';
 
 export default {
