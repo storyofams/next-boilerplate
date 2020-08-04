@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Checkbox } from '@/components';
+import { Stack, Checkbox } from '~/components';
 
 export default {
   component: Checkbox,

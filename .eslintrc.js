@@ -28,11 +28,11 @@ module.exports = {
     },
     'import/resolver': {
       alias: [
-        ['@components', './src/components'],
-        ['@styles', './src/styles'],
-        ['@hooks', './src/hooks'],
-        ['@config', './src/config'],
-        ['@lib', './src/lib'],
+        ['~components', './src/components'],
+        ['~styles', './src/styles'],
+        ['~hooks', './src/hooks'],
+        ['~config', './src/config'],
+        ['~lib', './src/lib'],
       ],
     },
   },

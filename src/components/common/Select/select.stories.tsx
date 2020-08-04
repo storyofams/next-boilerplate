@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Stack } from '@/components';
+import { Select, Stack } from '~/components';
 
 export default {
   component: Select,

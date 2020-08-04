@@ -21,7 +21,7 @@ This project uses an extension over styled-system that includes many handy short
 If you build a primitive, always include the entire system like this:
 
 ```
-import {system, ISystem} from '@/lib'
+import {system, ISystem} from '~/lib'
 
 const Button = styled.button<ISystem<React.HTMLAttributes<HTMLDivElement>>>`
     ...
@@ -40,7 +40,7 @@ const Box = styled.button<ISystem>`
 sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility
 
 ```
-import {css} from '@/lib'
+import {css} from '~/lib'
 
 const Button = styled.button(css({
     color: 'grey400',
@@ -58,7 +58,7 @@ Sometimes its good to have multiple variantions (or `variants`) of a single comp
 
 ```
 import styled from 'styled-components'
-import {variant, system, ISystem} from '@/lib'
+import {variant, system, ISystem} from '~/lib'
 
 const Text = styled(Box)<ISystem>`
   ${variant({

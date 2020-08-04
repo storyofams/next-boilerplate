@@ -17,7 +17,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
+      "~/*": ["src/*"],
       "test-utils": ["src/lib/test-utils"]
     }
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Text } from '@/components';
+import { Text } from '~/components';
 import Icon from './Icon';
 
 export default {
