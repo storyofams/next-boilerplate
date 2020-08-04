@@ -41,11 +41,11 @@ const Wrapper = styled.label<ISystem>`
   }
 
   > input:checked + .slider {
-    background-color: ${p => p.theme.colors.primary500};
+    background-color: ${(p) => p.theme.colors.primary500};
   }
 
   > input:focus + .slider {
-    box-shadow: 0px 0px 0px 3px ${p => p.theme.colors.primaryAlpha40};
+    box-shadow: 0px 0px 0px 3px ${(p) => p.theme.colors.primaryAlpha40};
   }
 
   > input:checked + .slider:before {
@@ -64,7 +64,7 @@ export const Toggle: React.FC<IToggle> = ({ checked, onChange }) => {
   return (
     <Wrapper>
       <input
-        onChange={e => onChange(e.target.checked)}
+        onChange={(e) => onChange(e.target.checked)}
         checked={checked}
         type="checkbox"
       />

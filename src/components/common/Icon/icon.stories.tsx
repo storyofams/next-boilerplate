@@ -11,7 +11,7 @@ export default {
 const allIcons = (require as any)
   .context('./library', false, /\.svg$/)
   .keys()
-  .map(k => k.replace('./', '').replace('.svg', ''));
+  .map((k) => k.replace('./', '').replace('.svg', ''));
 
 export const library = () => (
   <table>
@@ -26,7 +26,7 @@ export const library = () => (
       <th>default</th>
       <th>larger</th>
     </tr>
-    {allIcons.map(name => (
+    {allIcons.map((name) => (
       <tr
         style={{
           border: '1px solid #222',

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ReactSelect, { Props } from 'react-select';
-import { system, ISystem } from '~/lib';
 import styled, { css, ThemeContext } from 'styled-components';
+import { system, ISystem } from '~/lib';
 
 const StyledSelect = styled(ReactSelect).attrs({
   className: 'react-select',
@@ -52,13 +52,13 @@ export interface ISelect extends Props {
   theme?: any;
 }
 
-export const Select: React.FC<ISelect> = props => {
+export const Select: React.FC<ISelect> = (props) => {
   const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (
     <StyledSelect
       styledTheme={styledTheme}
-      theme={t => ({
+      theme={(t) => ({
         ...t,
         colors: {
           ...t.colors,

@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import { pick, omit } from '@styled-system/props';
-import { system, ISystem } from '~/lib';
+import styled from 'styled-components';
 import { useId } from '~/hooks';
+import { system, ISystem } from '~/lib';
 
 const Wrapper = styled.div<ISystem>`
-  font-size: ${p => p.theme.fontSizes[2]};
-  color: ${p => p.theme.colors.grey800};
+  font-size: ${(p) => p.theme.fontSizes[2]};
+  color: ${(p) => p.theme.colors.grey800};
   ${system}
 
   input[type='radio'] {
@@ -19,7 +19,7 @@ const Wrapper = styled.div<ISystem>`
       &::before {
         background: #fff;
         border-radius: 50%;
-        border: 1px solid ${p => p.theme.colors.grey200};
+        border: 1px solid ${(p) => p.theme.colors.grey200};
         content: '';
         position: absolute;
         left: -22px; /* This will be adjusted */
@@ -44,13 +44,13 @@ const Wrapper = styled.div<ISystem>`
         background: #fff;
       }
       + label::before {
-        background: ${p => p.theme.colors.primary500};
-        border-color: ${p => p.theme.colors.primary500};
+        background: ${(p) => p.theme.colors.primary500};
+        border-color: ${(p) => p.theme.colors.primary500};
       }
     }
     &:hover {
       + label::before {
-        border-color: ${p => p.theme.colors.grey300};
+        border-color: ${(p) => p.theme.colors.grey300};
       }
     }
   }

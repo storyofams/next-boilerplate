@@ -11,7 +11,6 @@
     "test:watch": "jest --watch",
     "lint": "eslint --ext .ts --ext .tsx ./src",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md|mdx)\"",
-    "format": "yarn prettier -- --write",
     "storybook": "start-storybook -s ./public/static -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -103,8 +102,7 @@
   },
   "lint-staged": {
     "**/*.+(js|jsx|ts|tsx)": [
-      "yarn lint",
-      "yarn format",
+      "yarn lint --fix",
       "git add"
     ]
   }

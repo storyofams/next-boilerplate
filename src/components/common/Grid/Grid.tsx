@@ -20,13 +20,13 @@ const Grid: FC<GridProps> = ({
     <Box className="grid" {...props}>
       <Flex
         flexWrap="wrap"
-        ml={modifyResponsiveValue(columnGap, val => -val)}
-        mt={modifyResponsiveValue(rowGap, val => -val)}
+        ml={modifyResponsiveValue(columnGap, (val) => -val)}
+        mt={modifyResponsiveValue(rowGap, (val) => -val)}
         css={css({
           '& > *': {
             flex: modifyResponsiveValue(
               rowSize,
-              size => `0 1 ${(1 / size) * 100}%`,
+              (size) => `0 1 ${(1 / size) * 100}%`,
             ),
             pl: columnGap,
             pt: rowGap,

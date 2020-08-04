@@ -1,6 +1,6 @@
 import React from 'react';
-import { Stack, Toggle } from '~/components';
 import { action } from '@storybook/addon-actions';
+import { Stack, Toggle } from '~/components';
 
 export default {
   component: Toggle,

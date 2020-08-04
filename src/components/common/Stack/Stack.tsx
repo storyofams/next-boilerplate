@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
+import { ResponsiveValue } from 'styled-system';
 import { Box } from '~/components';
 import { modifyResponsiveValue, ISystem } from '~/lib';
 // layout utility

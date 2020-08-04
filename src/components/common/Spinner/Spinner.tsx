@@ -18,7 +18,7 @@ const Inner = styled.div<{ stroke?: string }>`
   border-bottom-color: transparent;
   border-right-color: transparent;
   border-style: solid;
-  border-width: ${p => p.stroke};
+  border-width: ${(p) => p.stroke};
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;

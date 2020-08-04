@@ -1,8 +1,8 @@
-import React, { FC, forwardRef } from "react";
-import styled from "styled-components";
-import { ISystem } from "~/lib";
-import { Box } from "../Box";
-import req from "./req";
+import React, { FC, forwardRef } from 'react';
+import styled from 'styled-components';
+import { ISystem } from '~/lib';
+import { Box } from '../Box';
+import req from './req';
 
 export const StyledIcon = styled(Box)`
   display: inline-flex;
@@ -32,11 +32,11 @@ export const Icon: FC<IconProps> = forwardRef(
         case props.as !== undefined:
           return props.as;
         case props.href !== undefined:
-          return "a";
+          return 'a';
         case props.onClick !== undefined:
-          return "button";
+          return 'button';
         default:
-          return "div";
+          return 'div';
       }
     }
 
@@ -48,7 +48,7 @@ export const Icon: FC<IconProps> = forwardRef(
         <IconSvg.default />
       </StyledIcon>
     );
-  }
+  },
 );
 
 export default Icon;

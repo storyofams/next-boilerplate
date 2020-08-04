@@ -1,3 +1,4 @@
+import { css, DefaultTheme } from 'styled-components';
 import {
   system as styledSystem,
   background,
@@ -35,99 +36,98 @@ import {
   MinWidthProps,
   WidthProps,
   ColorProps,
-} from "styled-system";
-import { css, DefaultTheme } from "styled-components";
+} from 'styled-system';
 
 export const _customSystem: Config = {
   roundedTop: {
-    properties: ["borderTopLeftRadius", "borderTopRightRadius"],
-    scale: "radii",
+    properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
+    scale: 'radii',
   },
   roundedBottom: {
-    properties: ["borderBottomLeftRadius", "borderBottomRightRadius"],
-    scale: "radii",
+    properties: ['borderBottomLeftRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
   },
   roundedLeft: {
-    properties: ["borderTopLeftRadius", "borderBottomLeftRadius"],
-    scale: "radii",
+    properties: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+    scale: 'radii',
   },
   roundedRight: {
-    properties: ["borderTopRightRadius", "borderBottomRightRadius"],
-    scale: "radii",
+    properties: ['borderTopRightRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
   },
   roundedTopRight: {
-    property: "borderTopRightRadius",
-    scale: "radii",
+    property: 'borderTopRightRadius',
+    scale: 'radii',
   },
   roundedTopLeft: {
-    property: "borderTopLeftRadius",
-    scale: "radii",
+    property: 'borderTopLeftRadius',
+    scale: 'radii',
   },
   roundedBottomRight: {
-    property: "borderBottomRightRadius",
-    scale: "radii",
+    property: 'borderBottomRightRadius',
+    scale: 'radii',
   },
   roundedBottomLeft: {
-    property: "borderBottomLeftRadius",
-    scale: "radii",
+    property: 'borderBottomLeftRadius',
+    scale: 'radii',
   },
   rounded: {
-    property: "borderRadius",
-    scale: "radii",
+    property: 'borderRadius',
+    scale: 'radii',
   },
   d: {
-    property: "display",
+    property: 'display',
   },
   w: {
-    property: "width",
-    scale: "sizes",
+    property: 'width',
+    scale: 'sizes',
   },
   minW: {
-    property: "minWidth",
-    scale: "sizes",
+    property: 'minWidth',
+    scale: 'sizes',
   },
   maxW: {
-    property: "maxWidth",
-    scale: "sizes",
+    property: 'maxWidth',
+    scale: 'sizes',
   },
   h: {
-    property: "height",
-    scale: "sizes",
+    property: 'height',
+    scale: 'sizes',
   },
   minH: {
-    property: "minHeight",
-    scale: "sizes",
+    property: 'minHeight',
+    scale: 'sizes',
   },
   maxH: {
-    property: "maxHeight",
-    scale: "sizes",
+    property: 'maxHeight',
+    scale: 'sizes',
   },
   bgImg: {
-    property: "backgroundImage",
+    property: 'backgroundImage',
   },
   bgImage: {
-    property: "backgroundImage",
+    property: 'backgroundImage',
   },
   bgSize: {
-    property: "backgroundSize",
+    property: 'backgroundSize',
   },
   bgPos: {
-    property: "backgroundPosition",
+    property: 'backgroundPosition',
   },
   bgRepeat: {
-    property: "backgroundRepeat",
+    property: 'backgroundRepeat',
   },
   pos: {
-    property: "position",
+    property: 'position',
   },
   flexDir: {
-    property: "flexDirection",
+    property: 'flexDirection',
   },
   shadow: {
-    property: "boxShadow",
-    scale: "shadows",
+    property: 'boxShadow',
+    scale: 'shadows',
   },
-  textDecoration: { property: "textDecoration" },
+  textDecoration: { property: 'textDecoration' },
   overflowX: true,
   overflowY: true,
   textTransform: true,
@@ -150,17 +150,17 @@ export const _customSystem: Config = {
   listStylePosition: true,
   listStyleImage: true,
   fill: {
-    property: "fill",
-    scale: "colors",
+    property: 'fill',
+    scale: 'colors',
   },
   stroke: {
-    property: "stroke",
-    scale: "colors",
+    property: 'stroke',
+    scale: 'colors',
   },
   objectFit: true,
   objectPosition: true,
   backgroundAttachment: {
-    property: "backgroundAttachment",
+    property: 'backgroundAttachment',
   },
   outline: true,
   float: true,
@@ -181,11 +181,11 @@ export const system = (p) => css`
     shadow,
     typography,
     flexbox,
-    customSystem
+    customSystem,
   )(p)}
 `;
 type CSS = React.CSSProperties;
-type borderRadius = BorderRadiusProps["borderRadius"];
+type borderRadius = BorderRadiusProps['borderRadius'];
 
 export interface System
   extends LayoutProps,
@@ -198,7 +198,7 @@ export interface System
     PositionProps<DefaultTheme>,
     ShadowProps<DefaultTheme>,
     TypographyProps<DefaultTheme> {
-  color?: keyof DefaultTheme["colors"];
+  color?: keyof DefaultTheme['colors'];
 
   // Custom borderRadius alias
   rounded?: borderRadius;
@@ -212,68 +212,68 @@ export interface System
   roundedBottomLeft?: borderRadius;
 
   // Custom width alias
-  w?: WidthProps["width"];
-  minW?: MinWidthProps["minWidth"];
-  maxW?: MaxWidthProps["maxWidth"];
+  w?: WidthProps['width'];
+  minW?: MinWidthProps['minWidth'];
+  maxW?: MaxWidthProps['maxWidth'];
 
   // Custom height alias
-  h?: HeightProps["height"];
-  minH?: MinHeightProps["minHeight"];
-  maxH?: MaxHeightProps["maxHeight"];
+  h?: HeightProps['height'];
+  minH?: MinHeightProps['minHeight'];
+  maxH?: MaxHeightProps['maxHeight'];
 
   // Custom display alias
-  d?: DisplayProps["display"];
+  d?: DisplayProps['display'];
 
   // Custom background alias
-  backgroundAttachment?: ResponsiveValue<CSS["backgroundAttachment"]>;
-  bgImg?: BackgroundImageProps["backgroundImage"];
-  bgImage?: BackgroundImageProps["backgroundImage"];
-  bgSize?: BackgroundSizeProps["backgroundSize"];
-  bgPos?: BackgroundPositionProps["backgroundPosition"];
-  pos?: PositionProps["position"];
-  flexDir?: FlexDirectionProps["flexDirection"];
+  backgroundAttachment?: ResponsiveValue<CSS['backgroundAttachment']>;
+  bgImg?: BackgroundImageProps['backgroundImage'];
+  bgImage?: BackgroundImageProps['backgroundImage'];
+  bgSize?: BackgroundSizeProps['backgroundSize'];
+  bgPos?: BackgroundPositionProps['backgroundPosition'];
+  pos?: PositionProps['position'];
+  flexDir?: FlexDirectionProps['flexDirection'];
 
   // CSS properties
-  textDecoration?: ResponsiveValue<CSS["textDecoration"]>;
-  textDecor?: ResponsiveValue<CSS["textDecoration"]>;
-  textTransform?: ResponsiveValue<CSS["textTransform"]>;
-  appearance?: ResponsiveValue<CSS["appearance"]>;
-  transform?: ResponsiveValue<CSS["transform"]>;
-  transformOrigin?: ResponsiveValue<CSS["transformOrigin"]>;
-  animation?: ResponsiveValue<CSS["animation"]>;
-  userSelect?: ResponsiveValue<CSS["userSelect"]>;
-  pointerEvents?: ResponsiveValue<CSS["pointerEvents"]>;
-  boxSizing?: ResponsiveValue<CSS["boxSizing"]>;
-  cursor?: ResponsiveValue<CSS["cursor"]>;
-  resize?: ResponsiveValue<CSS["resize"]>;
-  transition?: ResponsiveValue<CSS["transition"]>;
-  objectFit?: ResponsiveValue<CSS["objectFit"]>;
-  objectPosition?: ResponsiveValue<CSS["objectPosition"]>;
+  textDecoration?: ResponsiveValue<CSS['textDecoration']>;
+  textDecor?: ResponsiveValue<CSS['textDecoration']>;
+  textTransform?: ResponsiveValue<CSS['textTransform']>;
+  appearance?: ResponsiveValue<CSS['appearance']>;
+  transform?: ResponsiveValue<CSS['transform']>;
+  transformOrigin?: ResponsiveValue<CSS['transformOrigin']>;
+  animation?: ResponsiveValue<CSS['animation']>;
+  userSelect?: ResponsiveValue<CSS['userSelect']>;
+  pointerEvents?: ResponsiveValue<CSS['pointerEvents']>;
+  boxSizing?: ResponsiveValue<CSS['boxSizing']>;
+  cursor?: ResponsiveValue<CSS['cursor']>;
+  resize?: ResponsiveValue<CSS['resize']>;
+  transition?: ResponsiveValue<CSS['transition']>;
+  objectFit?: ResponsiveValue<CSS['objectFit']>;
+  objectPosition?: ResponsiveValue<CSS['objectPosition']>;
 
   // Ellipsis alias
-  wordBreak?: ResponsiveValue<CSS["wordBreak"]>;
-  overflowWrap?: ResponsiveValue<CSS["overflowWrap"]>;
-  whiteSpace?: ResponsiveValue<CSS["whiteSpace"]>;
+  wordBreak?: ResponsiveValue<CSS['wordBreak']>;
+  overflowWrap?: ResponsiveValue<CSS['overflowWrap']>;
+  whiteSpace?: ResponsiveValue<CSS['whiteSpace']>;
 
   // SVG color properties
-  fill?: ColorProps["color"];
-  stroke?: ColorProps["color"];
+  fill?: ColorProps['color'];
+  stroke?: ColorProps['color'];
 
-  bgAttachment?: ResponsiveValue<CSS["backgroundAttachment"]>;
-  shadow?: ResponsiveValue<keyof DefaultTheme["shadows"]>;
-  boxShadow?: ResponsiveValue<keyof DefaultTheme["shadows"]>;
+  bgAttachment?: ResponsiveValue<CSS['backgroundAttachment']>;
+  shadow?: ResponsiveValue<keyof DefaultTheme['shadows']>;
+  boxShadow?: ResponsiveValue<keyof DefaultTheme['shadows']>;
 
   // List properties
-  listStyleType?: ResponsiveValue<CSS["listStyleType"]>;
-  listStylePosition?: ResponsiveValue<CSS["listStylePosition"]>;
-  listStyleImage?: ResponsiveValue<CSS["listStyleImage"]>;
-  listStyleImg?: ResponsiveValue<CSS["listStyleImage"]>;
-  listStylePos?: ResponsiveValue<CSS["listStylePosition"]>;
+  listStyleType?: ResponsiveValue<CSS['listStyleType']>;
+  listStylePosition?: ResponsiveValue<CSS['listStylePosition']>;
+  listStyleImage?: ResponsiveValue<CSS['listStyleImage']>;
+  listStyleImg?: ResponsiveValue<CSS['listStyleImage']>;
+  listStylePos?: ResponsiveValue<CSS['listStylePosition']>;
 
   // Outline prop
-  outline?: ResponsiveValue<CSS["outline"]>;
-  float?: ResponsiveValue<CSS["float"]>;
-  willChange?: ResponsiveValue<CSS["willChange"]>;
+  outline?: ResponsiveValue<CSS['outline']>;
+  float?: ResponsiveValue<CSS['float']>;
+  willChange?: ResponsiveValue<CSS['willChange']>;
 
   //css
   css?: any;
@@ -287,5 +287,5 @@ export interface System
 }
 
 export type ISystem<T = undefined> = T extends {}
-  ? System & Omit<Omit<T, "color">, "css" | "ref">
+  ? System & Omit<Omit<T, 'color'>, 'css' | 'ref'>
   : System;

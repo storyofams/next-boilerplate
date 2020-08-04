@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Box } from '~/components';
 import { variant } from 'styled-system';
+import { Box } from '~/components';
 
 const variants = {
   ellipsis: {

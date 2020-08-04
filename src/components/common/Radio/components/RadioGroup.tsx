@@ -19,12 +19,12 @@ export const RadioGroup: React.FC<IRadioGroup> = ({
   onChange,
   ...props
 }) => {
-  const clones = Children.map(children, child => {
+  const clones = Children.map(children, (child) => {
     if (!React.isValidElement<RadioElement>(child)) {
       return child;
     }
     return cloneElement(child, {
-      onChange: e => onChange(e.target.value),
+      onChange: (e) => onChange(e.target.value),
       checked: child.props.value === value,
     });
   });

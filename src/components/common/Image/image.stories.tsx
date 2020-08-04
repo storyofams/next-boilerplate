@@ -36,7 +36,7 @@ export const lazyLoadStressTest = () => (
   <>
     The dimensions must be specified for this to work. So either height+width,
     flex-basis etc.. or a placeholder with the same dimensions
-    {array.map(i => (
+    {array.map((i) => (
       <Image
         key={i}
         size="200px"

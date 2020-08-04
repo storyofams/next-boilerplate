@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { system, ISystem } from '~/lib';
 
 const ButtonBase = styled.button<ISystem>`
-  border-radius: ${p => p.theme.radii.sm};
+  border-radius: ${(p) => p.theme.radii.sm};
   background: #fff;
   color: #fff;
   cursor: pointer;
