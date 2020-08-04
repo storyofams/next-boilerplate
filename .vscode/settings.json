@@ -29,13 +29,10 @@
     "**/.commitlintrc.js": true,
     "**/.babelrc": true,
     "**/.eslintignore": true,
-    "**/.eslintrc.js": true,
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
     "**/.gitignore": true,
-    "**/.prettierignore": true,
-    "**/.prettierrc": true,
-    // "**/next.config.js": true,
+    "**/next.config.js": true,
     "**/jest.setup.js": true
   },
   "search.exclude": {
