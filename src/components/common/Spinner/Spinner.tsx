@@ -7,28 +7,51 @@ const spin = keyframes`
   100% { transform: rotate(360deg); }
 `;
 
-const Inner = styled.div<{ stroke?: string }>`
-  /* Spinner size and color */
-  width: 1em;
-  height: 1em;
-  border-top-color: currentColor;
-  border-left-color: currentColor;
+const Inner = styled.div`
+  position: absolute;
 
-  /* Additional spinner styles */
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  border-style: solid;
-  border-width: ${p => p.stroke};
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+
+  border: 8px solid;
   border-radius: 50%;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: middle;
-  animation: ${spin} 0.7s linear infinite;
+  border-color: currentColor transparent transparent transparent;
+
+  animation: ${spin} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 `;
 
-export const Spinner = ({ stroke = '2px', ...props }) => (
+const Container = styled.div<{ color?: string }>`
+  display: inline-block;
+
+  position: relative;
+
+  width: 80px;
+  height: 80px;
+
+  color: ${p => (p.color ? p.theme.colors[p.color] : p.color)};
+
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+`;
+
+export const Spinner = ({ color = '', ...props }) => (
   <Flex variant="center" {...props}>
-    <Inner stroke={stroke} />
+    <Container color={color}>
+      <Inner />
+      <Inner />
+      <Inner />
+      <Inner />
+    </Container>
   </Flex>
 );
 
