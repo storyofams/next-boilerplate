@@ -7,6 +7,4 @@ export default {
 };
 
 export const Basic = () => <Spinner />;
-export const Custom = () => (
-  <Spinner stroke="8px" fontSize="100px" color="blue" />
-);
+export const Custom = () => <Spinner fontSize="100px" color="error500" />;
