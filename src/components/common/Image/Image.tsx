@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
+
 import { ISystem } from '~/lib';
+
 import StyledImage from './components/styledImage';
 
 export interface IImage extends ISystem {
