@@ -1,7 +1,9 @@
 import React, { FC, forwardRef } from 'react';
 import styled from 'styled-components';
+
 import { ISystem } from '~/lib';
-import { Box } from '../Box';
+import { Box } from '~/components';
+
 import req from './req';
 
 export const StyledIcon = styled(Box)`
