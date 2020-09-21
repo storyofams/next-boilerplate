@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from 'test-utils';
-import { InRadioGroup } from './radio.stories';
+
+import { Default } from './radio.stories';
 
 test('receives change events', async () => {
-  const { getByLabelText, getByTestId } = render(<InRadioGroup />);
+  const { getByLabelText, getByTestId } = render(<Default />);
   const firstRadio: any = getByLabelText(/one/i);
 
   expect(firstRadio.checked).toBeFalsy();

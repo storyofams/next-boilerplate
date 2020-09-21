@@ -1,6 +1,7 @@
 import React, { Children, cloneElement } from 'react';
-import { Box } from '~/components';
+
 import { ISystem } from '~/lib';
+import { Stack } from '~/components';
 
 interface RadioElement {
   onChange?: any;
@@ -30,9 +31,9 @@ export const RadioGroup: React.FC<IRadioGroup> = ({
   });
 
   return (
-    <Box role="radiogroup" {...props}>
+    <Stack flexDir="column" space={1} role="radiogroup" {...props}>
       {clones}
-    </Box>
+    </Stack>
   );
 };
 

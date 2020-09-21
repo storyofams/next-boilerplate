@@ -1,59 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
-import { pick, omit } from '@styled-system/props';
-import { system, ISystem } from '~/lib';
+import { omit, pick } from '@styled-system/props';
+
+import { ISystem, system } from '~/lib';
 import { useId } from '~/hooks';
 
 const Wrapper = styled.div<ISystem>`
-  font-size: ${p => p.theme.fontSizes[2]};
-  color: ${p => p.theme.colors.grey800};
-  ${system}
-
   input[type='radio'] {
-    opacity: 0;
-    width: 22px;
-
-    + label {
-      position: relative;
-
-      &::before {
-        background: #fff;
-        border-radius: 50%;
-        border: 1px solid ${p => p.theme.colors.grey200};
-        content: '';
-        position: absolute;
-        left: -22px; /* This will be adjusted */
-        width: 16px;
-        height: 16px;
-        top: 0px;
-        transition: border-color 0.18s;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        left: -17px;
-        top: 5px;
-        border-radius: 50%;
-        width: 6px;
-        height: 6px;
-      }
-    }
+    width: 16px;
+    height: 16px;
+    box-shadow: inset 0 0 0 5px #fff;
+    background-color: #fff;
+    padding: 0;
+    border: 1px solid ${p => p.theme.colors.grey200};
+    outline: none;
+    vertical-align: middle;
+    appearance: none;
+    border-radius: ${p => p.theme.radii.full};
+    transition: border 0.18s ease-in-out, box-shadow 0.18s ease-in-out;
+    margin-right: ${p => p.theme.space[1]}px;
 
     &:checked {
-      + label::after {
-        background: #fff;
-      }
-      + label::before {
-        background: ${p => p.theme.colors.primary500};
-        border-color: ${p => p.theme.colors.primary500};
-      }
+      border: 1px solid ${p => p.theme.colors.primary500};
+      box-shadow: inset 0 0 0 4px ${p => p.theme.colors.primary500};
     }
+
     &:hover {
-      + label::before {
-        border-color: ${p => p.theme.colors.grey300};
-      }
+      border: 1px solid ${p => p.theme.colors.grey200};
+      box-shadow: inset 0 0 0 4px ${p => p.theme.colors.primary500};
     }
   }
+
+  label {
+    font-size: ${p => p.theme.fontSizes[2]};
+    color: ${p => p.theme.colors.grey900};
+
+    /* leave font-size 16px for consistency sake, IOS browsers zoom in on inputs if they are below 16px */
+    @media (max-width: ${p => p.theme.breakpoints.sm}) {
+      font-size: ${p => p.theme.fontSizes[3]};
+    }
+  }
+
+  ${system}
 `;
 
 export interface IRadio {
