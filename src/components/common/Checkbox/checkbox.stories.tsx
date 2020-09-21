@@ -1,13 +1,14 @@
 import React from 'react';
-import { Stack, Checkbox } from '~/components';
+
+import { Checkbox, Stack } from '~/components';
 
 export default {
   component: Checkbox,
   title: 'Checkbox',
 };
 
-export const normal = () => (
-  <Stack flexDir="column" alignItems="flex-start" p={5} mb={5} space={5}>
+export const Default = () => (
+  <Stack flexDir="column" alignItems="flex-start" p={4} space={1}>
     <Checkbox checked />
     <Checkbox />
     <Checkbox label="lorem ipsum" />
