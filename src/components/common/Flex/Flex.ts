@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { Box } from '~/components';
 import { ResponsiveValue } from 'styled-system';
-import { variant } from '~/lib';
+import { variant } from 'styled-system';
+
+import { Box } from '~/components';
 
 type CSS = React.CSSProperties;
 
@@ -19,6 +20,7 @@ export interface FlexProps {
 
 const Flex = styled(Box)<FlexProps>`
   display: flex;
+
   ${p => variant({ variants })(p)}
 `;
 
