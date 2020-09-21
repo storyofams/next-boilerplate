@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Select, Stack } from '~/components';
 
 export default {
@@ -12,8 +13,8 @@ const options = [
   { value: '3', label: '15+' },
 ];
 
-export const BasicExamples = () => (
-  <Stack maxW="270px" flexDir="column" space={4}>
+export const Default = () => (
+  <Stack maxW="340px" flexDir="column" space={3} p={4}>
     <Select options={options} placeholder="Placeholder" isSearchable={false} />
     <Select options={options} placeholder="Placeholder" isDisabled />
     <Select
