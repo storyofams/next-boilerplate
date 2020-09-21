@@ -1,13 +1,14 @@
 import React from 'react';
-import { StatusMessage, Stack } from '~/components';
+
+import { Box, StatusMessage } from '~/components';
 
 export default {
   component: StatusMessage,
   title: 'StatusMessage',
 };
 
-export const BasicExamples = () => (
-  <Stack maxW="270px" flexDir="column" space={4}>
+export const Default = () => (
+  <Box p={4} maxW="270px" flexDir="column">
     <StatusMessage status="default">
       Lorem, ipsum dolor. (default)
     </StatusMessage>
@@ -18,5 +19,5 @@ export const BasicExamples = () => (
       Lorem, ipsum dolor. (warning)
     </StatusMessage>
     <StatusMessage status="error">Lorem, ipsum dolor. (error)</StatusMessage>
-  </Stack>
+  </Box>
 );

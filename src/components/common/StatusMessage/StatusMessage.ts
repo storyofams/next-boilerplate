@@ -1,7 +1,8 @@
 import Alert from '@reach/alert';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { system, ISystem } from '~/lib';
+
+import { ISystem, system } from '~/lib';
 
 type status = 'default' | 'success' | 'warning' | 'error';
 
@@ -17,8 +18,8 @@ const StatusMessage = styled(Alert).attrs(p => ({
 }))<IStatusMessage>(
   p =>
     css({
-      color: p.status ? `${p.status}500` : `grey900`,
-      fontSize: 1,
+      color: p.status !== 'default' && p.status ? `${p.status}500` : `grey900`,
+      fontSize: 2,
       fontWeight: 'medium',
       mt: '2px',
     })(p),
