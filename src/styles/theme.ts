@@ -1,10 +1,11 @@
 import { Breakpoints } from './styled';
 
 const theme = {
-  // colors
   colors: {
-    primary500: '#3461eb',
-    primaryAlpha40: 'rgba(52, 97, 235,0.4)',
+    primary400: '#55F1D2',
+    primary500: '#18ECC0',
+    secondary400: '#984EF9',
+    secondary500: '#862EF7',
     white: '#fff',
     grey100: '#F9F9F8',
     grey200: '#E2E2E0',
@@ -14,8 +15,8 @@ const theme = {
     grey700: '#737373',
     grey800: '#343434',
     grey900: '#1B1B1B',
-    warning500: '#F0BB00',
     warning100: '#FFF0BD',
+    warning500: '#F0BB00',
     success100: '#DBFFE3',
     success500: '#0C9151',
     error100: '#FFD1D1',
@@ -30,44 +31,54 @@ const theme = {
   fonts: {
     heading: `Domaine Disp`,
     body: `Inter`,
-    mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
+    mono: `SFMono-Regular, Menlo, Monaco,C onsolas, "Liberation Mono", "Courier New", monospace`,
   },
   fontSizes: {
-    root: `calc(14px + 0.2vw)`,
-    0: '0.7rem', // 12px
-    1: '0.8rem', // 14px
-    2: '0.925rem', //16px
-    3: '1.025rem', //18px
-    4: '1.15rem', //20px
-    5: '1.4rem', //24px
-    6: '1.85rem', //32px
-    7: '2.3rem', //40px
-    8: '2.75rem', //48px
-    heading: '1.85rem',
+    root: '14px',
+    0: '10px',
+    1: '12px',
+    2: '14px',
+    3: '16px',
+    4: '18px',
+    5: '20px',
+    6: '24px',
+    7: '32px',
+    8: '40px',
+    9: '48px',
+    10: '56px',
+    11: '64px',
+    heading: '32px',
   },
   lineHeights: {
-    normal: 100,
+    normal: 1,
+    medium: 1.25,
+    high: 1.5,
   },
-  // sizes
   space: {
     0: 0,
-    1: 4,
-    2: 8,
-    3: 12,
-    4: 16,
-    5: 24,
-    6: 32,
-    7: 48,
+    '1/4': 2,
+    '1/2': 4,
+    '3/4': 6,
+    1: 8,
+    '5/4': 10,
+    '6/4': 12,
+    2: 16,
+    3: 24,
+    4: 32,
+    5: 40,
+    6: 48,
+    7: 56,
     8: 64,
-    9: 80,
-    10: 120,
-    11: 160,
+    9: 72,
+    10: 80,
+    15: 120,
+    20: 160,
     mobileGutter: 16,
   },
   sizes: {
     maxWidth: 1140,
   },
-  breakpoints: ['768px', '1024px', '1280px'] as Breakpoints,
+  breakpoints: ['768px', '1024px', '1280px', '1440px'] as Breakpoints,
   zIndices: {
     hide: -1,
     base: 0,
@@ -84,9 +95,10 @@ const theme = {
   },
   radii: {
     none: '0',
-    sm: '4px',
+    xs: '4px',
+    sm: '6px',
     md: '8px',
-    lg: '18px',
+    lg: '16px',
     full: '9999px',
   },
   borders: {
@@ -99,8 +111,6 @@ const theme = {
     sm: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     normal: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     big: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
-    primary:
-      '0px 10px 16px rgba(240, 96, 57, 0.16), 0px 4px 6px rgba(0, 0, 0, 0.06)',
     none: 'none',
   },
 };
@@ -108,6 +118,6 @@ const theme = {
 theme.breakpoints.sm = theme.breakpoints[0];
 theme.breakpoints.md = theme.breakpoints[1];
 theme.breakpoints.lg = theme.breakpoints[2];
-theme.breakpoints.xl = '1440px';
+theme.breakpoints.xl = theme.breakpoints[3];
 
 export default theme;
