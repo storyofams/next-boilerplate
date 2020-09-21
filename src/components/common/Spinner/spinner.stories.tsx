@@ -1,10 +1,20 @@
 import React from 'react';
-import { Spinner } from '~/components';
+
+import { Flex, Spinner } from '~/components';
 
 export default {
   component: Spinner,
   title: 'Spinner',
 };
 
-export const Basic = () => <Spinner />;
-export const Custom = () => <Spinner fontSize="100px" color="error500" />;
+export const Default = () => (
+  <Flex p={4}>
+    <Spinner />
+  </Flex>
+);
+
+export const Custom = () => (
+  <Flex p={4}>
+    <Spinner size={40} color="primary500" />
+  </Flex>
+);
