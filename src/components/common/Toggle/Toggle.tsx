@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { system, ISystem } from '~/lib';
+
+import { ISystem, system } from '~/lib';
 
 const Wrapper = styled.label<ISystem>`
   position: relative;
@@ -23,33 +24,37 @@ const Wrapper = styled.label<ISystem>`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: ${p => p.theme.colors.grey300};
     transition: 0.4s;
     border-radius: 34px;
+    transition: background-color 0.18s;
   }
 
   > .slider:before {
     position: absolute;
     content: '';
-    height: 28px;
-    width: 28px;
-    left: 2px;
-    bottom: 2px;
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
     background-color: white;
     transition: 0.2s;
     border-radius: 50%;
+    transition: left 0.18s, right 0.18s;
   }
 
-  > input:checked + .slider {
-    background-color: ${p => p.theme.colors.primary500};
+  > input:checked {
+    & + .slider {
+      background-color: ${p => p.theme.colors.primary500};
+    }
+    & + .slider:before {
+      left: unset;
+      right: 4px;
+    }
   }
 
   > input:focus + .slider {
-    box-shadow: 0px 0px 0px 3px ${p => p.theme.colors.primaryAlpha40};
-  }
-
-  > input:checked + .slider:before {
-    transform: translateX(19px);
+    box-shadow: 0px 0px 0px 2px ${p => p.theme.colors.grey100};
   }
 
   ${system}
