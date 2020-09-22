@@ -8,7 +8,7 @@ import { Box, Flex, status, StatusMessage, Text } from '~/components';
 
 import StyledCheckbox from './components/StyledCheckbox';
 
-interface ICheckbox extends ISystem {
+interface CheckboxProps extends ISystem {
   checked?: boolean;
   onChange?: FormikHandlers['handleChange'];
   statusMessage?: string;
@@ -19,7 +19,7 @@ interface ICheckbox extends ISystem {
   id?: string;
 }
 
-const Checkbox: React.FC<ICheckbox> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   label,
   status,
   statusMessage,

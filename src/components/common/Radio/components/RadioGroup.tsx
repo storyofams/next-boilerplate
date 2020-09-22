@@ -9,12 +9,12 @@ interface RadioElement {
   checked?: boolean;
 }
 
-export interface IRadioGroup extends ISystem {
+export interface RadioGroupProps extends ISystem {
   value?: string | number;
   onChange: (value: string) => void;
 }
 
-export const RadioGroup: React.FC<IRadioGroup> = ({
+export const RadioGroup: React.FC<RadioGroupProps> = ({
   children,
   value,
   onChange,

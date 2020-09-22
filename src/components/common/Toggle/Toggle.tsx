@@ -60,12 +60,12 @@ const Wrapper = styled.label<ISystem>`
   ${system}
 `;
 
-export interface IToggle extends ISystem {
+export interface ToggleProps extends ISystem {
   checked?: boolean;
   onChange?(boolean): void;
 }
 
-export const Toggle: React.FC<IToggle> = ({ checked, onChange }) => {
+export const Toggle: React.FC<ToggleProps> = ({ checked, onChange }) => {
   return (
     <Wrapper>
       <input

@@ -74,11 +74,11 @@ const StyledSelect = styled(ReactSelect).attrs({
   `,
 );
 
-export interface ISelect extends Props {
+export interface SelectProps extends Props {
   theme?: any;
 }
 
-export const Select: React.FC<ISelect> = props => {
+export const Select: React.FC<SelectProps> = props => {
   const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (

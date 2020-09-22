@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { omit, pick } from '@styled-system/props';
 
@@ -44,11 +44,11 @@ const Wrapper = styled.div<ISystem>`
   ${system}
 `;
 
-export interface IRadio {
+export interface RadioProps {
   id?: string;
   value: string;
 }
-export const Radio: React.FC<IRadio> = ({
+export const Radio: React.FC<RadioProps> = ({
   children,
   id: initialId,
   ...props

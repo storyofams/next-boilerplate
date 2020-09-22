@@ -4,7 +4,7 @@ import { ISystem } from '~/lib';
 
 import StyledImage from './components/styledImage';
 
-export interface IImage extends ISystem {
+export interface ImageProps extends ISystem {
   objectFit?: 'cover' | 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
   objectPosition?: string;
   loading?: 'lazy' | 'eager';
@@ -71,7 +71,7 @@ function getIO() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const Img: React.FC<IImage> = ({
+export const Img: React.FC<ImageProps> = ({
   objectFit = 'cover',
   objectPosition = 'center center',
   loading = 'lazy',

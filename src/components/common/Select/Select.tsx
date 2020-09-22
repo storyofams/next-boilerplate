@@ -9,7 +9,7 @@ import StyledSelect from './components/StyledSelect';
 
 export type status = 'default' | 'success' | 'warning' | 'error';
 
-export interface ISelect extends ISystem, Props {
+export interface SelectProps extends ISystem, Props {
   status?: status;
   statusMessage?: string;
   label?: string;
@@ -20,7 +20,7 @@ export interface ISelect extends ISystem, Props {
   placeholder?: string;
 }
 
-export const Select: React.FC<ISelect> = ({
+export const Select: React.FC<SelectProps> = ({
   status = false,
   statusMessage = false,
   label = false,

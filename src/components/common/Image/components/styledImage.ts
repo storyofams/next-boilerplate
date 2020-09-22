@@ -16,11 +16,11 @@ const objectFitPolyfill = p => {
   return '';
 };
 
-interface IStyledImage extends ISystem {
+interface StyledImageProps extends ISystem {
   loading?: 'lazy' | 'eager';
 }
 
-const StyledImage = styled.img<IStyledImage>`
+const StyledImage = styled.img<StyledImageProps>`
   transition: opacity 0.15s;
 
   ${objectFitPolyfill}
