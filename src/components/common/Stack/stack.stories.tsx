@@ -7,7 +7,7 @@ export default {
   title: 'Stack',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Box p={5}>
     <h1>
       Stack is a layout utility that adds space on one side which in turn

@@ -7,7 +7,7 @@ export default {
   title: 'Checkbox',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Stack flexDir="column" alignItems="flex-start" p={4} space={1}>
     <Checkbox checked />
     <Checkbox />

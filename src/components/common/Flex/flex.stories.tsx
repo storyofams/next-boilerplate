@@ -7,7 +7,7 @@ export default {
   title: 'Flex',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Stack space={3} p={4}>
     <Box
       size="50px"

@@ -7,7 +7,7 @@ export default {
   title: 'Radio',
 };
 
-export const Default = () => {
+export const Basic = () => {
   const [val, setVal] = useState(null);
 
   return (

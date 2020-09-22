@@ -7,7 +7,7 @@ export default {
   title: 'Spinner',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Flex p={4}>
     <Spinner />
   </Flex>

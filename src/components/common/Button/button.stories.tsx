@@ -7,7 +7,7 @@ export default {
   title: 'Button',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
     <Button>Lorem Ipsum</Button>
     <Button isLoading>Lorem Ipsum</Button>

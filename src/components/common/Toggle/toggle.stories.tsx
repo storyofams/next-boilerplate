@@ -8,7 +8,7 @@ export default {
   title: 'Toggle',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Stack flexDir="column" alignItems="flex-start" p={4} space={3}>
     <Toggle checked />
     <Toggle onChange={action('toggled')} />

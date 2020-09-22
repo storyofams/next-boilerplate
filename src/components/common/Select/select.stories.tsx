@@ -13,7 +13,7 @@ const options = [
   { value: '3', label: '15+' },
 ];
 
-export const Default = () => (
+export const Basic = () => (
   <Stack maxW="340px" flexDir="column" space={3} p={4}>
     <Select options={options} placeholder="Placeholder" isSearchable={false} />
     <Select options={options} placeholder="Placeholder" isDisabled />

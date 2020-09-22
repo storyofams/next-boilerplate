@@ -7,7 +7,7 @@ export default {
   title: 'Box',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Box p={4} d="flex">
     <Box mr={[7, 5, 9]} h={100} w={100} bg="primary500" />
     <Box

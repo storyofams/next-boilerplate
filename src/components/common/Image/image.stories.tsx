@@ -7,7 +7,7 @@ export default {
   title: 'Image',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Stack space={3} flexDir="column" p={4}>
     <Box>
       size80

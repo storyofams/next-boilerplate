@@ -6,7 +6,7 @@ export default {
   title: 'Link',
 };
 
-export const Default = () => {
+export const Basic = () => {
   return (
     <Stack alignItems="center" p={4} mb={5} space={3}>
       <Link p={5} bg="success100" href="/">

@@ -7,7 +7,7 @@ export default {
   title: 'StatusMessage',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Box p={4} maxW="270px" flexDir="column">
     <StatusMessage status="default">
       Lorem, ipsum dolor. (default)

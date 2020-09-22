@@ -7,7 +7,7 @@ export default {
   title: 'Grid',
 };
 
-export const Default = () => (
+export const Basic = () => (
   <Box p={5}>
     <h1>
       Grid is a layout utility that adds space above and on the side of items in
