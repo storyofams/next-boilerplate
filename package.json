@@ -86,7 +86,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "ams"
+      "ams/web"
     ]
   },
   "config": {

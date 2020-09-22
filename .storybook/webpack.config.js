@@ -20,7 +20,7 @@ module.exports = ({ config }) => {
     resolve: {
       ...config.resolve,
       alias: {
-        "@": path.resolve(__dirname, "../src"),
+        '~': path.resolve(__dirname, '../src'),
       },
     },
   };
