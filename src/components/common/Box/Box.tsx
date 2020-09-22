@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
-const Box = styled.div<ISystem>`
+const Box = styled.div<SystemProps>`
   font-family: inherit;
 
   ${system}

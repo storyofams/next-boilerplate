@@ -2,12 +2,12 @@ import React, { FC, CSSProperties } from 'react';
 import { ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
 
-import { ISystem, modifyResponsiveValue } from '~/lib';
+import { SystemProps, modifyResponsiveValue } from '~/lib';
 import { Box } from '~/components';
 
 type CSS = CSSProperties;
 
-interface StackProps extends ISystem {
+interface StackProps extends SystemProps {
   space: ResponsiveValue<CSS['margin']>;
   role?: string;
 }

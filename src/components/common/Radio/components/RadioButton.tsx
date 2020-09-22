@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { omit, pick } from '@styled-system/props';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 import { useId } from '~/hooks';
 
-const Wrapper = styled.div<ISystem>`
+const Wrapper = styled.div<SystemProps>`
   input[type='radio'] {
     width: 16px;
     height: 16px;

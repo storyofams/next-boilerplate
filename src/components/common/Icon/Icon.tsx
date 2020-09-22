@@ -1,7 +1,7 @@
 import React, { FC, forwardRef, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 import { Box } from '~/components';
 
 import req from './req';
@@ -17,7 +17,7 @@ export const StyledIcon = styled(Box)`
   }
 `;
 
-export interface IconProps extends ISystem<HTMLAttributes<HTMLDivElement>> {
+export interface IconProps extends SystemProps<HTMLAttributes<HTMLDivElement>> {
   icon: string;
   as?: string;
   href?: string;

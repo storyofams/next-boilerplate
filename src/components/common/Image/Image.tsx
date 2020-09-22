@@ -1,10 +1,10 @@
 import React, { FC, useRef, useEffect } from 'react';
 
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 
 import StyledImage from './components/styledImage';
 
-export interface ImageProps extends ISystem {
+export interface ImageProps extends SystemProps {
   objectFit?: 'cover' | 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
   objectPosition?: string;
   loading?: 'lazy' | 'eager';

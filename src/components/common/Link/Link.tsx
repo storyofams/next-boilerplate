@@ -2,10 +2,10 @@ import React, { FC, ReactNode } from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 import { Text } from '~/components/common/Text';
 
-interface LinkProps extends ISystem {
+interface LinkProps extends SystemProps {
   children?: ReactNode;
   href?: string;
   linkAs?: string;

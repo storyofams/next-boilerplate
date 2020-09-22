@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
 const CheckboxInput = styled.input.attrs({
   type: 'checkbox',
-})<ISystem>`
+})<SystemProps>`
   position: relative;
   appearance: none;
   width: 16px;

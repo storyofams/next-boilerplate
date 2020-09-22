@@ -2,11 +2,11 @@ import Alert from '@reach/alert';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
 type status = 'default' | 'success' | 'warning' | 'error';
 
-interface StatusMessageProps extends ISystem {
+interface StatusMessageProps extends SystemProps {
   status: status | Boolean;
   type?: 'polite' | 'assertive';
 }

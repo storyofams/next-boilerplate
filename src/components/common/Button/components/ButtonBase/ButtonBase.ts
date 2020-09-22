@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
-export interface ButtonProps extends ISystem {
+export interface ButtonProps extends SystemProps {
   variant?: 'primary' | 'secondary' | 'underline';
 }
 

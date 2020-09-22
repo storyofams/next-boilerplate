@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
 
-import { ISystem, modifyResponsiveValue } from '~/lib';
+import { SystemProps, modifyResponsiveValue } from '~/lib';
 import { Box, Flex } from '~/components';
 
-interface GridProps extends ISystem {
+interface GridProps extends SystemProps {
   rowSize: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
   columnGap?: ResponsiveValue<number>;

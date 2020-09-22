@@ -1,7 +1,7 @@
 import React, { forwardRef, FC, HTMLAttributes } from 'react';
 import css from '@styled-system/css';
 
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 import { Box, Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
 
@@ -9,7 +9,7 @@ import ButtonBase from './components/ButtonBase/ButtonBase';
 
 interface ButtonProps
   extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
-    ISystem {
+    SystemProps {
   isLoading?: boolean;
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'underline';

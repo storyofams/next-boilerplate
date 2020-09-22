@@ -287,6 +287,6 @@ export interface System
   width?: any;
 }
 
-export type ISystem<T = undefined> = T extends {}
+export type SystemProps<T = undefined> = T extends {}
   ? System & Omit<Omit<T, 'color'>, 'css' | 'ref'>
   : System;

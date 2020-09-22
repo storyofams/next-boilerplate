@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Props } from 'react-select';
 
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 import { useId } from '~/hooks';
 import { Box, StatusMessage, Text } from '~/components';
 
@@ -9,7 +9,7 @@ import StyledSelect from './components/StyledSelect';
 
 export type status = 'default' | 'success' | 'warning' | 'error';
 
-export interface SelectProps extends ISystem, Props {
+export interface SelectProps extends SystemProps, Props {
   status?: status;
   statusMessage?: string;
   label?: string;

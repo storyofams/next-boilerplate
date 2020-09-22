@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
-const Wrapper = styled.label<ISystem>`
+const Wrapper = styled.label<SystemProps>`
   position: relative;
   display: inline-block;
   width: 52px;
@@ -60,7 +60,7 @@ const Wrapper = styled.label<ISystem>`
   ${system}
 `;
 
-export interface ToggleProps extends ISystem {
+export interface ToggleProps extends SystemProps {
   checked?: boolean;
   onChange?(boolean): void;
 }

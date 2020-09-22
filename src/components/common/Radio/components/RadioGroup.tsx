@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, FC, isValidElement } from 'react';
 
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 import { Stack } from '~/components';
 
 interface RadioElement {
@@ -9,7 +9,7 @@ interface RadioElement {
   checked?: boolean;
 }
 
-export interface RadioGroupProps extends ISystem {
+export interface RadioGroupProps extends SystemProps {
   value?: string | number;
   onChange: (value: string) => void;
 }

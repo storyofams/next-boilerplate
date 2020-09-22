@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ISystem, system } from '~/lib';
+import { SystemProps, system } from '~/lib';
 
 const objectFitPolyfill = p => {
   let res = [];
@@ -16,7 +16,7 @@ const objectFitPolyfill = p => {
   return '';
 };
 
-interface StyledImageProps extends ISystem {
+interface StyledImageProps extends SystemProps {
   loading?: 'lazy' | 'eager';
 }
 
