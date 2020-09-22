@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { FormikHandlers } from 'formik';
 import { pick, omit } from '@styled-system/props';
 
@@ -19,7 +19,7 @@ interface CheckboxProps extends ISystem {
   id?: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox: FC<CheckboxProps> = ({
   label,
   status,
   statusMessage,

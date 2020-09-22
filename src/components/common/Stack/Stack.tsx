@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, CSSProperties } from 'react';
 import { ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
 
 import { ISystem, modifyResponsiveValue } from '~/lib';
 import { Box } from '~/components';
 
-type CSS = React.CSSProperties;
+type CSS = CSSProperties;
 
 interface StackProps extends ISystem {
   space: ResponsiveValue<CSS['margin']>;

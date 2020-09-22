@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import {
   system as styledSystem,
   background,
@@ -184,7 +185,7 @@ export const system = p => css`
     customSystem,
   )(p)}
 `;
-type CSS = React.CSSProperties;
+type CSS = CSSProperties;
 type borderRadius = BorderRadiusProps['borderRadius'];
 
 export interface System

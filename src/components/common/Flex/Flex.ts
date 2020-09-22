@@ -1,10 +1,11 @@
+import { CSSProperties } from 'react';
 import styled from 'styled-components';
 import { ResponsiveValue } from 'styled-system';
 import { variant } from 'styled-system';
 
 import { Box } from '~/components';
 
-type CSS = React.CSSProperties;
+type CSS = CSSProperties;
 
 const variants = {
   center: {

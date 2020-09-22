@@ -1,4 +1,4 @@
-import React, { forwardRef, FC } from 'react';
+import React, { forwardRef, FC, HTMLAttributes } from 'react';
 import css from '@styled-system/css';
 
 import { ISystem } from '~/lib';
@@ -8,7 +8,7 @@ import { Link } from '~/components/common/Link';
 import ButtonBase from './components/ButtonBase/ButtonBase';
 
 interface ButtonProps
-  extends Omit<Omit<React.HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
+  extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
     ISystem {
   isLoading?: boolean;
   disabled?: boolean;

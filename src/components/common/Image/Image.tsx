@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 
 import { ISystem } from '~/lib';
 
@@ -71,7 +71,7 @@ function getIO() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const Img: React.FC<ImageProps> = ({
+export const Img: FC<ImageProps> = ({
   objectFit = 'cover',
   objectPosition = 'center center',
   loading = 'lazy',

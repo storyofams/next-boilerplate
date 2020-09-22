@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import ReactSelect, { Props } from 'react-select';
 import styled, { css, ThemeContext } from 'styled-components';
 
@@ -78,7 +78,7 @@ export interface SelectProps extends Props {
   theme?: any;
 }
 
-export const Select: React.FC<SelectProps> = props => {
+export const Select: FC<SelectProps> = props => {
   const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (

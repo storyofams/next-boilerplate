@@ -48,7 +48,7 @@ export interface RadioProps {
   id?: string;
   value: string;
 }
-export const Radio: React.FC<RadioProps> = ({
+export const Radio: FC<RadioProps> = ({
   children,
   id: initialId,
   ...props

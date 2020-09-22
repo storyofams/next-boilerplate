@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Props } from 'react-select';
 
 import { ISystem } from '~/lib';
@@ -20,7 +20,7 @@ export interface SelectProps extends ISystem, Props {
   placeholder?: string;
 }
 
-export const Select: React.FC<SelectProps> = ({
+export const Select: FC<SelectProps> = ({
   status = false,
   statusMessage = false,
   label = false,

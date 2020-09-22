@@ -1,4 +1,4 @@
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, FC, isValidElement } from 'react';
 
 import { ISystem } from '~/lib';
 import { Stack } from '~/components';
@@ -14,14 +14,14 @@ export interface RadioGroupProps extends ISystem {
   onChange: (value: string) => void;
 }
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({
+export const RadioGroup: FC<RadioGroupProps> = ({
   children,
   value,
   onChange,
   ...props
 }) => {
   const clones = Children.map(children, child => {
-    if (!React.isValidElement<RadioElement>(child)) {
+    if (!isValidElement<RadioElement>(child)) {
       return child;
     }
     return cloneElement(child, {

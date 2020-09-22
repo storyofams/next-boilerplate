@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { ISystem, system } from '~/lib';
@@ -65,7 +65,7 @@ export interface ToggleProps extends ISystem {
   onChange?(boolean): void;
 }
 
-export const Toggle: React.FC<ToggleProps> = ({ checked, onChange }) => {
+export const Toggle: FC<ToggleProps> = ({ checked, onChange }) => {
   return (
     <Wrapper>
       <input
