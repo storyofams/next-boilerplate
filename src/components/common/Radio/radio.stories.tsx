@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Radio, RadioGroup } from '~/components';
+
+import { Box, Radio, RadioGroup } from '~/components';
 
 export default {
   component: Radio,
   title: 'Radio',
 };
 
-export const InRadioGroup = () => {
+export const Basic = () => {
   const [val, setVal] = useState(null);
 
   return (
-    <>
+    <Box p={4}>
       <RadioGroup value={val} onChange={setVal}>
         <Radio data-testid="radio-1" value="1">
           one
@@ -20,6 +21,6 @@ export const InRadioGroup = () => {
           three
         </Radio>
       </RadioGroup>
-    </>
+    </Box>
   );
 };

@@ -1,17 +1,24 @@
-import React, { FC } from 'react';
+import React, { FC, CSSProperties } from 'react';
 import css from '@styled-system/css';
 import { ResponsiveValue } from 'styled-system';
+
 import { Box } from '~/components';
-import { modifyResponsiveValue, ISystem } from '~/lib';
-// layout utility
+import { SystemProps, modifyResponsiveValue } from '~/lib';
 
-type CSS = React.CSSProperties;
+type CSS = CSSProperties;
 
-interface StackProps extends ISystem {
+interface StackProps extends SystemProps {
   space: ResponsiveValue<CSS['margin']>;
+  role?: string;
 }
 
-const Stack: FC<StackProps> = ({ space, flexDirection, flexDir, ...props }) => {
+const Stack: FC<StackProps> = ({
+  space,
+  flexDirection,
+  flexDir,
+  role,
+  ...props
+}) => {
   const commonDirectionProp = flexDir || flexDirection || 'row';
 
   function parseDirection(direction) {
@@ -28,6 +35,8 @@ const Stack: FC<StackProps> = ({ space, flexDirection, flexDir, ...props }) => {
     parseDirection,
   );
 
+  console.log(spacingProp);
+
   return (
     <Box
       display="flex"
@@ -35,6 +44,7 @@ const Stack: FC<StackProps> = ({ space, flexDirection, flexDir, ...props }) => {
       css={css({
         '>*+*': spacingProp,
       })}
+      role={role}
       {...props}
     />
   );

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Props } from 'react-select';
-import { Box, Text, StatusMessage } from '~/components';
+
+import { Box, StatusMessage, Text } from '~/components';
 import { useId } from '~/hooks';
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
+
 import StyledSelect from './components/StyledSelect';
 
 export type status = 'default' | 'success' | 'warning' | 'error';
 
-export interface ISelect extends ISystem, Props {
+export interface SelectProps extends SystemProps, Props {
   status?: status;
   statusMessage?: string;
   label?: string;
@@ -18,7 +20,7 @@ export interface ISelect extends ISystem, Props {
   placeholder?: string;
 }
 
-export const Select: React.FC<ISelect> = ({
+export const Select: FC<SelectProps> = ({
   status = false,
   statusMessage = false,
   label = false,

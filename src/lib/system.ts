@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { css, DefaultTheme } from 'styled-components';
 import {
   system as styledSystem,
@@ -184,7 +185,7 @@ export const system = (p) => css`
     customSystem,
   )(p)}
 `;
-type CSS = React.CSSProperties;
+type CSS = CSSProperties;
 type borderRadius = BorderRadiusProps['borderRadius'];
 
 export interface System
@@ -286,6 +287,6 @@ export interface System
   width?: any;
 }
 
-export type ISystem<T = undefined> = T extends {}
+export type SystemProps<T = undefined> = T extends {}
   ? System & Omit<Omit<T, 'color'>, 'css' | 'ref'>
   : System;

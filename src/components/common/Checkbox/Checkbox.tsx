@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { pick, omit } from '@styled-system/props';
 import { FormikHandlers } from 'formik';
-import { StatusMessage, Flex, Text, status, Box } from '~/components';
+
+import { Box, Flex, status, StatusMessage, Text } from '~/components';
 import { useId } from '~/hooks';
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
+
 import StyledCheckbox from './components/StyledCheckbox';
 
-interface ICheckbox extends ISystem {
+interface CheckboxProps extends SystemProps {
   checked?: boolean;
   onChange?: FormikHandlers['handleChange'];
   statusMessage?: string;
@@ -17,7 +19,7 @@ interface ICheckbox extends ISystem {
   id?: string;
 }
 
-const Checkbox: React.FC<ICheckbox> = ({
+const Checkbox: FC<CheckboxProps> = ({
   label,
   status,
   statusMessage,

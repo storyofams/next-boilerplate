@@ -1,9 +1,11 @@
+import { CSSProperties } from 'react';
 import styled from 'styled-components';
 import { ResponsiveValue } from 'styled-system';
-import { Box } from '~/components';
-import { variant } from '~/lib';
+import { variant } from 'styled-system';
 
-type CSS = React.CSSProperties;
+import { Box } from '~/components';
+
+type CSS = CSSProperties;
 
 const variants = {
   center: {
@@ -19,7 +21,8 @@ export interface FlexProps {
 
 const Flex = styled(Box)<FlexProps>`
   display: flex;
-  ${(p) => variant({ variants })(p)}
+
+  ${(p) => variant({ variants })(p)};
 `;
 
 Flex.displayName = 'Flex';
