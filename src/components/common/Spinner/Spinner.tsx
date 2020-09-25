@@ -11,6 +11,7 @@ const spin = keyframes`
 const Container = styled.div<{ color?: string; size: number }>`
   position: relative;
   display: inline-block;
+
   width: ${(p) => p.size}px;
   height: ${(p) => p.size}px;
   color: ${(p) => (p.color ? p.theme.colors[p.color] : p.color)};

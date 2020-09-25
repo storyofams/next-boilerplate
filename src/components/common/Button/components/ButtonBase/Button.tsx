@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import { Box, Spinner } from '~/components';
-import { ISystem } from '~/lib';
+import { SystemProps } from '~/lib';
 
 import ButtonBase from './ButtonBase';
 
 interface ButtonProps
   extends Omit<Omit<React.HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
-    ISystem {
+    SystemProps {
   isLoading?: boolean;
   isFullWidth?: boolean;
   baseColor?: string;

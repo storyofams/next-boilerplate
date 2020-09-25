@@ -22,7 +22,7 @@ export interface FlexProps {
 const Flex = styled(Box)<FlexProps>`
   display: flex;
 
-  ${(p) => variant({ variants })(p)};
+  ${(p) => variant({ variants })(p)}
 `;
 
 Flex.displayName = 'Flex';
