@@ -1,49 +1,62 @@
 import React from 'react';
-import { Box } from '~/components';
-import Text from './Text';
+
+import { Box, Stack, Text } from '~/components';
 
 export default {
   component: Text,
   title: 'Text',
 };
 
-export const asProp = () => (
-  <Box p={5}>
-    <Text as="h1">Title</Text>
-    <br />
-    <Text>Body Text</Text>
-    <br />
-    <Text as="i">Italic</Text>
-    <br />
-    <Text as="u">Underline</Text>
-    <br />
-    <Text as="abbr">I18N</Text>
-    <br />
-    <Text as="cite">Citation</Text>
-    <br />
-    <Text as="del">Deleted</Text>
-    <br />
-    <Text as="em">Emphasis</Text>
-    <br />
-    <Text as="ins">Inserted</Text>
-    <br />
-    <Text as="kbd">Ctrl + C</Text>
-    <br />
-    <Text as="mark">Highlighted</Text>
-    <br />
-    <Text as="s">Strikethrough</Text>
-    <br />
-    <Text as="samp">Sample</Text>
-    <br />
-    <Text as="sub">sub</Text>
-    <br />
-    <Text as="sup">sup</Text>
-  </Box>
+export const Headings = () => (
+  <Stack flexDir="column" space={3} p={4}>
+    <Text variant="h1">h1: Heading 1</Text>
+    <Text variant="h2">h2: Heading 2</Text>
+    <Text variant="h3">h3: Heading 3</Text>
+    <Text variant="h4">h4: Heading 4</Text>
+    <Text variant="h5">h5: Heading 5</Text>
+  </Stack>
 );
 
-export const variantEllipsis = () => (
-  <Box m={5} w="200px" border="1px solid red">
-    <Text maxW="100%" variant="ellipsis">
+export const Paragraphs = () => (
+  <Stack flexDir="column" space={3} p={4}>
+    <Text variant="pxl">pxl: Paragraph extra large</Text>
+    <Text variant="pl">pl: Paragraph large</Text>
+    <Text variant="pm">pm: Paragraph medium</Text>
+    <Text variant="psm">psm: Paragraph small</Text>
+    <Text variant="pxs">pxs: Paragraph extra small</Text>
+  </Stack>
+);
+
+export const asProp = () => (
+  <Stack flexDir="column" space={3} p={4}>
+    <Text as="h1">Title</Text>
+    <Text>Body Text</Text>
+    <Text as="i">Italic</Text>
+    <Text as="u">Underline</Text>
+    <Text as="abbr">I18N</Text>
+    <Text as="cite">Citation</Text>
+    <Text as="del">Deleted</Text>
+    <Text as="em">Emphasis</Text>
+    <Text as="ins">Inserted</Text>
+    <Text as="kbd">Ctrl + C</Text>
+    <Text as="mark">Highlighted</Text>
+    <Text as="s">Strikethrough</Text>
+    <Text as="samp">Sample</Text>
+    <Text as="sub">sub</Text>
+    <Text as="sup">sup</Text>
+  </Stack>
+);
+
+export const Ellipsis = () => (
+  <Box
+    m={4}
+    p={2}
+    borderRadius="xs"
+    w="200px"
+    border="1px solid"
+    borderColor="secondary400"
+  >
+    <Text maxW="100%" ellipsis>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
       impedit laudantium porro dolores, laboriosam laborum corrupti sapiente
       alias nulla possimus maiores mollitia harum temporibus, delectus eveniet

@@ -1,6 +1,7 @@
-import React, { Children, cloneElement } from 'react';
-import { Box } from '~/components';
-import { ISystem } from '~/lib';
+import React, { Children, cloneElement, FC, isValidElement } from 'react';
+
+import { SystemProps } from '~/lib';
+import { Stack } from '~/components';
 
 interface RadioElement {
   onChange?: any;
@@ -8,19 +9,19 @@ interface RadioElement {
   checked?: boolean;
 }
 
-export interface IRadioGroup extends ISystem {
+export interface RadioGroupProps extends SystemProps {
   value?: string | number;
   onChange: (value: string) => void;
 }
 
-export const RadioGroup: React.FC<IRadioGroup> = ({
+export const RadioGroup: FC<RadioGroupProps> = ({
   children,
   value,
   onChange,
   ...props
 }) => {
   const clones = Children.map(children, child => {
-    if (!React.isValidElement<RadioElement>(child)) {
+    if (!isValidElement<RadioElement>(child)) {
       return child;
     }
     return cloneElement(child, {
@@ -30,9 +31,9 @@ export const RadioGroup: React.FC<IRadioGroup> = ({
   });
 
   return (
-    <Box role="radiogroup" {...props}>
+    <Stack flexDir="column" space={1} role="radiogroup" {...props}>
       {clones}
-    </Box>
+    </Stack>
   );
 };
 

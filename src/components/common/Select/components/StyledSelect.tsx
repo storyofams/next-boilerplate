@@ -1,25 +1,32 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import ReactSelect, { Props } from 'react-select';
-import { system, ISystem } from '~/lib';
 import styled, { css, ThemeContext } from 'styled-components';
+
+import { SystemProps, system } from '~/lib';
 
 const StyledSelect = styled(ReactSelect).attrs({
   className: 'react-select',
   classNamePrefix: 'react-select',
-})<ISystem>(
+})<SystemProps>(
   ({ styledTheme: theme }) => css`
-    ${system}
+    font-size: ${theme.fontSizes[2]};
 
-    font-size: 14px;
+    /* leave font-size 16px for consistency sake, IOS browsers zoom in on inputs if they are below 16px */
+    @media (max-width: ${theme.breakpoints.sm}) {
+      font-size: ${theme.fontSizes[3]};
+    }
+
     .react-select {
       &__placeholder {
         color: ${theme.colors.grey200};
       }
+
       &__control {
         transition: border-color 0.18s ease;
-        border-radius: ${theme.radii.md};
-        box-shadow: none;
+        border-radius: ${theme.radii.xs};
         border-color: ${theme.colors.grey200};
+        box-shadow: none;
+
         &:hover {
           border-color: ${theme.colors.grey300};
         }
@@ -31,28 +38,47 @@ const StyledSelect = styled(ReactSelect).attrs({
             }
           }
         }
+
         &--is-disabled {
           background: ${theme.colors.grey200};
+
           .react-select__placeholder {
             color: ${theme.colors.grey700};
           }
         }
       }
+
       &__value-container {
         padding-left: 14px;
       }
+
       &__indicator-separator {
         display: none;
       }
+
+      &__option {
+        transition: border-color 0.18s ease, background-color 0.18s ease;
+        color: ${theme.colors.grey900};
+
+        &:hover {
+          background-color: ${theme.colors.grey100};
+        }
+
+        &.option--is-selected {
+          background-color: ${theme.colors.primary500};
+        }
+      }
     }
+
+    ${system}
   `,
 );
 
-export interface ISelect extends Props {
+export interface SelectProps extends Props {
   theme?: any;
 }
 
-export const Select: React.FC<ISelect> = props => {
+export const Select: FC<SelectProps> = props => {
   const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (

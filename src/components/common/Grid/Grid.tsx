@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
 import { ResponsiveValue } from 'styled-system';
-import { Flex, Box } from '~/components';
-import { modifyResponsiveValue, System, css } from '~/lib';
+import css from '@styled-system/css';
 
-interface GridProps extends System {
+import { SystemProps, modifyResponsiveValue } from '~/lib';
+import { Box, Flex } from '~/components';
+
+interface GridProps extends SystemProps {
   rowSize: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
   columnGap?: ResponsiveValue<number>;
@@ -17,7 +19,7 @@ const Grid: FC<GridProps> = ({
   ...props
 }) => {
   return (
-    <Box className="grid" {...props}>
+    <Box {...props}>
       <Flex
         flexWrap="wrap"
         ml={modifyResponsiveValue(columnGap, val => -val)}

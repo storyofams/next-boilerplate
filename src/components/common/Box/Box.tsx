@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { system, System } from '~/lib';
 
-// Box with all variants from every-layout.dev/layouts/
-// Stack and Flex get their own component
+import { SystemProps, system } from '~/lib';
 
-const Box = styled.div<System>`
+const Box = styled.div<SystemProps>`
   font-family: inherit;
+
   ${system}
 `;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { system, ISystem } from '~/lib';
+
+import { SystemProps, system } from '~/lib';
 
 const objectFitPolyfill = p => {
   let res = [];
@@ -15,11 +16,11 @@ const objectFitPolyfill = p => {
   return '';
 };
 
-interface IStyledImage extends ISystem {
+interface StyledImageProps extends SystemProps {
   loading?: 'lazy' | 'eager';
 }
 
-const StyledImage = styled.img<IStyledImage>`
+const StyledImage = styled.img<StyledImageProps>`
   transition: opacity 0.15s;
 
   ${objectFitPolyfill}

@@ -1,17 +1,18 @@
 import styled from 'styled-components';
-import { system, ISystem } from '~/lib';
+
+import { SystemProps, system } from '~/lib';
 
 const CheckboxInput = styled.input.attrs({
   type: 'checkbox',
-})<ISystem>`
+})<SystemProps>`
+  position: relative;
   appearance: none;
-  border-radius: ${p => p.theme.radii.sm};
   width: 16px;
   min-width: 16px;
   height: 16px;
-  border: 1px solid ${p => p.theme.colors.grey200};
-  position: relative;
   background-color: ${p => p.theme.colors.white};
+  border: 1px solid ${p => p.theme.colors.grey200};
+  border-radius: ${p => p.theme.radii.xs};
 
   &:hover {
     border: 1px solid ${p => p.theme.colors.grey300};
@@ -19,6 +20,7 @@ const CheckboxInput = styled.input.attrs({
 
   &:checked {
     background-color: ${p => p.theme.colors.primary500};
+
     &:after {
       content: '';
       top: 2px;
@@ -36,6 +38,13 @@ const CheckboxInput = styled.input.attrs({
 
   &:after {
     border-color: transparent;
+  }
+
+  /* leave font-size 16px for consistency sake, IOS browsers zoom in on inputs if they are below 16px */
+  @media (max-width: ${p => p.theme.breakpoints.sm}) {
+    & + label {
+      font-size: ${p => p.theme.fontSizes[3]};
+    }
   }
 
   ${system}

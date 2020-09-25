@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Text } from '~/components';
-import Icon from './Icon';
+
+import { Box, Flex, Icon, Text } from '~/components';
 
 export default {
   component: Icon,
@@ -13,64 +13,57 @@ const allIcons = (require as any)
   .keys()
   .map(k => k.replace('./', '').replace('.svg', ''));
 
-export const library = () => (
-  <table>
-    <tr
-      style={{
-        border: '1px solid #222',
-        textAlign: 'left',
-        padding: '8px',
-      }}
-    >
-      <th>name</th>
-      <th>default</th>
-      <th>larger</th>
-    </tr>
-    {allIcons.map(name => (
-      <tr
-        style={{
-          border: '1px solid #222',
-          textAlign: 'left',
-          padding: '8px',
-        }}
-        key={name}
+export const Library = () => (
+  <Box p={4}>
+    <h1>
+      To add an icon simply drop the svg file in ./library and change the
+      stroke/fill to "currentColor".
+    </h1>
+    <Box mt={2} maxWidth="320px">
+      <Flex
+        py={2}
+        justifyContent="center"
+        alignItems="center"
+        borderBottom="1px solid #D9D9D9"
       >
-        <td>
-          <Text
-            mr="mobileGutter"
-            fontSize={20 as any}
-            lineHeight="normal"
-            textShadow=""
-          >
-            {name}
-          </Text>
-        </td>
-        <td>
-          <Icon
-            icon={name}
-            color="grey100"
-            px="mobileGutter"
-            mr={8}
-            fontSize={7}
-          />
-        </td>
-        <td>
-          <Icon icon={name} color="primary500" fontSize={2} />
-        </td>
-      </tr>
-    ))}
-  </table>
+        <Box w="75%">Name</Box>
+        <Box w="25%">Icon</Box>
+      </Flex>
+      {allIcons.map(name => (
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          borderBottom="1px solid #D9D9D9"
+          key={name}
+          py={2}
+        >
+          <Box w="75%">
+            <Text mr={5} fontSize={2} lineHeight="normal">
+              {name}
+            </Text>
+          </Box>
+          <Flex w="25%">
+            <Icon icon={name} color="grey800" mr={10} fontSize={4} />
+          </Flex>
+        </Flex>
+      ))}
+    </Box>
+  </Box>
 );
 
 const commonProps = {
-  icon: 'account',
-  fontSize: '60px' as any,
+  m: 4 as any,
+  color: 'secondary500' as any,
+  icon: 'heart',
+  fontSize: 8 as any,
 };
 // different semantics
-export const asButton = () => (
+export const AsButton = () => (
   <Icon {...commonProps} onClick={action('clicked')} />
 );
-export const asAtag = () => (
+
+export const AsATag = () => (
   <Icon {...commonProps} href="https://www.example.com" />
 );
-export const asH1 = () => <Icon {...commonProps} as="h1" />;
+
+export const AsH1 = () => <Icon {...commonProps} as="h1" />;

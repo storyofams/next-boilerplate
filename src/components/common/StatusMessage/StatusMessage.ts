@@ -1,11 +1,12 @@
 import Alert from '@reach/alert';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { system, ISystem } from '~/lib';
+
+import { SystemProps, system } from '~/lib';
 
 type status = 'default' | 'success' | 'warning' | 'error';
 
-interface IStatusMessage extends ISystem {
+interface StatusMessageProps extends SystemProps {
   status: status | Boolean;
   type?: 'polite' | 'assertive';
 }
@@ -14,11 +15,11 @@ interface IStatusMessage extends ISystem {
 
 const StatusMessage = styled(Alert).attrs(p => ({
   type: p.type || 'polite',
-}))<IStatusMessage>(
+}))<StatusMessageProps>(
   p =>
     css({
-      color: p.status ? `${p.status}500` : `grey900`,
-      fontSize: 1,
+      color: p.status !== 'default' && p.status ? `${p.status}500` : `grey900`,
+      fontSize: 2,
       fontWeight: 'medium',
       mt: '2px',
     })(p),

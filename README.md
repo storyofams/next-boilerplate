@@ -21,15 +21,15 @@ This project uses an extension over styled-system that includes many handy short
 If you build a primitive, always include the entire system like this:
 
 ```
-import {system, ISystem} from '~/lib'
+import {system, SystemProps} from '~/lib'
 
-const Button = styled.button<ISystem<React.HTMLAttributes<HTMLDivElement>>>`
+const Button = styled.button<SystemProps<React.HTMLAttributes<HTMLDivElement>>>`
     ...
     ${system}
 `
 
 
-const Box = styled.button<ISystem>`
+const Box = styled.button<SystemProps>`
     ...
     ${system}
 `
@@ -58,9 +58,9 @@ Sometimes its good to have multiple variantions (or `variants`) of a single comp
 
 ```
 import styled from 'styled-components'
-import {variant, system, ISystem} from '~/lib'
+import {variant, system, SystemProps} from '~/lib'
 
-const Text = styled(Box)<ISystem>`
+const Text = styled(Box)<SystemProps>`
   ${variant({
     variants: {
       title: {
