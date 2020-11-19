@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import { FormikHandlers } from 'formik';
-import { pick, omit } from '@styled-system/props';
 
-import { SystemProps } from '~/lib';
-import { useId } from '~/hooks';
+import { pick, omit } from '@styled-system/props';
+import { FormikHandlers } from 'formik';
+
 import { Box, Flex, status, StatusMessage, Text } from '~/components';
+import { useId } from '~/hooks';
+import { SystemProps } from '~/lib';
 
 import StyledCheckbox from './components/StyledCheckbox';
 

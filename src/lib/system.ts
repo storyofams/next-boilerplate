@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react';
+import { css, DefaultTheme } from 'styled-components';
 import {
   system as styledSystem,
   background,
@@ -37,7 +38,6 @@ import {
   WidthProps,
   ColorProps,
 } from 'styled-system';
-import { css, DefaultTheme } from 'styled-components';
 
 export const _customSystem: Config = {
   roundedTop: {
@@ -170,7 +170,7 @@ export const _customSystem: Config = {
 
 const customSystem = styledSystem(_customSystem);
 
-export const system = p => css`
+export const system = (p) => css`
   ${compose(
     layout,
     color,

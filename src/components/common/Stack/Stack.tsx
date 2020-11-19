@@ -1,9 +1,9 @@
 import React, { FC, CSSProperties } from 'react';
-import { ResponsiveValue } from 'styled-system';
 import css from '@styled-system/css';
+import { ResponsiveValue } from 'styled-system';
 
-import { SystemProps, modifyResponsiveValue } from '~/lib';
 import { Box } from '~/components';
+import { SystemProps, modifyResponsiveValue } from '~/lib';
 
 type CSS = CSSProperties;
 

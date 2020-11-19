@@ -13,7 +13,7 @@ const transformAlias = (prop, propValue) => {
       const key: any = _customSystem[prop];
       const { properties, property } = key;
       if (properties) {
-        properties.forEach(_cssProp => (result[_cssProp] = propValue));
+        properties.forEach((_cssProp) => (result[_cssProp] = propValue));
       }
       if (property) {
         result[property] = propValue;
@@ -25,7 +25,7 @@ const transformAlias = (prop, propValue) => {
   return result;
 };
 
-export const transformAliasProps = props => {
+export const transformAliasProps = (props) => {
   let result = {};
   for (let prop in props) {
     if (typeof props[prop] === 'object') {

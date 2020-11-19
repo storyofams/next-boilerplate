@@ -1,9 +1,9 @@
 import React, { forwardRef, FC, HTMLAttributes } from 'react';
 import css from '@styled-system/css';
 
-import { SystemProps } from '~/lib';
 import { Box, Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
+import { SystemProps } from '~/lib';
 
 import ButtonBase from './components/ButtonBase/ButtonBase';
 

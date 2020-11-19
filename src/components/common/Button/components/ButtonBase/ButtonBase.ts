@@ -14,17 +14,17 @@ const ButtonBase = styled.button<ButtonProps>`
   justify-content: center;
   text-align: center;
   font-size: inherit;
-  font-weight: ${p => p.theme.fontWeights.medium};
-  padding: ${p => p.theme.space[1]}px ${p => p.theme.space[2]}px;
-  border-radius: ${p => p.theme.radii.xs};
-  background-color: ${p => p.theme.colors.transparent};
+  font-weight: ${(p) => p.theme.fontWeights.medium};
+  padding: ${(p) => p.theme.space[1]}px ${(p) => p.theme.space[2]}px;
+  border-radius: ${(p) => p.theme.radii.xs};
+  background-color: ${(p) => p.theme.colors.transparent};
   cursor: pointer;
   user-select: none;
   transition: background-color 0.18s, box-shadow 0.18s, border-color 0.18s,
     color 0.18s;
 
   &:hover {
-    color: ${p => p.theme.colors.grey700};
+    color: ${(p) => p.theme.colors.grey700};
   }
 
   ${variant({
@@ -89,7 +89,7 @@ const ButtonBase = styled.button<ButtonProps>`
     cursor: wait;
   }
 
-  ${p =>
+  ${(p) =>
     p.variant === 'underline' &&
     `
     &::before {

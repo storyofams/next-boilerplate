@@ -1,6 +1,6 @@
 import Alert from '@reach/alert';
-import styled from 'styled-components';
 import css from '@styled-system/css';
+import styled from 'styled-components';
 
 import { SystemProps, system } from '~/lib';
 
@@ -13,10 +13,10 @@ interface StatusMessageProps extends SystemProps {
 // this component alerts screen readers when its rendered.
 // should be used together with a formfield + formik
 
-const StatusMessage = styled(Alert).attrs(p => ({
+const StatusMessage = styled(Alert).attrs((p) => ({
   type: p.type || 'polite',
 }))<StatusMessageProps>(
-  p =>
+  (p) =>
     css({
       color: p.status !== 'default' && p.status ? `${p.status}500` : `grey900`,
       fontSize: 2,

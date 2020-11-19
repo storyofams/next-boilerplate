@@ -2,8 +2,8 @@ import React, { FC, ReactNode } from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 
-import { SystemProps, system } from '~/lib';
 import { Text } from '~/components/common/Text';
+import { SystemProps, system } from '~/lib';
 
 interface LinkProps extends SystemProps {
   children?: ReactNode;

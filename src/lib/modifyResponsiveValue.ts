@@ -5,7 +5,7 @@ export const modifyResponsiveValue = (value, cb) => {
     return value.map(cb);
   } else {
     const newObj = {};
-    Object.keys(value).forEach(k => (newObj[k] = cb(value[k])));
+    Object.keys(value).forEach((k) => (newObj[k] = cb(value[k])));
     return newObj;
   }
 };
