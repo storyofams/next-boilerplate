@@ -19,7 +19,7 @@
     "@styled-system/css": "^5.1.4",
     "@styled-system/props": "^5.1.4",
     "@svgr/webpack": "^5.0.1",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "date-fns": "^2.9.0",
     "fontfaceobserver": "^2.1.0",
     "formik": "^2.1.3",
