@@ -17,36 +17,35 @@
 
 ## Styled system
 
-This project uses an extension over styled-system that includes many handy shortcuts like `maxW`, `d='flex'`, `h` (instead of `height`). You can see all properties in the `@lib/system` file.
 If you build a primitive, always include the entire system like this:
 
 ```
 import {system, SystemProps} from '~/lib'
 
 const Button = styled.button<SystemProps<React.HTMLAttributes<HTMLDivElement>>>`
-    ...
-    ${system}
+  ...
+  ${system}
 `
 
-
 const Box = styled.button<SystemProps>`
-    ...
-    ${system}
+  ...
+  ${system}
 `
 ```
 
 ## The CSS function
 
-sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility
+Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility (example taken from https://styled-system.com/variants):
 
 ```
-import {css} from '~/lib'
+import styled from 'styled-components'
+import css from '@styled-system/css'
 
 const Button = styled.button(css({
-    color: 'grey400',
-    borderRadius: 'sm',
-    p: [1,2,3], // can take responsive arrays just like styled-system
-    d: 'inline-flex'
+  color: 'grey400',
+  borderRadius: 'sm',
+  p: [1,2,3], // can take responsive arrays just like styled-system
+  d: 'inline-flex'
 }))
 ```
 
@@ -54,35 +53,36 @@ this will automatically create a styled component that takes its properties from
 
 ## Variants
 
-Sometimes its good to have multiple variantions (or `variants`) of a single component. In this case use the `variant` prop like this:
+Sometimes its good to have multiple variantions (or `variants`) of a single component. In this case use the `variant` prop like this (example taken from https://styled-system.com/variants):
 
 ```
 import styled from 'styled-components'
-import {variant, system, SystemProps} from '~/lib'
+import { variant } from 'styled-system'
 
-const Text = styled(Box)<SystemProps>`
-  ${variant({
+const Button = styled('button')(
+  {
+    appearance: 'none',
+    fontFamily: 'inherit',
+  },
+  variant({
     variants: {
-      title: {
-        fontFamily: 'heading',
-        fontSize: 8,
-        fontWeight: 'bold',
-        lineHeight: '1',
-        letterSpacing: '-0.02em',
+      primary: {
+        color: 'white',
+        bg: 'primary',
       },
-      body: {
-        fontSize: 5,
-        lineHeight: 1.8,
+      secondary: {
+        color: 'white',
+        bg: 'secondary',
       },
     }
   })
-}
+)
 ```
 
 you can then use them like this
 
 ```
-<Text as='h2' variant='title'>Lorem Ipsum</Text>
+<Button variant='primary'>Primary</Button>
 ```
 
 ## Ease of use
