@@ -8,11 +8,11 @@ export default {
 };
 
 export const Basic = () => (
-  <Box p={4} d="flex">
-    <Box mr={[7, 5, 9]} h={100} w={100} bg="primary500" />
+  <Box p={4} display="flex">
+    <Box mr={[7, 5, 9]} height={100} width={100} bg="primary500" />
     <Box
-      h={100}
-      w={100}
+      height={100}
+      width={100}
       borderRadius="full"
       bg={['secondary400', 'secondary500']}
     />

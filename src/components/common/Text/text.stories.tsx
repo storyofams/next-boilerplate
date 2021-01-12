@@ -8,7 +8,7 @@ export default {
 };
 
 export const Headings = () => (
-  <Stack flexDir="column" space={3} p={4}>
+  <Stack flexDirection="column" space={3} p={4}>
     <Text variant="h1">h1: Heading 1</Text>
     <Text variant="h2">h2: Heading 2</Text>
     <Text variant="h3">h3: Heading 3</Text>
@@ -18,7 +18,7 @@ export const Headings = () => (
 );
 
 export const Paragraphs = () => (
-  <Stack flexDir="column" space={3} p={4}>
+  <Stack flexDirection="column" space={3} p={4}>
     <Text variant="pxl">pxl: Paragraph extra large</Text>
     <Text variant="pl">pl: Paragraph large</Text>
     <Text variant="pm">pm: Paragraph medium</Text>
@@ -28,7 +28,7 @@ export const Paragraphs = () => (
 );
 
 export const asProp = () => (
-  <Stack flexDir="column" space={3} p={4}>
+  <Stack flexDirection="column" space={3} p={4}>
     <Text as="h1">Title</Text>
     <Text>Body Text</Text>
     <Text as="i">Italic</Text>
@@ -52,11 +52,11 @@ export const Ellipsis = () => (
     m={4}
     p={2}
     borderRadius="xs"
-    w="200px"
+    width="200px"
     border="1px solid"
     borderColor="secondary400"
   >
-    <Text maxW="100%" ellipsis>
+    <Text maxWidth="100%" ellipsis>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
       impedit laudantium porro dolores, laboriosam laborum corrupti sapiente
       alias nulla possimus maiores mollitia harum temporibus, delectus eveniet

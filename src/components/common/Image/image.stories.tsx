@@ -8,7 +8,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Stack space={3} flexDir="column" p={4}>
+  <Stack space={3} flexDirection="column" p={4}>
     <Box>
       size80
       <Image size="80px" src="http://placekitten.com/200/300" />
@@ -49,7 +49,7 @@ export const LazyLoadStressTest = () => (
       The dimensions must be specified for this to work. So either height+width,
       flex-basis etc.. or a placeholder with the same dimensions
     </h1>
-    <Stack space={3} flexDir="column" mt={4}>
+    <Stack space={3} flexDirection="column" mt={4}>
       {array.map(i => (
         <Image
           key={i}

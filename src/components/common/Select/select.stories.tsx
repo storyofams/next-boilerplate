@@ -14,7 +14,7 @@ const options = [
 ];
 
 export const Basic = () => (
-  <Stack maxW="340px" flexDir="column" space={3} p={4}>
+  <Stack maxWidth="340px" flexDirection="column" space={3} p={4}>
     <Select options={options} placeholder="Placeholder" isSearchable={false} />
     <Select options={options} placeholder="Placeholder" isDisabled />
     <Select

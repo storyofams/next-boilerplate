@@ -8,7 +8,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button>Lorem Ipsum</Button>
     <Button isLoading>Lorem Ipsum</Button>
     <Button disabled>Lorem Ipsum</Button>
@@ -16,7 +16,7 @@ export const Basic = () => (
 );
 
 export const Primary = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button variant="primary">Lorem Ipsum</Button>
     <Button variant="primary" isLoading>
       Lorem Ipsum
@@ -28,7 +28,7 @@ export const Primary = () => (
 );
 
 export const Secondary = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button variant="secondary">Lorem Ipsum</Button>
     <Button variant="secondary" isLoading>
       Lorem Ipsum
@@ -39,7 +39,7 @@ export const Secondary = () => (
   </Stack>
 );
 export const Underline = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button variant="underline">Lorem Ipsum</Button>
     <Button variant="underline" isLoading>
       Lorem Ipsum
@@ -51,7 +51,7 @@ export const Underline = () => (
 );
 
 export const Link = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDir="column">
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button href="/" variant="primary">
       Lorem Ipsum
     </Button>

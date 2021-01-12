@@ -12,14 +12,8 @@ interface StackProps extends SystemProps {
   role?: string;
 }
 
-const Stack: FC<StackProps> = ({
-  space,
-  flexDirection,
-  flexDir,
-  role,
-  ...props
-}) => {
-  const commonDirectionProp = flexDir || flexDirection || 'row';
+const Stack: FC<StackProps> = ({ space, flexDirection, role, ...props }) => {
+  const commonDirectionProp = flexDirection || 'row';
 
   function parseDirection(direction) {
     const isRow = direction.startsWith('row');
@@ -40,7 +34,7 @@ const Stack: FC<StackProps> = ({
   return (
     <Box
       display="flex"
-      flexDir={commonDirectionProp}
+      flexDirection={commonDirectionProp}
       css={css({
         '>*+*': spacingProp,
       })}
