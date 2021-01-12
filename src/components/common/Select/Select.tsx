@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Props } from 'react-select';
 
-import { SystemProps } from '~/lib';
-import { useId } from '~/hooks';
 import { Box, StatusMessage, Text } from '~/components';
+import { useId } from '~/hooks';
+import { SystemProps } from '~/lib';
 
 import StyledSelect from './components/StyledSelect';
 

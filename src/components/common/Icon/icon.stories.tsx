@@ -11,7 +11,7 @@ export default {
 const allIcons = (require as any)
   .context('./library', false, /\.svg$/)
   .keys()
-  .map(k => k.replace('./', '').replace('.svg', ''));
+  .map((k) => k.replace('./', '').replace('.svg', ''));
 
 export const Library = () => (
   <Box p={4}>
@@ -29,7 +29,7 @@ export const Library = () => (
         <Box width="75%">Name</Box>
         <Box width="25%">Icon</Box>
       </Flex>
-      {allIcons.map(name => (
+      {allIcons.map((name: string) => (
         <Flex
           justifyContent="center"
           alignItems="center"

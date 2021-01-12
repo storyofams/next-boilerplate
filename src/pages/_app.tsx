@@ -1,12 +1,14 @@
-import App from 'next/app';
 import React from 'react';
+import { DefaultSeo } from 'next-seo';
+import App from 'next/app';
+import objectFitImages from 'object-fit-images';
 import { ThemeProvider } from 'styled-components';
+
+import { seo } from '~/config';
 import CSSreset from '~/styles/CSSreset';
 import theme from '~/styles/theme';
-import objectFitImages from 'object-fit-images';
+
 import '../../public/static/fonts/stylesheet.css';
-import { DefaultSeo } from 'next-seo';
-import { seo } from '~/config';
 export default class MyApp extends App {
   componentDidMount() {
     objectFitImages();

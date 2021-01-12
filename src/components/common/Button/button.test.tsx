@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { fireEvent, render } from '~/lib';
-
 import { Button } from '~/components';
+import { fireEvent, render } from '~/lib';
 
 test('registers event handlers', () => {
   const clickHandler = jest.fn();

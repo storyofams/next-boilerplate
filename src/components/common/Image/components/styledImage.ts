@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { SystemProps, system } from '~/lib';
 
-const objectFitPolyfill = p => {
+const objectFitPolyfill = (p) => {
   let res = [];
   if (p.objectFit) {
     res.push(`object-fit: ${p.objectFit}`);

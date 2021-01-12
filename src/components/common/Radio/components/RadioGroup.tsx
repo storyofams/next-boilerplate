@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, FC, isValidElement } from 'react';
 
-import { SystemProps } from '~/lib';
 import { Stack } from '~/components';
+import { SystemProps } from '~/lib';
 
 interface RadioElement {
   onChange?: any;
@@ -20,12 +20,12 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   onChange,
   ...props
 }) => {
-  const clones = Children.map(children, child => {
+  const clones = Children.map(children, (child) => {
     if (!isValidElement<RadioElement>(child)) {
       return child;
     }
     return cloneElement(child, {
-      onChange: e => onChange(e.target.value),
+      onChange: (e) => onChange(e.target.value),
       checked: child.props.value === value,
     });
   });

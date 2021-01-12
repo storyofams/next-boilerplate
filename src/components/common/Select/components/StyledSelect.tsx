@@ -78,13 +78,13 @@ export interface SelectProps extends Props {
   theme?: any;
 }
 
-export const Select: FC<SelectProps> = props => {
+export const Select: FC<SelectProps> = (props) => {
   const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (
     <StyledSelect
       styledTheme={styledTheme}
-      theme={t => ({
+      theme={(t) => ({
         ...t,
         colors: {
           ...t.colors,

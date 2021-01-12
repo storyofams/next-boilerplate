@@ -64,7 +64,7 @@ export interface TextProps {
 export const Text = styled(Box)<TextProps>`
   ${variant({ variants })}
 
-  ${p =>
+  ${(p) =>
     p.ellipsis &&
     `
     white-space: nowrap;

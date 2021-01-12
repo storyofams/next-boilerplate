@@ -1,8 +1,8 @@
 import React, { FC, forwardRef, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-import { SystemProps } from '~/lib';
 import { Box } from '~/components';
+import { SystemProps } from '~/lib';
 
 import req from './req';
 
@@ -45,6 +45,7 @@ export const Icon: FC<IconProps> = forwardRef(
 
     return (
       <StyledIcon ref={ref} aria-hidden as={getAs()} color={color} {...props}>
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
         <IconSvg.default />
       </StyledIcon>
     );

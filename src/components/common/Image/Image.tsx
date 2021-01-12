@@ -53,8 +53,8 @@ function getIO() {
     window.IntersectionObserver
   ) {
     io = new window.IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting || entry.intersectionRatio > 0) {
             loadImage(entry.target);
             console.log('loaded');

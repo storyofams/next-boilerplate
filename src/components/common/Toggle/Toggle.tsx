@@ -24,7 +24,7 @@ const Wrapper = styled.label<SystemProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${p => p.theme.colors.grey300};
+    background-color: ${(p) => p.theme.colors.grey300};
     transition: 0.4s;
     border-radius: 34px;
     transition: background-color 0.18s;
@@ -45,7 +45,7 @@ const Wrapper = styled.label<SystemProps>`
 
   > input:checked {
     & + .slider {
-      background-color: ${p => p.theme.colors.primary500};
+      background-color: ${(p) => p.theme.colors.primary500};
     }
     & + .slider:before {
       left: unset;
@@ -54,7 +54,7 @@ const Wrapper = styled.label<SystemProps>`
   }
 
   > input:focus + .slider {
-    box-shadow: 0px 0px 0px 2px ${p => p.theme.colors.grey100};
+    box-shadow: 0px 0px 0px 2px ${(p) => p.theme.colors.grey100};
   }
 
   ${system}
@@ -62,14 +62,14 @@ const Wrapper = styled.label<SystemProps>`
 
 export interface ToggleProps extends SystemProps {
   checked?: boolean;
-  onChange?(boolean): void;
+  onChange?(isToggled: boolean): void;
 }
 
 export const Toggle: FC<ToggleProps> = ({ checked, onChange }) => {
   return (
     <Wrapper>
       <input
-        onChange={e => onChange(e.target.checked)}
+        onChange={(e) => onChange(e.target.checked)}
         checked={checked}
         type="checkbox"
       />

@@ -1,5 +1,7 @@
 import { CSSProperties } from 'react';
+import { css, DefaultTheme } from 'styled-components';
 import {
+  system as styledSystem,
   space,
   color,
   typography,
@@ -22,10 +24,51 @@ import {
   PositionProps,
   ShadowProps,
   ResponsiveValue,
+  Config,
 } from 'styled-system';
-import { css, DefaultTheme } from 'styled-components';
 
-export const system = p => css`
+export const _customSystem: Config = {
+  textDecoration: true,
+  overflowX: true,
+  overflowY: true,
+  textTransform: true,
+  animation: true,
+  appearance: true,
+  transform: true,
+  transformOrigin: true,
+  visibility: true,
+  whiteSpace: true,
+  userSelect: true,
+  pointerEvents: true,
+  wordBreak: true,
+  overflowWrap: true,
+  textOverflow: true,
+  boxSizing: true,
+  cursor: true,
+  resize: true,
+  transition: true,
+  listStyleType: true,
+  listStylePosition: true,
+  listStyleImage: true,
+  objectFit: true,
+  objectPosition: true,
+  outline: true,
+  float: true,
+  willChange: true,
+  fill: {
+    property: 'fill',
+    scale: 'colors',
+  },
+  stroke: {
+    property: 'stroke',
+    scale: 'colors',
+  },
+  backgroundAttachment: true,
+};
+
+const customSystem = styledSystem(_customSystem);
+
+export const system = (p) => css`
   ${compose(
     space,
     color,
@@ -37,6 +80,7 @@ export const system = p => css`
     border,
     position,
     shadow,
+    customSystem,
   )(p)}
 `;
 type CSS = CSSProperties;

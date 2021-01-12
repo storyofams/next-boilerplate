@@ -50,7 +50,7 @@ export const LazyLoadStressTest = () => (
       flex-basis etc.. or a placeholder with the same dimensions
     </h1>
     <Stack space={3} flexDirection="column" mt={4}>
-      {array.map(i => (
+      {array.map((i) => (
         <Image
           key={i}
           size="80px"
