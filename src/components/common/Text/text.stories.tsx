@@ -4,50 +4,73 @@ import { Box, Stack, Text } from '~/components';
 
 export default {
   component: Text,
-  title: 'Text',
+  title: 'components/Text',
 };
 
-export const Headings = () => (
+export const Headings = (args) => (
   <Stack flexDir="column" space={3} p={4}>
-    <Text variant="h1">h1: Heading 1</Text>
-    <Text variant="h2">h2: Heading 2</Text>
-    <Text variant="h3">h3: Heading 3</Text>
-    <Text variant="h4">h4: Heading 4</Text>
-    <Text variant="h5">h5: Heading 5</Text>
+    <Text {...args} />
   </Stack>
 );
+Headings.args = {
+  variant: 'h1',
+  children: 'Heading',
+};
+Headings.argTypes = {
+  variant: {
+    control: { type: 'select', options: ['h1', 'h2', 'h3', 'h4', 'h5'] },
+  },
+};
 
-export const Paragraphs = () => (
+export const Paragraphs = (args) => (
   <Stack flexDir="column" space={3} p={4}>
-    <Text variant="pxl">pxl: Paragraph extra large</Text>
-    <Text variant="pl">pl: Paragraph large</Text>
-    <Text variant="pm">pm: Paragraph medium</Text>
-    <Text variant="psm">psm: Paragraph small</Text>
-    <Text variant="pxs">pxs: Paragraph extra small</Text>
+    <Text {...args} />
   </Stack>
 );
+Paragraphs.args = {
+  variant: 'pxl',
+  children: 'Paragraph',
+};
+Paragraphs.argTypes = {
+  variant: {
+    control: { type: 'select', options: ['pxl', 'pl', 'pm', 'psm', 'pxs'] },
+  },
+};
 
-export const asProp = () => (
+export const asProp = (args) => (
   <Stack flexDir="column" space={3} p={4}>
-    <Text as="h1">Title</Text>
-    <Text>Body Text</Text>
-    <Text as="i">Italic</Text>
-    <Text as="u">Underline</Text>
-    <Text as="abbr">I18N</Text>
-    <Text as="cite">Citation</Text>
-    <Text as="del">Deleted</Text>
-    <Text as="em">Emphasis</Text>
-    <Text as="ins">Inserted</Text>
-    <Text as="kbd">Ctrl + C</Text>
-    <Text as="mark">Highlighted</Text>
-    <Text as="s">Strikethrough</Text>
-    <Text as="samp">Sample</Text>
-    <Text as="sub">sub</Text>
-    <Text as="sup">sup</Text>
+    <Text {...args} />
   </Stack>
 );
+asProp.args = {
+  as: '',
+  children: 'As Text',
+};
+asProp.argTypes = {
+  as: {
+    control: {
+      type: 'select',
+      options: [
+        'h1',
+        'i',
+        'u',
+        'abbr',
+        'cite',
+        'del',
+        'em',
+        'ins',
+        'kbd',
+        'mark',
+        's',
+        'samp',
+        'sub',
+        'sup',
+      ],
+    },
+  },
+};
 
-export const Ellipsis = () => (
+export const Ellipsis = (args) => (
   <Box
     m={4}
     p={2}
@@ -56,7 +79,7 @@ export const Ellipsis = () => (
     border="1px solid"
     borderColor="secondary400"
   >
-    <Text maxW="100%" ellipsis>
+    <Text maxW="100%" {...args}>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
       impedit laudantium porro dolores, laboriosam laborum corrupti sapiente
       alias nulla possimus maiores mollitia harum temporibus, delectus eveniet
@@ -66,3 +89,6 @@ export const Ellipsis = () => (
     </Text>
   </Box>
 );
+Ellipsis.args = {
+  ellipsis: true,
+};
