@@ -4,3 +4,4 @@ export * from './system';
 export * from './test-utils';
 export * from './transformAliasProps';
 export * from './variant';
+export * from './sentry';

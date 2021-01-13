@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "@reach/alert": "^0.7.4",
+    "@sentry/browser": "^5.29.2",
+    "@sentry/integrations": "^5.29.2",
+    "@sentry/node": "^5.29.2",
     "@styled-system/css": "^5.1.4",
     "@styled-system/props": "^5.1.4",
     "@svgr/webpack": "^5.0.1",
@@ -41,6 +44,7 @@
     "@babel/runtime-corejs2": "^7.9.2",
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "@sentry/webpack-plugin": "^1.14.0",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
