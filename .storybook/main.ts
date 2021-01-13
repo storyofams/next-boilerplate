@@ -1,5 +1,15 @@
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
-  addons: ['@storybook/addon-actions', '@storybook/addon-controls'],
+  addons: [
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+      },
+    },
+    '@storybook/addon-actions',
+    '@storybook/addon-controls',
+    '@storybook/addon-viewport',
+  ],
 };
 
