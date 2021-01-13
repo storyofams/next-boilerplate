@@ -11,7 +11,9 @@ import theme from '~/styles/theme';
 
 import '../../public/static/fonts/stylesheet.css';
 
-initSentry();
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  initSentry();
+}
 
 export default class MyApp extends App {
   componentDidMount() {
