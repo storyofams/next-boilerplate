@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@reach/alert": "^0.7.4",
-    "@storybook/addon-docs": "^6.1.14",
     "@styled-system/css": "^5.1.4",
     "@styled-system/props": "^5.1.4",
     "@svgr/webpack": "^5.0.1",
@@ -44,6 +43,7 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-controls": "^6.1.14",
+    "@storybook/addon-docs": "^6.1.14",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/addon-viewport": "^6.1.14",
     "@storybook/addons": "^6.1.11",
