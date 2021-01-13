@@ -5,17 +5,24 @@ import { Checkbox, Stack } from '~/components';
 export default {
   component: Checkbox,
   title: 'Checkbox',
+  args: {
+    checked: false,
+    label: 'editable label text',
+    statusMessage: 'editable status text',
+    status: 'error',
+  },
+  argTypes: {
+    status: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'error'],
+      },
+    },
+  },
 };
 
-export const Basic = () => (
+export const Basic = (args) => (
   <Stack flexDir="column" alignItems="flex-start" p={4} space={1}>
-    <Checkbox checked />
-    <Checkbox />
-    <Checkbox label="lorem ipsum" />
-    <Checkbox
-      label="lorem ipsum"
-      statusMessage="Please click this"
-      status="error"
-    />
+    <Checkbox {...args} />
   </Stack>
 );

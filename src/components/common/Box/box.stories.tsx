@@ -1,20 +1,30 @@
 import React from 'react';
 
 import { Box } from '~/components';
+import theme from '~/styles/theme';
 
 export default {
   component: Box,
   title: 'Box',
+  args: {
+    bg: 'black',
+    shadow: null,
+    borderRadius: 0,
+    border: theme.borders.none,
+    d: 'flex',
+    w: 100,
+    h: 100,
+  },
+  argTypes: {
+    bg: { control: { type: 'select', options: theme.colors } },
+    borderRadius: { control: { type: 'select', options: theme.radii } },
+    shadow: { control: { type: 'select', options: theme.shadows } },
+    border: { control: { type: 'select', options: theme.borders } },
+  },
 };
 
-export const Basic = () => (
+export const Basic = (args) => (
   <Box p={4} d="flex">
-    <Box mr={[7, 5, 9]} h={100} w={100} bg="primary500" />
-    <Box
-      h={100}
-      w={100}
-      borderRadius="full"
-      bg={['secondary400', 'secondary500']}
-    />
+    <Box {...args} />
   </Box>
 );
