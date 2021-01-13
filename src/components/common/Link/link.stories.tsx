@@ -4,7 +4,7 @@ import theme from '~/styles/theme';
 
 export default {
   component: Link,
-  title: 'Link',
+  title: 'components/Link',
   args: {
     bg: theme.colors.success100,
     href: '/',

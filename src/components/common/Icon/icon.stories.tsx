@@ -10,7 +10,7 @@ const allIcons = (require as any)
 
 export default {
   component: Icon,
-  title: 'Icon',
+  title: 'components/Icon',
   args: {
     icon: 'heart',
   },

@@ -4,7 +4,7 @@ import { Box, Stack, Text } from '~/components';
 
 export default {
   component: Text,
-  title: 'Text',
+  title: 'components/Text',
 };
 
 export const Headings = (args) => (

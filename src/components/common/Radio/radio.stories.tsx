@@ -4,7 +4,7 @@ import { Box, Radio, RadioGroup } from '~/components';
 
 export default {
   component: Radio,
-  title: 'Radio',
+  title: 'components/Radio',
   args: {
     children: 'one',
     value: '1',

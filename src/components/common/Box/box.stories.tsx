@@ -5,7 +5,7 @@ import theme from '~/styles/theme';
 
 export default {
   component: Box,
-  title: 'Box',
+  title: 'components/Box',
   args: {
     bg: 'black',
     shadow: null,

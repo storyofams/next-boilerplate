@@ -5,7 +5,7 @@ import theme from '~/styles/theme';
 
 export default {
   component: Spinner,
-  title: 'Spinner',
+  title: 'components/Spinner',
   args: {
     size: 40,
     color: 'primary500',

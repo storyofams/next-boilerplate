@@ -10,7 +10,7 @@ const options = [
 
 export default {
   component: Select,
-  title: 'Select',
+  title: 'components/Select',
   args: {
     isSearchable: false,
     isDisabled: false,

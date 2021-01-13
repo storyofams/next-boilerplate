@@ -4,7 +4,7 @@ import { Box, Image, Stack } from '~/components';
 
 export default {
   component: Image,
-  title: 'Image',
+  title: 'components/Image',
   args: {
     objectFit: 'contain',
     objectPosition: '0% 0%',

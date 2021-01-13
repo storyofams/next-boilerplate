@@ -4,7 +4,7 @@ import { Toggle } from '~/components';
 
 export default {
   component: Toggle,
-  title: 'Toggle',
+  title: 'components/Toggle',
   argTypes: { onChange: { action: 'toggled' } },
   parameters: { controls: { hideNoControlsWarning: true } },
 };

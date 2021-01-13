@@ -5,7 +5,7 @@ import theme from '~/styles/theme';
 
 export default {
   component: Stack,
-  title: 'Stack',
+  title: 'components/Stack',
   args: {
     borderRadius: 'xs',
     size: '40px',

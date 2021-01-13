@@ -4,7 +4,7 @@ import { Button } from '~/components';
 
 export default {
   component: Button,
-  title: 'Button',
+  title: 'components/Button',
   args: { isLoading: false, disabled: false },
 };
 

@@ -4,7 +4,7 @@ import { Box, StatusMessage } from '~/components';
 
 export default {
   component: StatusMessage,
-  title: 'StatusMessage',
+  title: 'components/StatusMessage',
   args: {
     children: 'editable status text',
     status: 'default',

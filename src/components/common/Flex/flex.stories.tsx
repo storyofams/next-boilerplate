@@ -5,7 +5,7 @@ import theme from '~/styles/theme';
 
 export default {
   component: Flex,
-  title: 'Flex',
+  title: 'components/Flex',
   argTypes: {
     borderRadius: { control: { type: 'select', options: theme.radii } },
     borderColor: { control: { type: 'select', options: theme.colors } },

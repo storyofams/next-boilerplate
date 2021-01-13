@@ -4,7 +4,7 @@ import { Checkbox, Stack } from '~/components';
 
 export default {
   component: Checkbox,
-  title: 'Checkbox',
+  title: 'components/Checkbox',
   args: {
     checked: false,
     label: 'editable label text',

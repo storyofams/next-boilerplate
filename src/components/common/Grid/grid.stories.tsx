@@ -4,7 +4,7 @@ import { Box, Grid } from '~/components';
 
 export default {
   component: Grid,
-  title: 'Grid',
+  title: 'components/Grid',
 };
 
 export const Basic = (args) => (
