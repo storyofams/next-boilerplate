@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Stack, Toggle } from '~/components';
+import { Toggle } from '~/components';
 
 export default {
   component: Toggle,
@@ -9,8 +9,4 @@ export default {
   parameters: { controls: { hideNoControlsWarning: true } },
 };
 
-export const Basic = (args) => (
-  <Stack flexDir="column" alignItems="flex-start" p={4} space={3}>
-    <Toggle {...args} />
-  </Stack>
-);
+export const Basic = (args) => <Toggle {...args} />;
