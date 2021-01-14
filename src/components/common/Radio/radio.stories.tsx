@@ -17,7 +17,7 @@ export const Basic = () => {
         <Radio data-testid="radio-1" value="1">
           one
         </Radio>
-        <Radio data-testid="radio-2" value="2">
+        <Radio disabled data-testid="radio-2" value="2">
           two
         </Radio>
         <Radio data-testid="radio-3" value="3">

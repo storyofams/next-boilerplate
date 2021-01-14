@@ -186,6 +186,7 @@ const theme = {
       'input:checked + &': {
         display: 'block',
       },
+      'input:disabled ~ &': { cursor: 'not-allowed', opacity: 0.5 },
     },
     label: {
       fontSize: 3,
@@ -196,6 +197,7 @@ const theme = {
       'input:checked + &': {
         display: 'block',
       },
+      'input:disabled ~ &': { cursor: 'not-allowed', opacity: 0.5 },
     },
   },
   link: {

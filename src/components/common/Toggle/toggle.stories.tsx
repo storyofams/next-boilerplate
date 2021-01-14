@@ -17,5 +17,6 @@ export const Basic = () => (
   >
     <Toggle checked />
     <Toggle onChange={action('toggled')} />
+    <Toggle disabled onChange={action('toggled')} />
   </Stack>
 );

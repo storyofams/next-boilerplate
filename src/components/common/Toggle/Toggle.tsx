@@ -1,80 +1,69 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import { Box, BoxProps } from 'rebass/styled-components';
 
-import { SystemProps, system } from '~/lib';
-
-const Wrapper = styled.label<SystemProps>`
-  position: relative;
-  display: inline-block;
-  width: 52px;
-  height: 32px;
-
-  /* Hide default HTML checkbox */
-  > input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* The slider */
-  > .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${(p) => p.theme.colors.grey300};
-    transition: 0.4s;
-    border-radius: 34px;
-    transition: background-color 0.18s;
-  }
-
-  > .slider:before {
-    position: absolute;
-    content: '';
-    height: 24px;
-    width: 24px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.2s;
-    border-radius: 50%;
-    transition: left 0.18s, right 0.18s;
-  }
-
-  > input:checked {
-    & + .slider {
-      background-color: ${(p) => p.theme.colors.primary500};
-    }
-    & + .slider:before {
-      left: unset;
-      right: 4px;
-    }
-  }
-
-  > input:focus + .slider {
-    box-shadow: 0px 0px 0px 2px ${(p) => p.theme.colors.grey100};
-  }
-
-  ${system}
-`;
-
-export interface ToggleProps extends SystemProps {
+const styles = {
+  position: 'relative',
+  display: 'inline-block',
+  width: '52px',
+  height: '32px',
+  '& > input': { opacity: 0, width: '0', height: '0' },
+  '& > .slider': {
+    position: 'absolute',
+    cursor: 'pointer',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    backgroundColor: 'grey300',
+    border: '1px',
+    borderColor: 'grey300',
+    transition: ['0.4s', 'background-color 0.18s, border-color 0.18s'],
+    borderRadius: '34px',
+  },
+  '& > .slider:before': {
+    position: 'absolute',
+    content: "''",
+    height: '24px',
+    width: '24px',
+    left: '3px',
+    bottom: '3px',
+    backgroundColor: 'white',
+    transition: ['0.2s', 'left 0.18s, right 0.18s'],
+    borderRadius: '50%',
+  },
+  '& > input:checked': {
+    '& + .slider': {
+      backgroundColor: 'primary500',
+      border: '1px',
+      borderColor: 'primary500',
+    },
+    '& + .slider:before': { left: 'unset', right: '4px' },
+  },
+  '& > input:focus + .slider': { border: '1px', borderColor: 'primary500' },
+  '& > input:disabled + .slider': { cursor: 'not-allowed', opacity: 0.5 },
+};
+export interface ToggleProps extends Omit<BoxProps, 'onChange'> {
   checked?: boolean;
+  disabled?: boolean;
   onChange?(isToggled: boolean): void;
 }
 
-export const Toggle: FC<ToggleProps> = ({ checked, onChange }) => {
+export const Toggle: FC<ToggleProps> = ({
+  checked,
+  disabled,
+  onChange,
+  ...props
+}) => {
   return (
-    <Wrapper>
+    <Box sx={styles} as="label" {...props}>
       <input
         onChange={(e) => onChange(e.target.checked)}
         checked={checked}
+        disabled={disabled}
         type="checkbox"
       />
       <span className="slider" />
-    </Wrapper>
+    </Box>
   );
 };
 

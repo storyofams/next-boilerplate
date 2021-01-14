@@ -16,7 +16,7 @@ export const Basic = () => (
   >
     <Checkbox checked />
     <Checkbox />
-    <Checkbox label="lorem ipsum" />
+    <Checkbox disabled label="lorem ipsum" />
     <Checkbox
       label="lorem ipsum"
       statusMessage="Please click this"
