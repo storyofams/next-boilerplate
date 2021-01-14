@@ -39,6 +39,8 @@ const StyledSelect = styled(ReactSelect).attrs({
 
         &--is-disabled {
           background: ${theme.colors.grey200};
+          cursor: not-allowed;
+          opacity: 0.5;
 
           .react-select__placeholder {
             color: ${theme.colors.grey700};

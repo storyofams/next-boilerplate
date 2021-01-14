@@ -30,18 +30,20 @@ export const Select: FC<SelectProps> = ({
   status = false,
   statusMessage = false,
   label = false,
+  id: givenId,
   ...props
 }) => {
-  const id = useId();
+  const autoId = useId();
+  const id = givenId || `select-${autoId}`;
 
   return (
     <Box {...pick(props)}>
       {label && (
-        <Label htmlFor={`select-${id}`} mb={1} as="label">
+        <Label htmlFor={id} mb={1} as="label">
           {label}
         </Label>
       )}
-      <StyledSelect inputId={`select-${id}`} {...omit(props)} />
+      <StyledSelect inputId={id} {...omit(props)} />
 
       {statusMessage && (
         <StatusMessage status={status}>{statusMessage}</StatusMessage>
