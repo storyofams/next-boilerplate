@@ -12,5 +12,4 @@ export * from './common/Select';
 export * from './common/Spinner';
 export * from './common/Stack';
 export * from './common/StatusMessage';
-export * from './common/Text';
 export * from './common/Toggle';
