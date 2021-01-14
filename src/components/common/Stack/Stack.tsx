@@ -29,8 +29,6 @@ const Stack: FC<StackProps> = ({ space, flexDirection, role, ...props }) => {
     parseDirection,
   );
 
-  console.log(spacingProp);
-
   return (
     <Box
       display="flex"

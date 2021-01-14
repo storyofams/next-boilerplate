@@ -1,11 +1,6 @@
 import React from 'react';
 
-import { Select, Stack } from '~/components';
-
-export default {
-  component: Select,
-  title: 'Select',
-};
+import { Select } from '~/components';
 
 const options = [
   { value: '1', label: '0 - 9' },
@@ -13,29 +8,27 @@ const options = [
   { value: '3', label: '15+' },
 ];
 
-export const Basic = () => (
-  <Stack maxWidth="340px" flexDirection="column" space={3} p={4}>
-    <Select options={options} placeholder="Placeholder" isSearchable={false} />
-    <Select options={options} placeholder="Placeholder" isDisabled />
-    <Select
-      options={options}
-      placeholder="Placeholder"
-      value={{ value: '1', label: '0 - 9' }}
-    />
-    <Select
-      label="Name"
-      status="success"
-      statusMessage="probably won't use this"
-    />
-    <Select
-      label="Name"
-      status="warning"
-      statusMessage="This is not a strong password"
-    />
-    <Select
-      label="Name"
-      status="error"
-      statusMessage="This email address is already in use"
-    />
-  </Stack>
-);
+export default {
+  component: Select,
+  title: 'components/Select',
+  args: {
+    isSearchable: false,
+    isDisabled: false,
+    options,
+    placeholder: 'Placeholder',
+    value: { value: '1', label: '0 - 9' },
+    label: 'Label',
+    status: 'success',
+    statusMessage: 'Status text',
+  },
+  argTypes: {
+    status: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'error'],
+      },
+    },
+  },
+};
+
+export const Basic = (args) => <Select {...args} />;

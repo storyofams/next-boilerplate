@@ -3,17 +3,23 @@ import { action } from '@storybook/addon-actions';
 
 import { Box, Flex, Icon, Text } from '~/components';
 
-export default {
-  component: Icon,
-  title: 'Icon',
-};
-
 const allIcons = (require as any)
   .context('./library', false, /\.svg$/)
   .keys()
   .map((k) => k.replace('./', '').replace('.svg', ''));
 
-export const Library = () => (
+export default {
+  component: Icon,
+  title: 'components/Icon',
+  args: {
+    icon: 'heart',
+  },
+  argTypes: {
+    icon: { control: { type: 'select', options: allIcons } },
+  },
+};
+
+export const Library = (args) => (
   <Box p={4}>
     <h1>
       To add an icon simply drop the svg file in ./library and change the
@@ -58,12 +64,12 @@ const commonProps = {
   fontSize: 8 as any,
 };
 // different semantics
-export const AsButton = () => (
-  <Icon {...commonProps} onClick={action('clicked')} />
+export const AsButton = (args) => (
+  <Icon {...commonProps} {...args} onClick={action('clicked')} />
 );
 
-export const AsATag = () => (
-  <Icon {...commonProps} href="https://www.example.com" />
+export const AsATag = (args) => (
+  <Icon {...commonProps} {...args} href="https://www.example.com" />
 );
 
-export const AsH1 = () => <Icon {...commonProps} as="h1" />;
+export const AsH1 = (args) => <Icon {...commonProps} {...args} as="h1" />;

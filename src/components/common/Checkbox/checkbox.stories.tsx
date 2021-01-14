@@ -1,21 +1,24 @@
 import React from 'react';
 
-import { Checkbox, Stack } from '~/components';
+import { Checkbox } from '~/components';
 
 export default {
   component: Checkbox,
-  title: 'Checkbox',
+  title: 'components/Checkbox',
+  args: {
+    checked: false,
+    label: 'editable label text',
+    statusMessage: 'editable status text',
+    status: 'error',
+  },
+  argTypes: {
+    status: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'error'],
+      },
+    },
+  },
 };
 
-export const Basic = () => (
-  <Stack flexDirection="column" alignItems="flex-start" p={4} space={1}>
-    <Checkbox checked />
-    <Checkbox />
-    <Checkbox label="lorem ipsum" />
-    <Checkbox
-      label="lorem ipsum"
-      statusMessage="Please click this"
-      status="error"
-    />
-  </Stack>
-);
+export const Basic = (args) => <Checkbox {...args} />;
