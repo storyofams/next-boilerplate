@@ -40,7 +40,7 @@ const Button: FC<ButtonProps> = forwardRef(
     const _props = {
       ...props,
       disabled: disabled || isLoading,
-      variant,
+      variant: 'primary',
       ref,
     };
 

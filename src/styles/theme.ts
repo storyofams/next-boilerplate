@@ -113,6 +113,25 @@ const theme = {
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
     none: 'none',
   },
+  forms: {
+    label: {
+      fontSize: 3,
+    },
+    checkbox: {
+      mr: 1,
+      color: 'primary500',
+      'input:checked + &': {
+        display: 'block',
+      },
+    },
+    radio: {
+      mr: 1,
+      color: 'primary500',
+      'input:checked + &': {
+        display: 'block',
+      },
+    },
+  },
   buttons: {
     primary: {
       color: 'grey900',

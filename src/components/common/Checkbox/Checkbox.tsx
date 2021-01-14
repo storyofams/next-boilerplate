@@ -1,20 +1,21 @@
 import React, { FC } from 'react';
 
+import {
+  Checkbox as RebassCheckbox,
+  Label,
+  CheckboxProps as RebassCheckboxProps,
+} from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { FormikHandlers } from 'formik';
+import { Box, BoxProps } from 'rebass/styled-components';
 
-import { Box, Flex, status, StatusMessage, Text } from '~/components';
+import { status, StatusMessage } from '~/components';
 import { useId } from '~/hooks';
-import { SystemProps } from '~/lib';
 
-import StyledCheckbox from './components/StyledCheckbox';
-
-interface CheckboxProps extends SystemProps {
-  checked?: boolean;
-  onChange?: FormikHandlers['handleChange'];
+interface CheckboxProps extends RebassCheckboxProps, BoxProps {
   statusMessage?: string;
   label?: string;
   status?: status;
+  checked?: boolean;
   // html props
   disabled?: boolean;
   id?: string;
@@ -28,19 +29,14 @@ const Checkbox: FC<CheckboxProps> = ({
   ...props
 }) => {
   const autoId = useId();
-
   const id = givenId || `checkbox-${autoId}`;
 
   return (
     <Box {...pick(props)}>
-      <Flex alignItems="center">
-        <StyledCheckbox id={id} {...omit(props)} />
-        {!!label && (
-          <Text ml={2} htmlFor={id} as="label">
-            {label}
-          </Text>
-        )}
-      </Flex>
+      <Label htmlFor={id}>
+        <RebassCheckbox id={id} {...omit(props)} />
+        {label}
+      </Label>
       {!!statusMessage && (
         <StatusMessage status={status}>{statusMessage}</StatusMessage>
       )}

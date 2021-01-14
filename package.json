@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@reach/alert": "^0.7.4",
+    "@rebass/forms": "^4.0.6",
     "@styled-system/css": "^5.1.4",
     "@styled-system/props": "^5.1.4",
     "@svgr/webpack": "^5.0.1",
