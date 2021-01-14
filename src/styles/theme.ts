@@ -113,77 +113,6 @@ const theme = {
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
     none: 'none',
   },
-  forms: {
-    label: {
-      fontSize: 3,
-    },
-    checkbox: {
-      mr: 1,
-      color: 'primary500',
-      'input:checked + &': {
-        display: 'block',
-      },
-    },
-    radio: {
-      mr: 1,
-      color: 'primary500',
-      'input:checked + &': {
-        display: 'block',
-      },
-    },
-  },
-  text: {
-    h1: {
-      fontSize: [8, 10],
-      fontWeight: 'bold',
-      lineHeight: 'medium',
-    },
-    h2: {
-      fontSize: [7, 9],
-      fontWeight: 'bold',
-      lineHeight: 'medium',
-    },
-    h3: {
-      fontSize: [6, 8],
-      fontWeight: 'bold',
-      lineHeight: 'medium',
-    },
-    h4: {
-      fontSize: [5, 6],
-      fontWeight: 'bold',
-      lineHeight: 'medium',
-    },
-    h5: {
-      fontSize: [3, 5],
-      fontWeight: 'bold',
-      lineHeight: 'medium',
-    },
-    pxl: {
-      fontSize: [2, 4],
-      fontWeight: 'regular',
-      lineHeight: 'medium',
-    },
-    plg: {
-      fontSize: [2, 3],
-      fontWeight: 'regular',
-      lineHeight: 'medium',
-    },
-    pmd: {
-      fontSize: [1, 2],
-      fontWeight: 'regular',
-      lineHeight: 'medium',
-    },
-    psm: {
-      fontSize: 1,
-      fontWeight: 'regular',
-      lineHeight: 'medium',
-    },
-    pxs: {
-      fontSize: 0,
-      fontWeight: 'regular',
-      lineHeight: 'medium',
-    },
-  },
   buttons: {
     primary: {
       color: 'grey900',
@@ -242,6 +171,84 @@ const theme = {
           bg: 'secondary400',
         },
       },
+    },
+  },
+  forms: {
+    checkbox: {
+      mr: 1,
+      color: 'primary500',
+      'input:checked + &': {
+        display: 'block',
+      },
+    },
+    label: {
+      fontSize: 3,
+    },
+    radio: {
+      mr: 1,
+      color: 'primary500',
+      'input:checked + &': {
+        display: 'block',
+      },
+    },
+  },
+  link: {
+    transition:
+      'border-color 0.18s ease-in-out, color 0.18s ease-in-out, box-shadow 0.18s ease-in-out, opacity 0.18s ease-in-out, background-color 0.18s ease-in-out',
+    cursor: 'pointer',
+    '&:hover': { opacity: 0.7 },
+    '&:disabled': { opacity: 0.5, cursor: 'not-allowed' },
+  },
+  text: {
+    h1: {
+      fontSize: [8, 10],
+      fontWeight: 'bold',
+      lineHeight: 'medium',
+    },
+    h2: {
+      fontSize: [7, 9],
+      fontWeight: 'bold',
+      lineHeight: 'medium',
+    },
+    h3: {
+      fontSize: [6, 8],
+      fontWeight: 'bold',
+      lineHeight: 'medium',
+    },
+    h4: {
+      fontSize: [5, 6],
+      fontWeight: 'bold',
+      lineHeight: 'medium',
+    },
+    h5: {
+      fontSize: [3, 5],
+      fontWeight: 'bold',
+      lineHeight: 'medium',
+    },
+    pxl: {
+      fontSize: [2, 4],
+      fontWeight: 'regular',
+      lineHeight: 'medium',
+    },
+    plg: {
+      fontSize: [2, 3],
+      fontWeight: 'regular',
+      lineHeight: 'medium',
+    },
+    pmd: {
+      fontSize: [1, 2],
+      fontWeight: 'regular',
+      lineHeight: 'medium',
+    },
+    psm: {
+      fontSize: 1,
+      fontWeight: 'regular',
+      lineHeight: 'medium',
+    },
+    pxs: {
+      fontSize: 0,
+      fontWeight: 'regular',
+      lineHeight: 'medium',
     },
   },
 };
