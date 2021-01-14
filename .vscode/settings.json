@@ -17,7 +17,7 @@
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
     "**/.gitignore": true,
-    "**/next.config.js": true,
+    "**/next.config.js": false,
     "**/jest.setup.js": true
   },
   "search.exclude": {
