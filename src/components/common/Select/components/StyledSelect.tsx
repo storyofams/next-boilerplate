@@ -2,12 +2,10 @@ import React, { FC, useContext } from 'react';
 import ReactSelect, { Props } from 'react-select';
 import styled, { css, ThemeContext } from 'styled-components';
 
-import { SystemProps, system } from '~/lib';
-
 const StyledSelect = styled(ReactSelect).attrs({
   className: 'react-select',
   classNamePrefix: 'react-select',
-})<SystemProps>(
+})(
   ({ styledTheme: theme }) => css`
     font-size: ${theme.fontSizes[2]};
 
@@ -69,8 +67,6 @@ const StyledSelect = styled(ReactSelect).attrs({
         }
       }
     }
-
-    ${system}
   `,
 );
 

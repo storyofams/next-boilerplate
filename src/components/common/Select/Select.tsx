@@ -1,15 +1,21 @@
 import React, { FC } from 'react';
+import { Label } from '@rebass/forms/styled-components';
+import { pick, omit } from '@styled-system/props';
 import { Props } from 'react-select';
+import { Box, BoxProps } from 'rebass/styled-components';
 
-import { Box, StatusMessage, Text } from '~/components';
+import { StatusMessage } from '~/components';
 import { useId } from '~/hooks';
-import { SystemProps } from '~/lib';
 
 import StyledSelect from './components/StyledSelect';
 
 export type status = 'default' | 'success' | 'warning' | 'error';
-
-export interface SelectProps extends SystemProps, Props {
+export interface SelectProps
+  extends Props,
+    Omit<
+      BoxProps,
+      'defaultValue' | 'onBlur' | 'onFocus' | 'onKeyDown' | 'tabIndex' | 'value'
+    > {
   status?: status;
   statusMessage?: string;
   label?: string;
@@ -29,13 +35,13 @@ export const Select: FC<SelectProps> = ({
   const id = useId();
 
   return (
-    <Box>
+    <Box {...pick(props)}>
       {label && (
-        <Text htmlFor={`select-${id}`} mb={1} as="label">
+        <Label htmlFor={`select-${id}`} mb={1} as="label">
           {label}
-        </Text>
+        </Label>
       )}
-      <StyledSelect inputId={`select-${id}`} {...props} />
+      <StyledSelect inputId={`select-${id}`} {...omit(props)} />
 
       {statusMessage && (
         <StatusMessage status={status}>{statusMessage}</StatusMessage>
