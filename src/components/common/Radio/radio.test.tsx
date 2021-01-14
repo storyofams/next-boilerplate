@@ -3,8 +3,14 @@ import { render, fireEvent } from 'test-utils';
 
 import { Basic } from './radio.stories';
 
+const args = {
+  children: 'one',
+  value: '1',
+};
+
 test('receives change events', async () => {
-  const { getByLabelText, getByTestId } = render(<Basic />);
+  // have to provide args/props, since we are rendering a story that expects it
+  const { getByLabelText, getByTestId } = render(<Basic {...args} />);
   const firstRadio: any = getByLabelText(/one/i);
 
   expect(firstRadio.checked).toBeFalsy();
