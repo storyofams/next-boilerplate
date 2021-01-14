@@ -115,6 +115,8 @@ const theme = {
   },
   buttons: {
     primary: {
+      px: 2,
+      py: 1,
       color: 'grey900',
       bg: 'primary500',
       borderColor: 'primary500',
@@ -126,6 +128,8 @@ const theme = {
       },
     },
     outline: {
+      px: 2,
+      py: 1,
       color: 'primary500',
       bg: 'transparent',
       border: '1px',
@@ -138,6 +142,8 @@ const theme = {
       },
     },
     secondary: {
+      px: 2,
+      py: 1,
       color: 'white',
       bg: 'secondary500',
       borderColor: 'secondary500',

@@ -1,5 +1,4 @@
 import React, { forwardRef, FC, HTMLAttributes } from 'react';
-import css from '@styled-system/css';
 import {
   Box,
   Button as RebassButton,
@@ -27,12 +26,13 @@ const styles = {
   fontSize: 'inherit',
   fontWeight: 'medium',
   borderRadius: 'xs',
-  cursor: 'pointer',
   userSelect: 'none',
-  px: 2,
-  py: 1,
+  cursor: 'pointer',
   transition:
-    'background-color 0.18s, box-shadow 0.18s, border-color 0.18s,\n    color 0.18s',
+    'background-color 0.18s, box-shadow 0.18s, border-color 0.18s, color 0.18s',
+  '&:disabled': { cursor: 'not-allowed', opacity: 0.5 },
+  '&:active': { boxShadow: 'none' },
+  '&[data-is-loading]': { cursor: 'wait' },
 };
 
 const Button: FC<ButtonProps> = forwardRef(
@@ -40,7 +40,7 @@ const Button: FC<ButtonProps> = forwardRef(
     const _props = {
       ...props,
       disabled: disabled || isLoading,
-      variant: 'primary',
+      variant,
       ref,
     };
 
@@ -65,7 +65,7 @@ const Button: FC<ButtonProps> = forwardRef(
     }
     if (href) {
       return (
-        <Link href={href} css={css({ '&:hover': { opacity: 1 } })}>
+        <Link href={href} sx={{ '&:hover': { opacity: 1 } }}>
           <RebassButton sx={styles} {..._props}>
             {children}
           </RebassButton>
@@ -75,7 +75,7 @@ const Button: FC<ButtonProps> = forwardRef(
 
     if (to) {
       return (
-        <Link to={to} css={css({ '&:hover': { opacity: 1 } })}>
+        <Link to={to} sx={{ '&:hover': { opacity: 1 } }}>
           <RebassButton sx={styles} {..._props}>
             {children}
           </RebassButton>
