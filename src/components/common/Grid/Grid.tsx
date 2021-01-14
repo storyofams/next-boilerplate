@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Box, Flex } from 'rebass/styled-components';
+import { Box, BoxProps, Flex } from 'rebass/styled-components';
 import { ResponsiveValue } from 'styled-system';
 
-import { SystemProps, modifyResponsiveValue } from '~/lib';
+import { modifyResponsiveValue } from '~/lib';
 
-interface GridProps extends SystemProps {
+interface GridProps extends BoxProps {
   rowSize: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
   columnGap?: ResponsiveValue<number>;
