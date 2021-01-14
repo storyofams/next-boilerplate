@@ -1,4 +1,4 @@
-import { Flex, Text } from '~/components';
+import { Flex, Text } from 'rebass/styled-components';
 
 const getError = ({ res, err }) => {
   let statusCode = 404;

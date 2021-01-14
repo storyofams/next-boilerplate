@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Radio, RadioGroup } from '~/components';
+import { Radio, RadioGroup } from '~/components';
 
 export default {
   component: Radio,

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Image, Stack } from '~/components';
+import { Image, Stack } from '~/components';
 
 export default {
   component: Image,

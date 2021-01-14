@@ -1,6 +1,7 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, StatusMessage } from '~/components';
+import { StatusMessage } from '~/components';
 
 export default {
   component: StatusMessage,
@@ -8,7 +9,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Box p={4} maxWidth="270px" flexDirection="column">
+  <Box p={4} maxWidth="270px" sx={{ flexDirection: 'column' }}>
     <StatusMessage status="default">
       Lorem, ipsum dolor. (default)
     </StatusMessage>
