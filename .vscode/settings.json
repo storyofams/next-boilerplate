@@ -7,18 +7,11 @@
     "**/storybook-static": true,
     "**/.next": true,
     "**/yarn-error.log": true,
-    "**/public": true,
     "**/.cache": true,
-    "**/coverage": true,
     "**/.github": true,
-    "**/.commitlintrc.js": true,
     "**/.babelrc": true,
-    "**/.eslintignore": true,
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
-    "**/.gitignore": true,
-    "**/next.config.js": true,
-    "**/jest.setup.js": true
   },
   "search.exclude": {
     "**/.next": true,
