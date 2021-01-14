@@ -1,13 +1,16 @@
 import React, { forwardRef, FC, HTMLAttributes } from 'react';
 import css from '@styled-system/css';
-import { Box, Button as RebassButton } from 'rebass/styled-components';
+import {
+  Box,
+  Button as RebassButton,
+  ButtonProps as RebassButtonProps,
+} from 'rebass/styled-components';
 
 import { Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
-import { SystemProps } from '~/lib';
 interface ButtonProps
   extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
-    SystemProps {
+    RebassButtonProps {
   isLoading?: boolean;
   disabled?: boolean;
   variant?: 'primary' | 'outline' | 'secondary' | 'underline';
