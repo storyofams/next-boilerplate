@@ -1,6 +1,7 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Stack } from '~/components';
+import { Stack } from '~/components';
 
 export default {
   component: Stack,
@@ -14,42 +15,53 @@ export const Basic = () => (
       creates a stack.
     </h1>
     <Stack space={3} mt={4}>
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
+      <Box>
+        <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
+      </Box>
+      <Box>
+        <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
+      </Box>
     </Stack>
   </Box>
 );
 
 export const Responsive = () => (
   <Box p={4}>
-    <Stack flexDirection={['row', 'column']} space={[1, 2, 3]}>
-      <Box borderRadius="xs" size="40px" bg="primary500" />
-      <Box borderRadius="xs" size="40px" bg="primary500" />
-      <Box borderRadius="xs" size="40px" bg="primary500" />
-      <Box borderRadius="xs" size="40px" bg="primary500" />
+    <Stack space={[1, 2, 3]}>
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
     </Stack>
-    <Stack mt={3} space={3} flexDirection={['row', 'column', 'row']}>
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
+    <Stack mt={3} space={3} flexDirection={['column', 'row', 'column']}>
+      <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary400" sx={{ borderRadius: 'xs' }} />
     </Stack>
-    <Stack mt={3} space={3} flexDirection={['column', 'row']}>
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
+    <Stack mt={3} space={3} flexDirection={['row', 'column']}>
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
+      <Box size="40px" bg="secondary500" sx={{ borderRadius: 'xs' }} />
     </Stack>
   </Box>
 );
 
 export const OverwritingMargin = () => (
   <Stack p={4} space={[0, 5, 9]}>
-    <Box mt={5} borderRadius="xs" size="40px" bg="primary500" />
-    <Box mr={5} borderRadius="xs" mt={5} size="40px" bg="primary500" />
-    <Box ml={0} borderRadius="xs" size="40px" bg="primary500" />
+    <Box mt={5} size="40px" bg="primary500" sx={{ borderRadius: 'xs' }} />
+    <Box
+      mr={5}
+      mt={5}
+      size="40px"
+      bg="primary500"
+      sx={{ borderRadius: 'xs' }}
+    />
+    <Box ml={0} size="40px" bg="primary500" sx={{ borderRadius: 'xs' }} />
   </Stack>
 );
