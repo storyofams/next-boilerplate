@@ -32,8 +32,8 @@ export const Library = (args) => (
         alignItems="center"
         borderBottom="1px solid #D9D9D9"
       >
-        <Box w="75%">Name</Box>
-        <Box w="25%">Icon</Box>
+        <Box width="75%">Name</Box>
+        <Box width="25%">Icon</Box>
       </Flex>
       {allIcons.map((name: string) => (
         <Flex
@@ -43,12 +43,12 @@ export const Library = (args) => (
           key={name}
           py={2}
         >
-          <Box w="75%">
+          <Box width="75%">
             <Text mr={5} fontSize={2} lineHeight="normal">
               {name}
             </Text>
           </Box>
-          <Flex w="25%">
+          <Flex width="25%">
             <Icon icon={name} color="grey800" mr={10} fontSize={4} />
           </Flex>
         </Flex>

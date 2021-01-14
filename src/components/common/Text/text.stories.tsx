@@ -1,17 +1,13 @@
 import React from 'react';
 
-import { Box, Stack, Text } from '~/components';
+import { Box, Text } from '~/components';
 
 export default {
   component: Text,
   title: 'components/Text',
 };
 
-export const Headings = (args) => (
-  <Stack flexDir="column" space={3} p={4}>
-    <Text {...args} />
-  </Stack>
-);
+export const Headings = (args) => <Text {...args} />;
 Headings.args = {
   variant: 'h1',
   children: 'Heading',
@@ -22,11 +18,7 @@ Headings.argTypes = {
   },
 };
 
-export const Paragraphs = (args) => (
-  <Stack flexDir="column" space={3} p={4}>
-    <Text {...args} />
-  </Stack>
-);
+export const Paragraphs = (args) => <Text {...args} />;
 Paragraphs.args = {
   variant: 'pxl',
   children: 'Paragraph',
@@ -37,11 +29,7 @@ Paragraphs.argTypes = {
   },
 };
 
-export const asProp = (args) => (
-  <Stack flexDir="column" space={3} p={4}>
-    <Text {...args} />
-  </Stack>
-);
+export const asProp = (args) => <Text {...args} />;
 asProp.args = {
   as: '',
   children: 'As Text',
@@ -75,7 +63,7 @@ export const Ellipsis = (args) => (
     m={4}
     p={2}
     borderRadius="xs"
-    w="200px"
+    width="200px"
     border="1px solid"
     borderColor="secondary400"
   >

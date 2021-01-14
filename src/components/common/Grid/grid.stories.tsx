@@ -15,22 +15,22 @@ export const Basic = (args) => (
     </h1>
     <Grid {...args}>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
     </Grid>
   </Box>
@@ -52,22 +52,22 @@ export const Responsive = (args) => (
   <Box p={5}>
     <Grid {...args}>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
       <Box>
-        <Box w="100%" h="40px" borderRadius="xs" bg="secondary400" />
+        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
       </Box>
     </Grid>
   </Box>

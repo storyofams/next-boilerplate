@@ -20,7 +20,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Box p={4} maxW="270px" flexDir="column">
+  <Box p={4} maxWidth="270px" flexDirection="column">
     <StatusMessage {...args} />
   </Box>
 );

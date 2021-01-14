@@ -24,7 +24,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Box p={4} d="flex">
+  <Box p={4} display="flex">
     <Box {...args} />
   </Box>
 );

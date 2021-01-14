@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Checkbox, Stack } from '~/components';
+import { Checkbox } from '~/components';
 
 export default {
   component: Checkbox,
@@ -21,8 +21,4 @@ export default {
   },
 };
 
-export const Basic = (args) => (
-  <Stack flexDir="column" alignItems="flex-start" p={4} space={1}>
-    <Checkbox {...args} />
-  </Stack>
-);
+export const Basic = (args) => <Checkbox {...args} />;

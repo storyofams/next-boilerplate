@@ -35,19 +35,19 @@ export const Basic = (args) => (
 
 export const Responsive = (args) => (
   <Box p={4}>
-    <Stack flexDir={args.flexDirTop} space={[1, 2, 3]}>
+    <Stack flexDirection={args.flexDirTop} space={[1, 2, 3]}>
       <Box {...args} />
       <Box {...args} />
       <Box {...args} />
       <Box {...args} />
     </Stack>
-    <Stack mt={3} space={3} flexDir={args.flexDirMiddle}>
+    <Stack mt={3} space={3} flexDirection={args.flexDirMiddle}>
       <Box borderRadius="xs" size="40px" bg="secondary400" />
       <Box borderRadius="xs" size="40px" bg="secondary400" />
       <Box borderRadius="xs" size="40px" bg="secondary400" />
       <Box borderRadius="xs" size="40px" bg="secondary400" />
     </Stack>
-    <Stack mt={3} space={3} flexDir={args.flexDirBottom}>
+    <Stack mt={3} space={3} flexDirection={args.flexDirBottom}>
       <Box borderRadius="xs" size="40px" bg="secondary500" />
       <Box borderRadius="xs" size="40px" bg="secondary500" />
       <Box borderRadius="xs" size="40px" bg="secondary500" />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Select, Stack } from '~/components';
+import { Select } from '~/components';
 
 const options = [
   { value: '1', label: '0 - 9' },
@@ -31,8 +31,4 @@ export default {
   },
 };
 
-export const Basic = (args) => (
-  <Stack maxW="340px" flexDir="column" space={3} p={4}>
-    <Select {...args} />
-  </Stack>
-);
+export const Basic = (args) => <Select {...args} />;
