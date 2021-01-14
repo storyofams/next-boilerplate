@@ -1,6 +1,7 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Grid } from '~/components';
+import { Grid } from '~/components';
 
 export default {
   component: Grid,
@@ -15,22 +16,53 @@ export const Basic = () => (
     </h1>
     <Grid rowSize={3} rowGap={3} columnGap={3} mt={4}>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
+      </Box>
+
+      <Box>
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
-      </Box>
-      <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
     </Grid>
   </Box>
@@ -38,24 +70,54 @@ export const Basic = () => (
 
 export const Responsive = () => (
   <Box p={5}>
-    <Grid rowSize={[1, 2, 4]} rowGap={[1, 1, 3]} columnGap={[1, 1, 3]}>
+    <Grid rowSize={[1, 2, 3]} rowGap={[1, 1, 3]} columnGap={[1, 1, 3]}>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
       <Box>
-        <Box width="100%" height="40px" borderRadius="xs" bg="secondary400" />
+        <Box
+          width="100%"
+          height="40px"
+          bg="secondary400"
+          sx={{ borderRadius: 'xs' }}
+        />
       </Box>
     </Grid>
   </Box>
