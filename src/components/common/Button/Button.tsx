@@ -1,21 +1,36 @@
 import React, { forwardRef, FC, HTMLAttributes } from 'react';
 import css from '@styled-system/css';
+import { Box, Button as RebassButton } from 'rebass/styled-components';
 
-import { Box, Spinner } from '~/components';
+import { Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
 import { SystemProps } from '~/lib';
-
-import ButtonBase from './components/ButtonBase/ButtonBase';
-
 interface ButtonProps
   extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
     SystemProps {
   isLoading?: boolean;
   disabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'underline';
+  variant?: 'primary' | 'outline' | 'secondary' | 'underline';
   href?: string;
   to?: string;
 }
+
+const styles = {
+  position: 'relative',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textAlign: 'center',
+  fontSize: 'inherit',
+  fontWeight: 'medium',
+  borderRadius: 'xs',
+  cursor: 'pointer',
+  userSelect: 'none',
+  px: 2,
+  py: 1,
+  transition:
+    'background-color 0.18s, box-shadow 0.18s, border-color 0.18s,\n    color 0.18s',
+};
 
 const Button: FC<ButtonProps> = forwardRef(
   ({ isLoading, disabled, children, variant, href, to, ...props }, ref) => {
@@ -28,20 +43,29 @@ const Button: FC<ButtonProps> = forwardRef(
 
     if (isLoading) {
       return (
-        <ButtonBase data-is-loading {..._props}>
-          <Box position="absolute">
+        <RebassButton data-is-loading sx={styles} {..._props}>
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
             <Spinner size={16} />
           </Box>
           <Box display="flex" color="transparent">
             {children}
           </Box>
-        </ButtonBase>
+        </RebassButton>
       );
     }
     if (href) {
       return (
         <Link href={href} css={css({ '&:hover': { opacity: 1 } })}>
-          <ButtonBase {..._props}>{children}</ButtonBase>
+          <RebassButton sx={styles} {..._props}>
+            {children}
+          </RebassButton>
         </Link>
       );
     }
@@ -49,12 +73,18 @@ const Button: FC<ButtonProps> = forwardRef(
     if (to) {
       return (
         <Link to={to} css={css({ '&:hover': { opacity: 1 } })}>
-          <ButtonBase {..._props}>{children}</ButtonBase>
+          <RebassButton sx={styles} {..._props}>
+            {children}
+          </RebassButton>
         </Link>
       );
     }
 
-    return <ButtonBase {..._props}>{children}</ButtonBase>;
+    return (
+      <RebassButton sx={styles} {..._props}>
+        {children}
+      </RebassButton>
+    );
   },
 );
 

@@ -7,14 +7,6 @@ export default {
   title: 'Button',
 };
 
-export const Basic = () => (
-  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
-    <Button>Lorem Ipsum</Button>
-    <Button isLoading>Lorem Ipsum</Button>
-    <Button disabled>Lorem Ipsum</Button>
-  </Stack>
-);
-
 export const Primary = () => (
   <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button variant="primary">Lorem Ipsum</Button>
@@ -26,7 +18,17 @@ export const Primary = () => (
     </Button>
   </Stack>
 );
-
+export const Outline = () => (
+  <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
+    <Button variant="outline">Lorem Ipsum</Button>
+    <Button variant="outline" isLoading>
+      Lorem Ipsum
+    </Button>
+    <Button variant="outline" disabled>
+      Lorem Ipsum
+    </Button>
+  </Stack>
+);
 export const Secondary = () => (
   <Stack alignItems="flex-start" p={4} space={3} flexDirection="column">
     <Button variant="secondary">Lorem Ipsum</Button>

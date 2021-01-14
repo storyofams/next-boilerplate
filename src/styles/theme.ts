@@ -113,6 +113,66 @@ const theme = {
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
     none: 'none',
   },
+  buttons: {
+    primary: {
+      color: 'grey900',
+      bg: 'primary500',
+      borderColor: 'primary500',
+      boxShadow: 'sm',
+      '&:hover, &:active': {
+        color: 'grey900',
+        bg: 'primary400',
+        borderColor: 'primary400',
+      },
+    },
+    outline: {
+      color: 'primary500',
+      bg: 'transparent',
+      border: '1px',
+      borderColor: 'primary500',
+      boxShadow: 'sm',
+      '&:hover, &:active': {
+        color: 'grey900',
+        bg: 'primary400',
+        borderColor: 'primary400',
+      },
+    },
+    secondary: {
+      color: 'white',
+      bg: 'secondary500',
+      borderColor: 'secondary500',
+      boxShadow: 'sm',
+      '&:hover, &:active': {
+        color: 'white',
+        bg: 'secondary400',
+        borderColor: 'secondary400',
+      },
+    },
+    underline: {
+      px: 0,
+      pt: 0,
+      pb: 1,
+      color: 'grey900',
+      bg: 'transparent',
+      borderColor: 'transparent',
+      '&::before': {
+        content: JSON.stringify(''),
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: '2px',
+        bg: 'primary500',
+        transition: 'background-color 0.2s',
+      },
+      '&:hover, &:active': {
+        color: 'grey900',
+        '&::before': {
+          bg: 'secondary400',
+        },
+      },
+    },
+  },
 };
 
 theme.breakpoints.sm = theme.breakpoints[0];
