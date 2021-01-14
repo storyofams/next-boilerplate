@@ -257,6 +257,12 @@ const theme = {
       lineHeight: 'medium',
     },
   },
+  variants: {
+    center: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
 };
 
 theme.breakpoints.sm = theme.breakpoints[0];
