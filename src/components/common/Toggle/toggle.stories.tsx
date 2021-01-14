@@ -9,7 +9,12 @@ export default {
 };
 
 export const Basic = () => (
-  <Stack flexDirection="column" alignItems="flex-start" p={4} space={3}>
+  <Stack
+    flexDirection="column"
+    sx={{ alignItems: 'flex-start' }}
+    p={4}
+    space={3}
+  >
     <Toggle checked />
     <Toggle onChange={action('toggled')} />
   </Stack>

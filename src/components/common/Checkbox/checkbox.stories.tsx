@@ -8,7 +8,12 @@ export default {
 };
 
 export const Basic = () => (
-  <Stack flexDirection="column" alignItems="flex-start" p={4} space={1}>
+  <Stack
+    flexDirection="column"
+    sx={{ alignItems: 'flex-start' }}
+    p={4}
+    space={1}
+  >
     <Checkbox checked />
     <Checkbox />
     <Checkbox label="lorem ipsum" />
