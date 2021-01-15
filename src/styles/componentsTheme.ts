@@ -1,4 +1,4 @@
-const components = {
+const componentsTheme = {
   buttons: {
     primary: {
       px: 2,
@@ -202,4 +202,4 @@ const components = {
   },
 };
 
-export default components;
+export default componentsTheme;

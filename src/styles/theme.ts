@@ -1,3 +1,4 @@
+import componentsTheme from './componentsTheme';
 import { Breakpoints } from './styled';
 
 const theme = {
@@ -113,6 +114,7 @@ const theme = {
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
     none: 'none',
   },
+  ...componentsTheme,
 };
 
 theme.breakpoints.sm = theme.breakpoints[0];

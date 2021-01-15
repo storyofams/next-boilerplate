@@ -5,7 +5,6 @@ import objectFitImages from 'object-fit-images';
 import { ThemeProvider } from 'styled-components';
 
 import { seo } from '~/config';
-import componentsTheme from '~/styles/componentsTheme';
 import CSSreset from '~/styles/CSSreset';
 import theme from '~/styles/theme';
 
@@ -18,7 +17,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <ThemeProvider theme={{ ...theme, ...componentsTheme }}>
+      <ThemeProvider theme={{ ...theme }}>
         <CSSreset />
         <DefaultSeo {...seo} />
         <Component {...pageProps} />
