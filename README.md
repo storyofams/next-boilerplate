@@ -12,24 +12,6 @@
 3. If you're building a primitive it should look like this:
 4. have fun
 
-## Styled system
-
-If you build a primitive, always include the entire system like this:
-
-```
-import {system, SystemProps} from '~/lib'
-
-const Button = styled.button<SystemProps<React.HTMLAttributes<HTMLDivElement>>>`
-  ...
-  ${system}
-`
-
-const Box = styled.button<SystemProps>`
-  ...
-  ${system}
-`
-```
-
 ## The CSS function
 
 Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility (example taken from https://styled-system.com/variants):
@@ -50,37 +32,7 @@ this will automatically create a styled component that takes its properties from
 
 ## Variants
 
-Sometimes its good to have multiple variantions (or `variants`) of a single component. In this case use the `variant` prop like this (example taken from https://styled-system.com/variants):
-
-```
-import styled from 'styled-components'
-import { variant } from 'styled-system'
-
-const Button = styled('button')(
-  {
-    appearance: 'none',
-    fontFamily: 'inherit',
-  },
-  variant({
-    variants: {
-      primary: {
-        color: 'white',
-        bg: 'primary',
-      },
-      secondary: {
-        color: 'white',
-        bg: 'secondary',
-      },
-    }
-  })
-)
-```
-
-you can then use them like this
-
-```
-<Button variant='primary'>Primary</Button>
-```
+Sometimes its good to have multiple variations (or `variants`) of a single component. In this case use the `variant` prop: https://rebassjs.org/variants
 
 ## Ease of use
 
