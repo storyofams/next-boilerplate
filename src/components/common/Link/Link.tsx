@@ -7,9 +7,14 @@ import {
 
 interface LinkProps extends RebassLinkProps {
   children?: ReactNode;
-  href?: string;
-  linkAs?: string;
-  to?: string;
+  /** usage for regular links */
+  href?: string | undefined;
+  /** usage for Next.js links */
+  to?: string | undefined;
+  /** optional decorator for Next.js links (since 9.5.3).
+   * Check (https://nextjs.org/docs/routing/introduction#linking-to-dynamic-paths) for info on dynamic routes
+   * */
+  linkAs?: string | undefined;
 }
 
 export const Link: FC<LinkProps> = ({
@@ -28,7 +33,7 @@ export const Link: FC<LinkProps> = ({
   }
 
   return (
-    <NextLink as={linkAs} href={to} passHref>
+    <NextLink href={to} as={linkAs} passHref>
       <RebassLink {...props}>{children}</RebassLink>
     </NextLink>
   );
