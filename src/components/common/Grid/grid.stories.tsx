@@ -9,7 +9,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Box p={5}>
+  <Box>
     <h1>
       Grid is a layout utility that adds space above and on the side of items in
       it which in turn creates a grid.
@@ -70,8 +70,9 @@ export const Basic = (args) => (
 
 Basic.args = {
   rowSize: 3,
-  rowGap: 3,
-  columnGap: 3,
+  rowGap: 2,
+  columnGap: 2,
+  mt: 2,
 };
 
 Basic.argTypes = {
@@ -81,7 +82,7 @@ Basic.argTypes = {
 };
 
 export const Responsive = (args) => (
-  <Box p={5}>
+  <Box>
     <Grid {...args}>
       <Box>
         <Box
@@ -137,8 +138,8 @@ export const Responsive = (args) => (
 
 Responsive.args = {
   rowSize: [1, 2, 4],
-  rowGap: [1, 1, 3],
-  columnGap: [1, 1, 3],
+  rowGap: [1, 1, 2],
+  columnGap: [1, 1, 2],
 };
 
 Responsive.argTypes = {

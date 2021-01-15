@@ -20,7 +20,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Stack space={3} p={4} maxWidth="270px" sx={{ flexDirection: 'column' }}>
+  <Stack space={3} maxWidth="270px" sx={{ flexDirection: 'column' }}>
     <StatusMessage {...args} />
   </Stack>
 );

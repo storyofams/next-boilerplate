@@ -17,7 +17,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Flex p={4}>
+  <Flex>
     <Spinner {...args} />
   </Flex>
 );

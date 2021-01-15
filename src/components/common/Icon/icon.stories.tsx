@@ -21,7 +21,7 @@ export default {
 };
 
 export const Library = (args) => (
-  <Box p={4}>
+  <Box>
     <h1>
       To add an icon simply drop the svg file in ./library and change the
       stroke/fill to "currentColor".
@@ -59,7 +59,6 @@ export const Library = (args) => (
 );
 
 const commonProps = {
-  m: 4 as any,
   color: 'secondary500' as any,
   icon: 'heart',
   fontSize: 8 as any,
