@@ -1,4 +1,4 @@
-import React, { forwardRef, FC, HTMLAttributes } from 'react';
+import React, { forwardRef, FC } from 'react';
 import {
   Box,
   Button as RebassButton,
@@ -7,9 +7,8 @@ import {
 
 import { Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
-interface ButtonProps
-  extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
-    RebassButtonProps {
+
+interface ButtonProps extends RebassButtonProps {
   isLoading?: boolean;
   disabled?: boolean;
   variant?: 'primary' | 'outline' | 'secondary' | 'underline';
@@ -63,6 +62,7 @@ const Button: FC<ButtonProps> = forwardRef(
         </RebassButton>
       );
     }
+
     if (href) {
       return (
         <Link href={href} sx={{ '&:hover': { opacity: 1 } }}>
