@@ -1,50 +1,32 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 
 import {
   Textarea as RebassTextarea,
-  Label,
   TextareaProps as RebassTextareaProps,
 } from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { Box, BoxProps } from 'rebass/styled-components';
 
-import { status, StatusMessage } from '~/components';
+import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
 
-interface TextareaProps extends RebassTextareaProps, BoxProps {
-  statusMessage?: string;
-  label?: string;
-  status?: status;
-  // html props
-  disabled?: boolean;
-  id?: string;
-}
+export const Textarea = forwardRef<RebassTextareaProps, InputWrapperProps>(
+  ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
+    const autoId = useId();
+    const id = givenId || `checkbox-${autoId}`;
 
-const Textarea: FC<TextareaProps> = ({
-  label,
-  status,
-  statusMessage,
-  id: givenId,
-  ...props
-}) => {
-  const autoId = useId();
-  const id = givenId || `checkbox-${autoId}`;
-
-  return (
-    <Box {...pick(props)}>
-      {label && (
-        <Label mb={1} htmlFor={id}>
-          {label}
-        </Label>
-      )}
-      <RebassTextarea id={id} {...omit(props)} />
-      {!!statusMessage && (
-        <StatusMessage mt="1/2" status={status}>
-          {statusMessage}
-        </StatusMessage>
-      )}
-    </Box>
-  );
-};
+    return (
+      <InputWrapper
+        id={id}
+        label={label}
+        status={status}
+        statusMessage={statusMessage}
+        error={error}
+        {...pick(props)}
+      >
+        <RebassTextarea id={id} ref={ref} {...omit(props)} />
+      </InputWrapper>
+    );
+  },
+);
 
 export default Textarea;

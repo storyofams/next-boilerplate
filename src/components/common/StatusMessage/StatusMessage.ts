@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 import { SystemProps, system } from '~/lib';
 
-type status = 'default' | 'success' | 'warning' | 'error';
+export type status = 'default' | 'success' | 'warning' | 'error';
 
 interface StatusMessageProps extends SystemProps {
   status: status | Boolean;
   type?: 'polite' | 'assertive';
 }
 // this component alerts screen readers when its rendered.
-// should be used together with a formfield + formik
+// should be used together with a formfield + react-hook-form
 
 const StatusMessage = styled(Alert).attrs((p) => ({
   type: p.type || 'polite',

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'rebass/styled-components';
 
 const styles = {
@@ -42,29 +42,28 @@ const styles = {
   '& > input:focus + .slider': { border: '1px', borderColor: 'primary500' },
   '& > input:disabled + .slider': { cursor: 'not-allowed', opacity: 0.5 },
 };
+
 export interface ToggleProps extends Omit<BoxProps, 'onChange'> {
   checked?: boolean;
   disabled?: boolean;
   onChange?(isToggled: boolean): void;
 }
 
-export const Toggle: FC<ToggleProps> = ({
-  checked,
-  disabled,
-  onChange,
-  ...props
-}) => {
-  return (
-    <Box sx={styles} as="label" {...props}>
-      <input
-        onChange={(e) => onChange(e.target.checked)}
-        checked={checked}
-        disabled={disabled}
-        type="checkbox"
-      />
-      <span className="slider" />
-    </Box>
-  );
-};
+export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
+  ({ checked, disabled, onChange, ...props }, ref) => {
+    return (
+      <Box sx={styles} as="label" {...props}>
+        <input
+          ref={ref}
+          onChange={(e) => onChange(e.target.checked)}
+          checked={checked}
+          disabled={disabled}
+          type="checkbox"
+        />
+        <span className="slider" />
+      </Box>
+    );
+  },
+);
 
 export default Toggle;
