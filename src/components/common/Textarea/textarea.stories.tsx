@@ -1,27 +1,25 @@
 import React from 'react';
 
-import { Textarea, Stack } from '~/components';
+import { Textarea } from '~/components';
 
 export default {
   component: Textarea,
-  title: 'Textarea',
+  title: 'components/Textarea',
+  args: {
+    placeholder: 'Placeholder',
+    value: 'Value',
+    label: 'Label',
+    status: 'success',
+    statusMessage: 'Status text',
+  },
+  argTypes: {
+    status: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'error'],
+      },
+    },
+  },
 };
 
-export const Basic = () => (
-  <Stack
-    flexDirection="column"
-    sx={{ alignItems: 'flex-start' }}
-    p={4}
-    space={1}
-  >
-    <Textarea placeholder="Placeholder" />
-    <Textarea label="Label" />
-    <Textarea
-      disabled
-      label="Label"
-      placeholder="Placeholder"
-      status="warning"
-      statusMessage="Warning"
-    />
-  </Stack>
-);
+export const Basic = (args) => <Textarea {...args} />;

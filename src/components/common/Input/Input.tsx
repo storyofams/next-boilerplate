@@ -39,7 +39,9 @@ const Input: FC<InputProps> = ({
       )}
       <RebassInput id={id} {...omit(props)} />
       {!!statusMessage && (
-        <StatusMessage status={status}>{statusMessage}</StatusMessage>
+        <StatusMessage mt="1/2" status={status}>
+          {statusMessage}
+        </StatusMessage>
       )}
     </Box>
   );

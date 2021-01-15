@@ -1,27 +1,25 @@
 import React from 'react';
 
-import { Input, Stack } from '~/components';
+import { Input } from '~/components';
 
 export default {
   component: Input,
-  title: 'Input',
+  title: 'components/Input',
+  args: {
+    placeholder: 'Placeholder',
+    value: 'Value',
+    label: 'Label',
+    status: 'success',
+    statusMessage: 'Status text',
+  },
+  argTypes: {
+    status: {
+      control: {
+        type: 'select',
+        options: ['default', 'success', 'warning', 'error'],
+      },
+    },
+  },
 };
 
-export const Basic = () => (
-  <Stack
-    flexDirection="column"
-    sx={{ alignItems: 'flex-start' }}
-    p={4}
-    space={1}
-  >
-    <Input placeholder="Placeholder" />
-    <Input label="Label" />
-    <Input
-      disabled
-      label="Label"
-      placeholder="Placeholder"
-      status="warning"
-      statusMessage="Warning"
-    />
-  </Stack>
-);
+export const Basic = (args) => <Input {...args} />;
