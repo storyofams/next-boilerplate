@@ -14,7 +14,7 @@
 
 ## The CSS function
 
-Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility (example taken from https://styled-system.com/variants):
+Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility:
 
 ```
 import styled from 'styled-components'
