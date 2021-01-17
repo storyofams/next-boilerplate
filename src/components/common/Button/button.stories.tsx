@@ -28,6 +28,16 @@ Secondary.args = {
   variant: 'secondary',
 };
 
+export const Outline = (args) => (
+  <Button {...args} variant="outline">
+    Lorem Ipsum
+  </Button>
+);
+
+Secondary.args = {
+  variant: 'outline',
+};
+
 export const Underline = (args) => (
   <Button {...args} variant="underline">
     Lorem Ipsum

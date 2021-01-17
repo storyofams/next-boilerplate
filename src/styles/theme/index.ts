@@ -1,5 +1,9 @@
-import componentsTheme from './componentsTheme';
-import { Breakpoints } from './styled';
+import { Breakpoints } from '../styled';
+import buttonTheme from './button';
+import formTheme from './form';
+import linkTheme from './link';
+import textTheme from './text';
+import variantsTheme from './variants';
 
 const theme = {
   colors: {
@@ -114,7 +118,11 @@ const theme = {
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
     none: 'none',
   },
-  ...componentsTheme,
+  ...buttonTheme,
+  ...formTheme,
+  ...linkTheme,
+  ...textTheme,
+  ...variantsTheme,
 };
 
 theme.breakpoints.sm = theme.breakpoints[0];
