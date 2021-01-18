@@ -44,6 +44,7 @@
     "@babel/runtime-corejs2": "7.12.5",
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
+    "@semantic-release/changelog": "5.0.1",
     "@storybook/addon-actions": "6.1.14",
     "@storybook/addon-controls": "6.1.14",
     "@storybook/addon-docs": "6.1.14",
@@ -68,7 +69,7 @@
     "babel-loader": "8.2.2",
     "babel-plugin-styled-components": "1.12.0",
     "babel-preset-react-app": "10.0.0",
-    "cz-customizable": "git+https://github.com/storyofams/cz-customizable.git",
+    "cz-customizable": "git+https://github.com/storyofams/cz-customizable.git#6.3.1",
     "eslint": "7.18.0",
     "eslint-config-ams": "git+https://github.com/storyofams/eslint-config-ams.git",
     "eslint-config-prettier": "7.1.0",
@@ -109,8 +110,7 @@
   },
   "lint-staged": {
     "**/*.+(js|jsx|ts|tsx)": [
-      "yarn lint --fix",
-      "git add"
+      "yarn lint --fix"
     ]
   }
 }
