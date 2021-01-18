@@ -56,6 +56,12 @@ module.exports = {
         "🤖   chore:      Changes to the build process or auxiliary tools\n                   and or libraries such as auto doc generation",
       emoji: "🤖",
     },
+    {
+      value: "ci",
+      name:
+        "👾   ci:         Changes related to setup and usage of CI",
+      emoji: "👾",
+    },
   ],
   allowTicketNumber: false,
   isTicketNumberRequired: false,
