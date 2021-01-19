@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from 'test-utils';
+import RadioGroup from './components/RadioGroup';
 
 import { Basic } from './radio.stories';
 
@@ -19,4 +20,16 @@ test('receives change events', async () => {
   fireEvent.click(firstLabel);
 
   expect(firstRadio.checked).toBeTruthy();
+});
+
+test('handles non valid element', async () => {
+  const nonValidReactElement = 'Test';
+  const { getByRole } = render(
+    <RadioGroup value={null} onChange={null}>
+      {nonValidReactElement}
+    </RadioGroup>,
+  );
+  const element = getByRole('radiogroup');
+
+  expect(element.innerHTML).toBe(nonValidReactElement);
 });

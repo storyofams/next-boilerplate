@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, StatusMessage } from '~/components';
+import { Stack, StatusMessage } from '~/components';
 
 export default {
   component: StatusMessage,
@@ -20,7 +20,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Box p={4} maxWidth="270px" flexDirection="column">
+  <Stack space={3} maxWidth="270px" sx={{ flexDirection: 'column' }}>
     <StatusMessage {...args} />
-  </Box>
+  </Stack>
 );

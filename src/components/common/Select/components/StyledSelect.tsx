@@ -1,13 +1,11 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import ReactSelect, { Props } from 'react-select';
-import styled, { css, ThemeContext } from 'styled-components';
-
-import { SystemProps, system } from '~/lib';
+import styled, { css, useTheme } from 'styled-components';
 
 const StyledSelect = styled(ReactSelect).attrs({
   className: 'react-select',
   classNamePrefix: 'react-select',
-})<SystemProps>(
+})(
   ({ styledTheme: theme }) => css`
     font-size: ${theme.fontSizes[2]};
 
@@ -41,6 +39,8 @@ const StyledSelect = styled(ReactSelect).attrs({
 
         &--is-disabled {
           background: ${theme.colors.grey200};
+          cursor: not-allowed;
+          opacity: 0.5;
 
           .react-select__placeholder {
             color: ${theme.colors.grey700};
@@ -69,8 +69,6 @@ const StyledSelect = styled(ReactSelect).attrs({
         }
       }
     }
-
-    ${system}
   `,
 );
 
@@ -79,18 +77,18 @@ export interface SelectProps extends Props {
 }
 
 export const Select: FC<SelectProps> = (props) => {
-  const styledTheme = useContext(ThemeContext); // react-select and styled-components both need a theme so it needs to be renamed
+  const theme = useTheme(); // react-select and styled-components both need a theme so it needs to be renamed
 
   return (
     <StyledSelect
-      styledTheme={styledTheme}
+      styledTheme={theme}
       theme={(t) => ({
         ...t,
         colors: {
           ...t.colors,
-          primary25: styledTheme.colors.primary500,
-          primary50: styledTheme.colors.primary500,
-          primary: styledTheme.colors.primary500,
+          primary25: theme.colors.primary500,
+          primary50: theme.colors.primary500,
+          primary: theme.colors.primary500,
         },
       })}
       {...props}

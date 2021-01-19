@@ -1,26 +1,18 @@
 import React, { forwardRef } from 'react';
+
+import {
+  Input as RebassInput,
+  InputProps as RebassInputProps,
+} from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { Props } from 'react-select';
 
 import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
 
-import StyledSelect from './components/StyledSelect';
-
-export const Select = forwardRef<Props, InputWrapperProps>(
-  (
-    {
-      status = false,
-      statusMessage = false,
-      label = false,
-      error,
-      id: givenId,
-      ...props
-    },
-    ref,
-  ) => {
+export const Input = forwardRef<RebassInputProps, InputWrapperProps>(
+  ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
     const autoId = useId();
-    const id = givenId || `select-${autoId}`;
+    const id = givenId || `input-${autoId}`;
 
     return (
       <InputWrapper
@@ -31,10 +23,10 @@ export const Select = forwardRef<Props, InputWrapperProps>(
         error={error}
         {...pick(props)}
       >
-        <StyledSelect inputId={id} ref={ref} {...omit(props)} />
+        <RebassInput id={id} ref={ref} {...omit(props)} />
       </InputWrapper>
     );
   },
 );
 
-export default Select;
+export default Input;

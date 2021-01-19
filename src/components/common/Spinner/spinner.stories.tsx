@@ -1,6 +1,7 @@
 import React from 'react';
+import { Flex } from 'rebass/styled-components';
 
-import { Flex, Spinner } from '~/components';
+import { Spinner } from '~/components';
 import theme from '~/styles/theme';
 
 export default {
@@ -16,7 +17,7 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Flex p={4}>
+  <Flex>
     <Spinner {...args} />
   </Flex>
 );

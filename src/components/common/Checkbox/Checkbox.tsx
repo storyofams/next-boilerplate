@@ -1,51 +1,36 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 
+import {
+  Checkbox as RebassCheckbox,
+  Label,
+  CheckboxProps as RebassCheckboxProps,
+} from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { FormikHandlers } from 'formik';
 
-import { Box, Flex, status, StatusMessage, Text } from '~/components';
+import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
-import { SystemProps } from '~/lib';
 
-import StyledCheckbox from './components/StyledCheckbox';
+interface CheckboxProps extends RebassCheckboxProps, InputWrapperProps {}
 
-interface CheckboxProps extends SystemProps {
-  checked?: boolean;
-  onChange?: FormikHandlers['handleChange'];
-  statusMessage?: string;
-  label?: string;
-  status?: status;
-  // html props
-  disabled?: boolean;
-  id?: string;
-}
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
+    const autoId = useId();
+    const id = givenId || `checkbox-${autoId}`;
 
-const Checkbox: FC<CheckboxProps> = ({
-  label,
-  status,
-  statusMessage,
-  id: givenId,
-  ...props
-}) => {
-  const autoId = useId();
-
-  const id = givenId || `checkbox-${autoId}`;
-
-  return (
-    <Box {...pick(props)}>
-      <Flex alignItems="center">
-        <StyledCheckbox id={id} {...omit(props)} />
-        {!!label && (
-          <Text ml={2} htmlFor={id} as="label">
-            {label}
-          </Text>
-        )}
-      </Flex>
-      {!!statusMessage && (
-        <StatusMessage status={status}>{statusMessage}</StatusMessage>
-      )}
-    </Box>
-  );
-};
+    return (
+      <InputWrapper
+        status={status}
+        statusMessage={statusMessage}
+        error={error}
+        {...pick(props)}
+      >
+        <Label htmlFor={id}>
+          <RebassCheckbox id={id} ref={ref} {...omit(props)} />
+          {label}
+        </Label>
+      </InputWrapper>
+    );
+  },
+);
 
 export default Checkbox;
