@@ -1,22 +1,22 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Image, Stack } from '~/components';
+import { Image, Stack, ImageProps } from '~/components';
 
 export default {
   component: Image,
   title: 'components/Image',
   args: {
-    objectFit: 'contain',
-    objectPosition: '0% 0%',
-    height: 'auto',
-    width: 'auto',
-  },
+    src: 'https://placekitten.com/200/300',
+    width: [200, 500],
+    height: 500,
+  } as ImageProps,
 };
 
 export const Basic = (args) => (
-  <Stack space={3} flexDirection="column" p={4}>
+  <Stack space={3} flexDirection="column">
     <Box>
-      <Image {...args} src="http://placekitten.com/200/300" />
+      <Image {...args} />
     </Box>
   </Stack>
 );
@@ -24,16 +24,17 @@ export const Basic = (args) => (
 const array = [...Object(Array(300)).keys()];
 
 export const LazyLoadStressTest = (args) => (
-  <Box p={4}>
+  <Box>
     <h1>
       The dimensions must be specified for this to work. So either height+width,
       flex-basis etc.. or a placeholder with the same dimensions
     </h1>
-    <Stack space={3} flexDirection="column" mt={4}>
+    <Stack space={3} flexDirection="column" mt={2}>
       {array.map((i) => (
         <Image
           key={i}
-          size="80px"
+          width="80px"
+          height="100%"
           src="https://res.cloudinary.com/demo/image/upload/w_1500/woman.png"
           placeholder="https://res.cloudinary.com/demo/image/upload/w_20/woman.png"
         />

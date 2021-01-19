@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Radio, RadioGroup } from '~/components';
+import { Radio, RadioGroup } from '~/components';
 
 export default {
   component: Radio,
@@ -15,7 +16,7 @@ export const Basic = (args) => {
   const [val, setVal] = useState(null);
 
   return (
-    <Box p={4}>
+    <Box>
       <RadioGroup value={val} onChange={setVal}>
         <Radio data-testid="radio-1" {...args} />
         <Radio value="2">two</Radio>

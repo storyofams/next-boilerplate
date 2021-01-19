@@ -1,7 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { Box, Flex, Text } from 'rebass/styled-components';
 
-import { Box, Flex, Icon, Text } from '~/components';
+import { Icon } from '~/components';
 
 const allIcons = (require as any)
   .context('./library', false, /\.svg$/)
@@ -20,7 +21,7 @@ export default {
 };
 
 export const Library = (args) => (
-  <Box p={4}>
+  <Box>
     <h1>
       To add an icon simply drop the svg file in ./library and change the
       stroke/fill to "currentColor".
@@ -30,7 +31,7 @@ export const Library = (args) => (
         py={2}
         justifyContent="center"
         alignItems="center"
-        borderBottom="1px solid #D9D9D9"
+        sx={{ borderBottom: '1px solid #D9D9D9' }}
       >
         <Box width="75%">Name</Box>
         <Box width="25%">Icon</Box>
@@ -39,7 +40,7 @@ export const Library = (args) => (
         <Flex
           justifyContent="center"
           alignItems="center"
-          borderBottom="1px solid #D9D9D9"
+          sx={{ borderBottom: '1px solid #D9D9D9' }}
           key={name}
           py={2}
         >
@@ -49,7 +50,7 @@ export const Library = (args) => (
             </Text>
           </Box>
           <Flex width="25%">
-            <Icon icon={name} color="grey800" mr={10} fontSize={4} />
+            <Icon icon={name} color="grey800" fontSize={4} />
           </Flex>
         </Flex>
       ))}
@@ -58,7 +59,6 @@ export const Library = (args) => (
 );
 
 const commonProps = {
-  m: 4 as any,
   color: 'secondary500' as any,
   icon: 'heart',
   fontSize: 8 as any,

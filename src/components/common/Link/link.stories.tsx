@@ -16,8 +16,8 @@ export default {
 
 export const Basic = (args) => {
   return (
-    <Stack alignItems="center" p={4} mb={5} space={3}>
-      <Link p={5} {...args}>
+    <Stack space={3} sx={{ alignItems: 'center' }}>
+      <Link p={2} {...args}>
         Link
       </Link>
     </Stack>
