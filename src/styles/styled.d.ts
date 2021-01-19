@@ -6,7 +6,7 @@ interface Breakpoints extends Array<string> {
   xl?: string;
 }
 declare module 'styled-components' {
-  type Theme = typeof import('./theme/theme').default;
+  type Theme = typeof import('./theme').default;
   export interface DefaultTheme extends Theme {
     breakpoints: Breakpoints;
   }
