@@ -16,6 +16,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/",
     "paths": {
       "~/*": ["src/*"],
       "test-utils": ["src/lib/test-utils"]

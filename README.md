@@ -64,7 +64,7 @@ I have hidden a bunch of files to make the whole thing easier to understand. If 
 
 ## Whats included?
 
-- Project structure with eslint, prettier, husky, alias, storybook, fontfaceobserver and all other bells and whistles
+- Project structure with eslint, prettier, husky, alias, storybook, sentry, fontfaceobserver and all other bells and whistles
 - A bunch of base components that make it easy to get going
 - A theme file and css normalizer
 - A bunch of hooks and utils
@@ -126,6 +126,33 @@ Possible types: `fix`,`feat`,`refactor`,`docs`,`test`,`chore`
 ## SEO
 
 Uses [next-seo](https://github.com/garmeeh/next-seo)
+
+## Crash feedback
+
+This project comes out of the box with a sample implementation of [Sentry](https://sentry.io/welcome/) including sourcemaps. When all the Sentry configuration env variables are available/configured, 
+the Sentry webpack plugin gets pushed to the webpack plugins, to build and upload the source maps to sentry.
+This is an alternative to manually uploading the source maps and is disabled in development mode.
+
+To get it fully operational requires:
+
+- generating keys in sentry
+- setting up environment variables
+
+The following are needed for the sample implementation:
+- NEXT_IS_SERVER
+- NEXT_PUBLIC_SENTRY_SERVER_ROOT_DIR
+  Used to improve readability of the framepaths in the sourcemaps
+- NODE_ENV
+  Sentry is only enabled when the `NODE_ENV` is production
+- NEXT_PUBLIC_SENTRY_DSN
+  The DSN tells the SDK where to send the events.
+- NEXT_PUBLIC_COMMIT_SHA
+  Sets the release.
+
+To be able to upload the sourcemaps, you will need to add the following keys
+- SENTRY_ORG
+- SENTRY_PROJECT
+- SENTRY_AUTH_TOKEN
 
 ## Missing something?
 
