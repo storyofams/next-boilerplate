@@ -33,3 +33,39 @@ test('forwards ref', () => {
 
   expect(refHandler).toHaveBeenCalledTimes(1);
 });
+
+test('has loading state when loading prop is passed', () => {
+  const { getByTestId } = render(
+    <Button data-testid="Button" isLoading>
+      button
+    </Button>,
+  );
+  const element = getByTestId('Button');
+
+  const hasDataIsLoadingAttribute = element.attributes.getNamedItem(
+    'data-is-loading',
+  );
+  expect(hasDataIsLoadingAttribute).toBeTruthy();
+});
+
+test('has loading state when href prop is passed', () => {
+  const { getByRole } = render(<Button href="/">button</Button>);
+  const element = getByRole('link');
+
+  const hasAttribute = element.attributes.getNamedItem('href');
+  expect(hasAttribute).toBeTruthy();
+});
+
+test('has loading state when to prop is passed', async () => {
+  const to = '/link';
+  const { findByTestId } = render(
+    <Button data-testid="NextLink" to={to}>
+      button
+    </Button>,
+  );
+  const element = await findByTestId('NextLink');
+
+  const hasAttribute = element.parentElement.attributes.getNamedItem('href');
+  expect(hasAttribute).toBeTruthy();
+  expect(hasAttribute.value).toBe(to);
+});

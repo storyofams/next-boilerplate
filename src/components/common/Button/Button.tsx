@@ -16,24 +16,6 @@ interface ButtonProps extends RebassButtonProps {
   to?: string;
 }
 
-const styles = {
-  position: 'relative',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  textAlign: 'center',
-  fontSize: 'inherit',
-  fontWeight: 'medium',
-  borderRadius: 'xs',
-  userSelect: 'none',
-  cursor: 'pointer',
-  transition:
-    'background-color 0.18s, box-shadow 0.18s, border-color 0.18s, color 0.18s',
-  '&:disabled': { cursor: 'not-allowed', opacity: 0.5 },
-  '&:active': { boxShadow: 'none' },
-  '&[data-is-loading]': { cursor: 'wait' },
-};
-
 const Button: FC<ButtonProps> = forwardRef(
   ({ isLoading, disabled, children, variant, href, to, ...props }, ref) => {
     const _props = {
@@ -45,7 +27,7 @@ const Button: FC<ButtonProps> = forwardRef(
 
     if (isLoading) {
       return (
-        <RebassButton data-is-loading sx={styles} {..._props}>
+        <RebassButton data-is-loading {..._props}>
           <Box
             sx={{
               position: 'absolute',
@@ -66,9 +48,7 @@ const Button: FC<ButtonProps> = forwardRef(
     if (href) {
       return (
         <Link href={href} sx={{ '&:hover': { opacity: 1 } }}>
-          <RebassButton sx={styles} {..._props}>
-            {children}
-          </RebassButton>
+          <RebassButton {..._props}>{children}</RebassButton>
         </Link>
       );
     }
@@ -76,18 +56,12 @@ const Button: FC<ButtonProps> = forwardRef(
     if (to) {
       return (
         <Link to={to} sx={{ '&:hover': { opacity: 1 } }}>
-          <RebassButton sx={styles} {..._props}>
-            {children}
-          </RebassButton>
+          <RebassButton {..._props}>{children}</RebassButton>
         </Link>
       );
     }
 
-    return (
-      <RebassButton sx={styles} {..._props}>
-        {children}
-      </RebassButton>
-    );
+    return <RebassButton {..._props}>{children}</RebassButton>;
   },
 );
 

@@ -1,121 +1,75 @@
-import React, { FC, useRef, useEffect } from 'react';
+import { pick, omit } from '@styled-system/props';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import {
+  Box,
+  BoxProps,
+  BoxProps as RebassBoxProps,
+} from 'rebass/styled-components';
+import { HeightProps, WidthProps } from 'styled-system';
 
-import { SystemProps } from '~/lib';
+const getHighestValue = (value: any): number | string => {
+  switch (typeof value) {
+    case 'number':
+      return value;
+    case 'object':
+      if (Array.isArray(value)) {
+        return value
+          .map(getHighestValue)
+          .sort((a, b) => Number(b) - Number(a))[0];
+      }
+      return Object.values(value)
+        .map(getHighestValue)
+        .sort((a, b) => Number(b) - Number(a))[0];
+    case 'string':
+      if (value.includes('%')) {
+        return value;
+      }
+      return parseInt(value);
+  }
+};
 
-import StyledImage from './components/styledImage';
+export type ImageProps = Omit<NextImageProps, 'layout' | 'width' | 'height'> &
+  Omit<BoxProps, 'width' | 'height'> &
+  (
+    | {
+        layout: 'fill';
+        width?: WidthProps['width'];
+        height?: HeightProps['height'];
+      }
+    | {
+        width: WidthProps['width'];
+        height: HeightProps['height'];
+        layout?: 'fixed' | 'intrinsic' | 'responsive';
+      }
+  );
 
-export interface ImageProps extends SystemProps {
-  objectFit?: 'cover' | 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
-  objectPosition?: string;
-  loading?: 'lazy' | 'eager';
-  src: string;
-  placeholder?: string;
-}
+/**
+ * @description Image component which uses Rebass as Next's Image component. When you use this component and you're not certain of the source
+ * domain of the image (i.e. user input) use, make sure to use the `unoptimized` prop. Otherwise declare the domain of the image in the `next.config.js`
+ */
 
-const hasNativeLazyLoadSupport =
-  typeof HTMLImageElement !== `undefined` &&
-  `loading` in HTMLImageElement.prototype &&
-  false;
+export const Image = (props: ImageProps) => {
+  const nextImageProps = omit(props) as Omit<
+    NextImageProps,
+    'width' | 'height'
+  >;
+  const rebassImageProps = pick(props) as RebassBoxProps;
 
-const cache = {};
-function addToCache(src) {
-  cache[src] = true;
-}
-function isInCache(src) {
-  return cache[src];
-}
-
-function fetchImage(url) {
-  return new Promise((resolve, reject) => {
-    const image = new Image();
-    image.src = url;
-    image.onload = resolve;
-    image.onerror = reject;
-  });
-}
-
-function loadImage(target) {
-  const image = target.src ? target : target.querySelector('img');
-  // eslint-disable-next-line prefer-destructuring
-  const src = image.dataset.src;
-  fetchImage(src).then(() => {
-    addToCache(src);
-    image.src = src;
-  });
-}
-
-let io;
-
-function getIO() {
-  if (
-    typeof io === `undefined` &&
-    typeof window !== `undefined` &&
-    window.IntersectionObserver
-  ) {
-    io = new window.IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting || entry.intersectionRatio > 0) {
-            loadImage(entry.target);
-            console.log('loaded');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: `200px` },
+  if (props.layout === 'fill') {
+    return (
+      <Box {...rebassImageProps} sx={{ position: 'relative' }}>
+        <NextImage layout="fill" {...nextImageProps} />
+      </Box>
     );
   }
 
-  return io;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const Img: FC<ImageProps> = ({
-  objectFit = 'cover',
-  objectPosition = 'center center',
-  loading = 'lazy',
-  placeholder,
-  src,
-  ...rest
-}) => {
-  const imgref = useRef();
-
-  useEffect(() => {
-    if (!hasNativeLazyLoadSupport) {
-      const observer = getIO();
-
-      if (observer) {
-        const target = imgref.current;
-        if (target) {
-          observer.observe(target);
-          return () => {
-            observer.unobserve(target);
-          };
-        }
-      }
-    } else {
-      loadImage(imgref.current);
-    }
-  }, []);
-
-  const props = { objectFit, objectPosition, ...rest };
-
-  const hasIO = typeof window !== `undefined` && window.IntersectionObserver;
-
-  if (loading === 'eager' || !hasIO || isInCache(src)) {
-    return <StyledImage src={src} {...props} />;
-  }
-
   return (
-    <StyledImage
-      loading={loading}
-      ref={imgref}
-      src={placeholder || ''}
-      data-src={src}
-      {...props}
-    />
+    <Box {...rebassImageProps}>
+      <NextImage
+        height={getHighestValue(props.width)}
+        width={getHighestValue(props.width)}
+        {...nextImageProps}
+      />
+    </Box>
   );
 };
-
-export default Img;

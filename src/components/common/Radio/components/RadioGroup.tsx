@@ -1,7 +1,6 @@
 import React, { Children, cloneElement, FC, isValidElement } from 'react';
-
+import { BoxProps } from 'rebass';
 import { Stack } from '~/components';
-import { SystemProps } from '~/lib';
 
 interface RadioElement {
   onChange?: any;
@@ -9,7 +8,7 @@ interface RadioElement {
   checked?: boolean;
 }
 
-export interface RadioGroupProps extends SystemProps {
+export interface RadioGroupProps extends Omit<BoxProps, 'onChange'> {
   value?: string | number;
   onChange: (value: string) => void;
 }

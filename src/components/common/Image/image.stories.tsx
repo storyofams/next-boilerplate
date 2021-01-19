@@ -1,23 +1,22 @@
 import React from 'react';
 import { Box } from 'rebass/styled-components';
 
-import { Image, Stack } from '~/components';
+import { Image, Stack, ImageProps } from '~/components';
 
 export default {
   component: Image,
   title: 'components/Image',
   args: {
-    objectFit: 'contain',
-    objectPosition: '0% 0%',
-    height: 'auto',
-    width: 'auto',
-  },
+    src: 'https://placekitten.com/200/300',
+    width: [200, 500],
+    height: 500,
+  } as ImageProps,
 };
 
 export const Basic = (args) => (
   <Stack space={3} flexDirection="column">
     <Box>
-      <Image {...args} src="http://placekitten.com/200/300" />
+      <Image {...args} />
     </Box>
   </Stack>
 );
@@ -34,7 +33,8 @@ export const LazyLoadStressTest = (args) => (
       {array.map((i) => (
         <Image
           key={i}
-          size="80px"
+          width="80px"
+          height="100%"
           src="https://res.cloudinary.com/demo/image/upload/w_1500/woman.png"
           placeholder="https://res.cloudinary.com/demo/image/upload/w_20/woman.png"
         />
