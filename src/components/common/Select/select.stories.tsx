@@ -16,7 +16,6 @@ export default {
     isDisabled: false,
     options,
     placeholder: 'Placeholder',
-    value: { value: '1', label: '0 - 9' },
     label: 'Label',
     status: 'success',
     statusMessage: 'Status text',

@@ -7,7 +7,6 @@ export default {
   title: 'components/Input',
   args: {
     placeholder: 'Placeholder',
-    value: 'Value',
     label: 'Label',
     status: 'success',
     statusMessage: 'Status text',

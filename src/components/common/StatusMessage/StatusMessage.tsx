@@ -2,14 +2,14 @@ import React, { FC } from 'react';
 import Alert from '@reach/alert';
 import { Text, BoxProps, TextProps } from 'rebass/styled-components';
 
-type status = 'default' | 'success' | 'warning' | 'error';
+export type status = 'default' | 'success' | 'warning' | 'error';
 
 interface StatusMessageProps extends BoxProps, TextProps {
   status: status | Boolean;
   type?: 'polite' | 'assertive';
 }
 // this component alerts screen readers when its rendered.
-// should be used together with a formfield + formik
+// should be used together with a formfield + react-hook-form
 
 export const StatusMessage: FC<StatusMessageProps> = ({
   status,

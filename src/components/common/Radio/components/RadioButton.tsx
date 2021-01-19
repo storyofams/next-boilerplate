@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import {
   Label,
   Radio as RebassRadio,
@@ -12,22 +12,21 @@ export interface RadioProps extends RebassCheckboxProps, BoxProps {
   id?: string;
   value: string;
 }
-export const Radio: FC<RadioProps> = ({
-  children,
-  id: initialId,
-  ...props
-}) => {
-  const autoId = useId();
-  const id = initialId || `radio=${autoId}`;
 
-  return (
-    <Box {...pick(props)}>
-      <Label htmlFor={id}>
-        <RebassRadio {...omit(props)} type="radio" id={id} />
-        {children}
-      </Label>
-    </Box>
-  );
-};
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(
+  ({ children, id: initialId, ...props }, ref) => {
+    const autoId = useId();
+    const id = initialId || `radio=${autoId}`;
+
+    return (
+      <Box {...pick(props)}>
+        <Label htmlFor={id}>
+          <RebassRadio {...omit(props)} type="radio" id={id} ref={ref} />
+          {children}
+        </Label>
+      </Box>
+    );
+  },
+);
 
 export default Radio;

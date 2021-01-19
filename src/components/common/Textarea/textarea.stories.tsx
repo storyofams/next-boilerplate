@@ -7,7 +7,6 @@ export default {
   title: 'components/Textarea',
   args: {
     placeholder: 'Placeholder',
-    value: 'Value',
     label: 'Label',
     status: 'success',
     statusMessage: 'Status text',

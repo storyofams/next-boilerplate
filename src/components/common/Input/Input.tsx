@@ -1,50 +1,32 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 
 import {
   Input as RebassInput,
-  Label,
   InputProps as RebassInputProps,
 } from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { Box, BoxProps } from 'rebass/styled-components';
 
-import { status, StatusMessage } from '~/components';
+import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
 
-interface InputProps extends RebassInputProps, BoxProps {
-  statusMessage?: string;
-  label?: string;
-  status?: status;
-  // html props
-  disabled?: boolean;
-  id?: string;
-}
+export const Input = forwardRef<RebassInputProps, InputWrapperProps>(
+  ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
+    const autoId = useId();
+    const id = givenId || `input-${autoId}`;
 
-const Input: FC<InputProps> = ({
-  label,
-  status,
-  statusMessage,
-  id: givenId,
-  ...props
-}) => {
-  const autoId = useId();
-  const id = givenId || `checkbox-${autoId}`;
-
-  return (
-    <Box {...pick(props)}>
-      {label && (
-        <Label mb={1} htmlFor={id}>
-          {label}
-        </Label>
-      )}
-      <RebassInput id={id} {...omit(props)} />
-      {!!statusMessage && (
-        <StatusMessage mt="1/2" status={status}>
-          {statusMessage}
-        </StatusMessage>
-      )}
-    </Box>
-  );
-};
+    return (
+      <InputWrapper
+        id={id}
+        label={label}
+        status={status}
+        statusMessage={statusMessage}
+        error={error}
+        {...pick(props)}
+      >
+        <RebassInput id={id} ref={ref} {...omit(props)} />
+      </InputWrapper>
+    );
+  },
+);
 
 export default Input;

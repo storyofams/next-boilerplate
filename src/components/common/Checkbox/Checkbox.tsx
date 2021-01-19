@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 
 import {
   Checkbox as RebassCheckbox,
@@ -6,42 +6,31 @@ import {
   CheckboxProps as RebassCheckboxProps,
 } from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
-import { Box, BoxProps } from 'rebass/styled-components';
 
-import { status, StatusMessage } from '~/components';
+import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
 
-interface CheckboxProps extends RebassCheckboxProps, BoxProps {
-  statusMessage?: string;
-  label?: string;
-  status?: status;
-  checked?: boolean;
-  // html props
-  disabled?: boolean;
-  id?: string;
-}
+interface CheckboxProps extends RebassCheckboxProps, InputWrapperProps {}
 
-const Checkbox: FC<CheckboxProps> = ({
-  label,
-  status,
-  statusMessage,
-  id: givenId,
-  ...props
-}) => {
-  const autoId = useId();
-  const id = givenId || `checkbox-${autoId}`;
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
+    const autoId = useId();
+    const id = givenId || `checkbox-${autoId}`;
 
-  return (
-    <Box {...pick(props)}>
-      <Label htmlFor={id}>
-        <RebassCheckbox id={id} {...omit(props)} />
-        {label}
-      </Label>
-      {!!statusMessage && (
-        <StatusMessage status={status}>{statusMessage}</StatusMessage>
-      )}
-    </Box>
-  );
-};
+    return (
+      <InputWrapper
+        status={status}
+        statusMessage={statusMessage}
+        error={error}
+        {...pick(props)}
+      >
+        <Label htmlFor={id}>
+          <RebassCheckbox id={id} ref={ref} {...omit(props)} />
+          {label}
+        </Label>
+      </InputWrapper>
+    );
+  },
+);
 
 export default Checkbox;
