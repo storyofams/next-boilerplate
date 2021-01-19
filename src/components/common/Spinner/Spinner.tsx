@@ -1,7 +1,6 @@
 import React from 'react';
+import { Flex } from 'rebass/styled-components';
 import styled, { keyframes } from 'styled-components';
-
-import { Flex } from '~/components';
 
 const spin = keyframes`
   0% { transform: rotate(0deg); }

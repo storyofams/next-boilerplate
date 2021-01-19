@@ -6,7 +6,6 @@ export default {
   component: Checkbox,
   title: 'components/Checkbox',
   args: {
-    checked: false,
     label: 'editable label text',
     statusMessage: 'editable status text',
     status: 'error',

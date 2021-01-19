@@ -1,18 +1,23 @@
 import React, { FC, CSSProperties } from 'react';
-import css from '@styled-system/css';
+import { Box, BoxProps } from 'rebass/styled-components';
 import { ResponsiveValue } from 'styled-system';
 
-import { Box } from '~/components';
-import { SystemProps, modifyResponsiveValue } from '~/lib';
+import { modifyResponsiveValue } from '~/lib';
 
 type CSS = CSSProperties;
-
-interface StackProps extends SystemProps {
+interface StackProps extends BoxProps {
   space: ResponsiveValue<CSS['margin']>;
   role?: string;
+  flexDirection?: ResponsiveValue<CSS['flexDirection']>;
 }
 
-const Stack: FC<StackProps> = ({ space, flexDirection, role, ...props }) => {
+const Stack: FC<StackProps> = ({
+  space,
+  flexDirection,
+  role,
+  sx,
+  ...props
+}) => {
   const commonDirectionProp = flexDirection || 'row';
 
   function parseDirection(direction) {
@@ -32,10 +37,11 @@ const Stack: FC<StackProps> = ({ space, flexDirection, role, ...props }) => {
   return (
     <Box
       display="flex"
-      flexDirection={commonDirectionProp}
-      css={css({
-        '>*+*': spacingProp,
-      })}
+      sx={{
+        '&& > * + *': spacingProp,
+        flexDirection: commonDirectionProp,
+        ...sx,
+      }}
       role={role}
       {...props}
     />

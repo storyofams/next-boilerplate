@@ -1,13 +1,16 @@
 import React from 'react';
+import { Box } from 'rebass/styled-components';
 
-import { Box, Stack } from '~/components';
+import { Stack } from '~/components';
 import theme from '~/styles/theme';
 
 export default {
   component: Stack,
   title: 'components/Stack',
   args: {
-    borderRadius: 'xs',
+    sx: {
+      borderRadius: 'xs',
+    },
     size: '40px',
     bg: 'primary500',
   },
@@ -18,12 +21,12 @@ export default {
 };
 
 export const Basic = (args) => (
-  <Box p={5}>
+  <Box>
     <h1>
       Stack is a layout utility that adds space on one side which in turn
       creates a stack.
     </h1>
-    <Stack space={3} mt={4}>
+    <Stack space={3} mt={2}>
       <Box {...args} />
       <Box {...args} />
       <Box {...args} />
@@ -34,7 +37,7 @@ export const Basic = (args) => (
 );
 
 export const Responsive = (args) => (
-  <Box p={4}>
+  <Box>
     <Stack flexDirection={args.flexDirTop} space={[1, 2, 3]}>
       <Box {...args} />
       <Box {...args} />
@@ -42,16 +45,16 @@ export const Responsive = (args) => (
       <Box {...args} />
     </Stack>
     <Stack mt={3} space={3} flexDirection={args.flexDirMiddle}>
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
-      <Box borderRadius="xs" size="40px" bg="secondary400" />
+      <Box {...args} />
+      <Box {...args} />
+      <Box {...args} />
+      <Box {...args} />
     </Stack>
     <Stack mt={3} space={3} flexDirection={args.flexDirBottom}>
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
-      <Box borderRadius="xs" size="40px" bg="secondary500" />
+      <Box {...args} />
+      <Box {...args} />
+      <Box {...args} />
+      <Box {...args} />
     </Stack>
   </Box>
 );
@@ -63,7 +66,7 @@ Responsive.args = {
 };
 
 export const OverwritingMargin = (args) => (
-  <Stack p={4} space={[0, 5, 9]}>
+  <Stack space={[0, 5, 9]}>
     <Box {...args} mt={args.mtFirstItem} />
     <Box mt={5} mr={5} {...args} />
     <Box {...args} />

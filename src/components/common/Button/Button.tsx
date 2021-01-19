@@ -1,18 +1,17 @@
-import React, { forwardRef, FC, HTMLAttributes } from 'react';
-import css from '@styled-system/css';
+import React, { forwardRef, FC } from 'react';
+import {
+  Box,
+  Button as RebassButton,
+  ButtonProps as RebassButtonProps,
+} from 'rebass/styled-components';
 
-import { Box, Spinner } from '~/components';
+import { Spinner } from '~/components';
 import { Link } from '~/components/common/Link';
-import { SystemProps } from '~/lib';
 
-import ButtonBase from './components/ButtonBase/ButtonBase';
-
-interface ButtonProps
-  extends Omit<Omit<HTMLAttributes<HTMLButtonElement>, 'color'>, 'css'>,
-    SystemProps {
+interface ButtonProps extends RebassButtonProps {
   isLoading?: boolean;
   disabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'underline';
+  variant?: 'primary' | 'outline' | 'secondary' | 'underline';
   href?: string;
   to?: string;
 }
@@ -28,33 +27,41 @@ const Button: FC<ButtonProps> = forwardRef(
 
     if (isLoading) {
       return (
-        <ButtonBase data-is-loading {..._props}>
-          <Box position="absolute">
+        <RebassButton data-is-loading {..._props}>
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
             <Spinner size={16} />
           </Box>
           <Box display="flex" color="transparent">
             {children}
           </Box>
-        </ButtonBase>
+        </RebassButton>
       );
     }
+
     if (href) {
       return (
-        <Link href={href} css={css({ '&:hover': { opacity: 1 } })}>
-          <ButtonBase {..._props}>{children}</ButtonBase>
+        <Link href={href} sx={{ '&:hover': { opacity: 1 } }}>
+          <RebassButton {..._props}>{children}</RebassButton>
         </Link>
       );
     }
 
     if (to) {
       return (
-        <Link to={to} css={css({ '&:hover': { opacity: 1 } })}>
-          <ButtonBase {..._props}>{children}</ButtonBase>
+        <Link to={to} sx={{ '&:hover': { opacity: 1 } }}>
+          <RebassButton {..._props}>{children}</RebassButton>
         </Link>
       );
     }
 
-    return <ButtonBase {..._props}>{children}</ButtonBase>;
+    return <RebassButton {..._props}>{children}</RebassButton>;
   },
 );
 
