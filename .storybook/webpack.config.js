@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack")
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -13,7 +14,15 @@ module.exports = ({ config }) => {
     test: /\.svg$/,
     use: [{ loader: "@svgr/webpack", options: { icon: true, svgo: true } }],
   });
-
+  config.plugins.push(new webpack.DefinePlugin({
+    'process.env.__NEXT_IMAGE_OPTS': JSON.stringify({
+      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+      domains: ['placekitten.com', 'res.cloudinary.com'],
+      path: '/',
+      loader: 'default',
+    }),
+  }));
   return {
     ...config,
     resolve: {
