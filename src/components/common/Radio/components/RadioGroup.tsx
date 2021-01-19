@@ -31,7 +31,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   });
 
   return (
-    <Stack flexDir="column" space={1} role="radiogroup" {...props}>
+    <Stack flexDirection="column" space={1} role="radiogroup" {...props}>
       {clones}
     </Stack>
   );
