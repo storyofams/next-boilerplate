@@ -17,11 +17,12 @@
   },
   "dependencies": {
     "@reach/alert": "^0.7.4",
+    "@rebass/forms": "^4.0.6",
     "@sentry/browser": "^5.29.2",
     "@sentry/integrations": "^5.29.2",
     "@sentry/node": "^5.29.2",
-    "@rebass/forms": "^4.0.6",
     "@storyofams/react-helpers": "0.3.1",
+    "@storyofams/react-ui": "^1.0.1",
     "@styled-system/css": "^5.1.4",
     "@styled-system/props": "^5.1.4",
     "@svgr/webpack": "^5.0.1",
@@ -51,13 +52,13 @@
     "@commitlint/cli": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
     "@sentry/webpack-plugin": "^1.14.0",
-    "@storybook/preset-typescript": "^1.2.0",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-controls": "^6.1.14",
     "@storybook/addon-docs": "^6.1.14",
     "@storybook/addon-links": "^6.1.11",
     "@storybook/addon-viewport": "^6.1.14",
     "@storybook/addons": "^6.1.11",
+    "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^6.1.11",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.4.0",
@@ -100,6 +101,7 @@
     "semantic-release": "17.3.3",
     "ts-jest": "^25.0.0",
     "ts-loader": "^6.2.1",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
     "typescript": "^3.7.4"
   },
   "eslintConfig": {
@@ -119,9 +121,8 @@
     }
   },
   "lint-staged": {
-    "**/*.+(js|jsx|ts|tsx)": [
-      "yarn lint --fix",
-      "git add"
+    "**/*.+(js|jsx|ts|tsx|mdx)": [
+      "yarn lint --fix"
     ]
   }
 }
