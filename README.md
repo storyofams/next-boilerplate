@@ -1,18 +1,18 @@
 <p align="center">
-  <a href="https://storyofams.com/" target="_blank" align="center">
+  <a aria-label="Story of AMS logo" href="https://storyofams.com/" target="_blank" align="center">
     <img src="https://storyofams.com/blog/story-of-ams-logo-small@3x.png" alt="Story of AMS" width="120">
   </a>
   <h1 align="center">next-boilerplate</h1>
 </p>
 
 <p align="center">
-  <a href="https://GitHub.com/storyofams/next-boilerplate/releases/">
+  <a aria-label="Releases" href="https://GitHub.com/storyofams/next-boilerplate/releases/">
     <img src="https://img.shields.io/github/release/storyofams/next-boilerplate.svg" />
   </a>
-  <a href="https://githubbox.com/storyofams/next-boilerplate">
+  <a aria-label="Codesandbox" href="https://githubbox.com/storyofams/next-boilerplate">
     <img src="https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox" />
   </a>
-  <a href="https://github.com/storyofams/next-boilerplate/stargazers/">
+  <a aria-label="Stars" href="https://github.com/storyofams/next-boilerplate/stargazers/">
     <img src="https://img.shields.io/github/stars/storyofams/next-boilerplate.svg?style=social&label=Star&maxAge=2592000" />
   </a>
 </p>
