@@ -8,7 +8,7 @@ export const initSentry = () => {
     process.env.NEXT_PUBLIC_SENTRY_SERVER_ROOT_DIR
   ) {
     // For Node.js, rewrite Error.stack to use relative paths, so that source
-    // maps starting with ~/_next map to files in Error.stack with path
+    // maps starting with ~_next map to files in Error.stack with path
     // app:///_next
     integrations.push(
       new RewriteFrames({
