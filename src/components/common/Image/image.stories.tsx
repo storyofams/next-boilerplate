@@ -1,7 +1,9 @@
 import React from 'react';
+
+import { Stack } from '@storyofams/react-ui';
 import { Box } from 'rebass/styled-components';
 
-import { Image, Stack, ImageProps } from '~components';
+import { Image, ImageProps } from '~components';
 
 export default {
   component: Image,
