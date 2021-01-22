@@ -1,18 +1,18 @@
 import React, { forwardRef } from 'react';
 
 import {
-  Textarea as RebassTextarea,
-  TextareaProps as RebassTextareaProps,
+  Input as RebassInput,
+  InputProps as RebassInputProps,
 } from '@rebass/forms/styled-components';
 import { pick, omit } from '@styled-system/props';
 
 import { InputWrapper, InputWrapperProps } from '~/components';
 import { useId } from '~/hooks';
 
-export const Textarea = forwardRef<RebassTextareaProps, InputWrapperProps>(
+export const Input = forwardRef<RebassInputProps, InputWrapperProps>(
   ({ label, status, statusMessage, error, id: givenId, ...props }, ref) => {
     const autoId = useId();
-    const id = givenId || `checkbox-${autoId}`;
+    const id = givenId || `input-${autoId}`;
 
     return (
       <InputWrapper
@@ -23,10 +23,8 @@ export const Textarea = forwardRef<RebassTextareaProps, InputWrapperProps>(
         error={error}
         {...pick(props)}
       >
-        <RebassTextarea id={id} ref={ref} {...omit(props)} />
+        <RebassInput id={id} ref={ref} {...omit(props)} />
       </InputWrapper>
     );
   },
 );
-
-export default Textarea;

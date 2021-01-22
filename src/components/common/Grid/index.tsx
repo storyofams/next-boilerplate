@@ -10,7 +10,7 @@ interface GridProps extends BoxProps {
   columnGap?: ResponsiveValue<number>;
 }
 
-const Grid: FC<GridProps> = ({
+export const Grid: FC<GridProps> = ({
   rowSize,
   rowGap = 0,
   columnGap = 0,
@@ -39,5 +39,3 @@ const Grid: FC<GridProps> = ({
     </Box>
   );
 };
-
-export default Grid;

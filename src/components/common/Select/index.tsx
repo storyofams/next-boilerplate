@@ -36,5 +36,3 @@ export const Select = forwardRef<Props, InputWrapperProps>(
     );
   },
 );
-
-export default Select;

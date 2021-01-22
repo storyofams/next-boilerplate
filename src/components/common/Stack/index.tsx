@@ -11,7 +11,7 @@ interface StackProps extends BoxProps {
   flexDirection?: ResponsiveValue<CSS['flexDirection']>;
 }
 
-const Stack: FC<StackProps> = ({
+export const Stack: FC<StackProps> = ({
   space,
   flexDirection,
   role,
@@ -47,5 +47,3 @@ const Stack: FC<StackProps> = ({
     />
   );
 };
-
-export default Stack;

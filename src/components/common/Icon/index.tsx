@@ -45,5 +45,3 @@ export const Icon: FC<IconProps> = forwardRef(
     );
   },
 );
-
-export default Icon;

@@ -29,5 +29,3 @@ export const StatusMessage: FC<StatusMessageProps> = ({
     </Text>
   );
 };
-
-export default StatusMessage;
