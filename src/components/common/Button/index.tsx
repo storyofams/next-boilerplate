@@ -16,7 +16,7 @@ interface ButtonProps extends RebassButtonProps {
   to?: string;
 }
 
-const Button: FC<ButtonProps> = forwardRef(
+export const Button: FC<ButtonProps> = forwardRef(
   ({ isLoading, disabled, children, variant, href, to, ...props }, ref) => {
     const _props = {
       ...props,
@@ -64,5 +64,3 @@ const Button: FC<ButtonProps> = forwardRef(
     return <RebassButton {..._props}>{children}</RebassButton>;
   },
 );
-
-export default Button;

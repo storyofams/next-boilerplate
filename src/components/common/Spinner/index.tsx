@@ -48,5 +48,3 @@ export const Spinner = ({ color = '', size = 80, ...props }) => {
     </Flex>
   );
 };
-
-export default Spinner;
