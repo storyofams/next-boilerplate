@@ -110,3 +110,7 @@ This is an alternative to manually uploading the source maps and is disabled in 
 ## Missing something?
 
 Open an issue on the repo with your proposed change.
+
+## Contributing
+
+Please see our [contributing.md](/contributing.md).
