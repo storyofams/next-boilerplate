@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Stack } from '@storyofams/react-ui';
 import { Box } from 'rebass/styled-components';
 
