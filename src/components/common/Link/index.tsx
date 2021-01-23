@@ -38,5 +38,3 @@ export const Link: FC<LinkProps> = ({
     </NextLink>
   );
 };
-
-export default Link;

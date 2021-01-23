@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'test-utils';
 
-import Spinner from './Spinner';
+import { Spinner } from '.';
 
 test('handles props', async () => {
   const { getByTestId } = render(<Spinner data-testid="spinner" />);
