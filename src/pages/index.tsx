@@ -1,25 +1,43 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
-import { Flex, Heading, Text } from 'rebass/styled-components';
+import { Flex, Text } from 'rebass/styled-components';
 
 const Home = () => (
   <div>
-    <NextSeo title="Home" description="This is a Home page" />
-    <Flex bg="grey100" p={2} width="100%" height="100vh" variant="center">
-      <Flex
-        bg="grey800"
-        minHeight="50vh"
-        minWidth="50%"
-        variant="center"
-        sx={{ borderRadius: 'lg', boxShadow: 'sm' }}
-      >
-        <Heading textAlign="center" px={3} py={4} variant="h2" color="white">
-          What will your Story be
-          <Text display="inline-block" color="primary500">
-            ?
-          </Text>
-        </Heading>
-      </Flex>
+    <NextSeo title="Home" description="What will your Story be?" />
+    <Flex
+      bg="black"
+      p={1}
+      width="100%"
+      height="100vh"
+      flexWrap="wrap"
+      alignContent="start"
+      justifyContent="space-evenly"
+      overflow="hidden"
+      sx={{
+        '&:after': {
+          content: "''",
+          position: 'fixed',
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          background: 'radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,1))',
+        },
+      }}
+    >
+      {[...Array(5000)].map((_, i) => (
+        <Text
+          color="grey800"
+          fontWeight="bold"
+          fontSize="7"
+          lineHeight="normal"
+          width="32px"
+          textAlign="center"
+        >
+          ×
+        </Text>
+      ))}
     </Flex>
   </div>
 );
