@@ -37,15 +37,17 @@ Sometimes its good to have multiple variations (or `variants`) of a single compo
 Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility:
 
 ```js
-import styled from 'styled-components'
-import css from '@styled-system/css'
+import styled from 'styled-components';
+import css from '@styled-system/css';
 
-const Button = styled.button(css({
-  color: 'grey400',
-  borderRadius: 'sm',
-  p: [1,2,3], // can take responsive arrays just like styled-system
-  d: 'inline-flex'
-}))
+const Button = styled.button(
+  css({
+    color: 'grey400',
+    borderRadius: 'sm',
+    p: [1, 2, 3], // can take responsive arrays just like styled-system
+    d: 'inline-flex',
+  })
+);
 ```
 
 This will automatically create a styled component that takes its properties from the theme.
@@ -54,18 +56,18 @@ This will automatically create a styled component that takes its properties from
 
 ```md
 |- src
-  |- components
-    |- common // for all shared components
-      |- List
-        |- list.test.tsx
-        |- list.stories.tsx
-        |- index.tsx // actual component lives here
-    |- landing // components specific to the landing page
-  |- config
-  |- hooks
-  |- lib // utils, helpers, etc
-  |- pages
-  |- styles
+|- components
+|- common // for all shared components
+|- List
+|- list.test.tsx
+|- list.stories.tsx
+|- index.tsx // actual component lives here
+|- landing // components specific to the landing page
+|- config
+|- hooks
+|- lib // utils, helpers, etc
+|- pages
+|- styles
 ```
 
 ## SEO
@@ -106,6 +108,10 @@ To be able to upload the sourcemaps, you will need to add the following keys
 When all the Sentry configuration env variables are set, the Sentry webpack plugin gets pushed to the webpack plugins, to build and upload the source maps to sentry.
 
 This is an alternative to manually uploading the source maps and is disabled in development mode.
+
+## Contributing
+
+Please see our [contributing.md](/contributing.md).
 
 ## Missing something?
 
