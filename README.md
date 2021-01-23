@@ -113,4 +113,4 @@ Open an issue on the repo with your proposed change.
 
 ## Contributing
 
-Please see our [contributing.md](/contributing.md).
+Please see our [contributing.md](https://github.com/storyofams/next-boilerplate/blob/master/.github/CONTRIBUTING.md).
