@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
-import { Flex, Text } from 'rebass/styled-components';
+import { Flex, Text, Heading } from 'rebass/styled-components';
 
 const Home = () => (
   <div>
@@ -22,11 +22,12 @@ const Home = () => (
           bottom: 0,
           left: 0,
           right: 0,
-          background: 'radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,1))',
+          background:
+            'radial-gradient(circle at center bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8), rgba(0,0,0,0.9), rgba(0,0,0,1))',
         },
       }}
     >
-      {[...Array(5000)].map((_, i) => (
+      {[...Array(5000)].map(() => (
         <Text
           color="grey800"
           fontWeight="bold"
@@ -39,6 +40,15 @@ const Home = () => (
         </Text>
       ))}
     </Flex>
+    <Heading
+      fontSize="9"
+      color="white"
+      textAlign="center"
+      width="100%"
+      sx={{ position: 'absolute', top: '50vh', transform: 'translateY(-50%)' }}
+    >
+      What will your Story be?
+    </Heading>
   </div>
 );
 
