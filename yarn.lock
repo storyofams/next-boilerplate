@@ -13248,6 +13248,11 @@ react-hotkeys@2.0.0:
   dependencies:
     prop-types "^15.6.1"
 
+react-id-generator@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-id-generator/-/react-id-generator-3.0.1.tgz#30ec683954b3c0a5aa0732c4b98ed0f88fd85d00"
+  integrity sha512-YxorMaYxB8ItXA3Cuadcl/8ZaquU9Tzrrr5ogFL8tNqevF96cmCtx3LZLXYqBEj3BxoV9aBIK5yJjIuX/XHQ1A==
+
 react-input-autosize@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-3.0.0.tgz#6b5898c790d4478d69420b55441fcc31d5c50a85"
