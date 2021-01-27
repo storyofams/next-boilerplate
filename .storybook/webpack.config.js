@@ -1,7 +1,9 @@
-const path = require("path");
 const webpack = require("webpack")
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 
 module.exports = ({ config }) => {
+  config.resolve.plugins = [new TsconfigPathsPlugin({ extensions: config.resolve.extensions })]
+
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve("babel-loader"),
@@ -9,11 +11,14 @@ module.exports = ({ config }) => {
       presets: [["react-app", { flow: false, typescript: true }]],
     },
   });
+
   config.resolve.extensions.push(".ts", ".tsx");
+
   config.module.rules.push({
     test: /\.svg$/,
     use: [{ loader: "@svgr/webpack", options: { icon: true, svgo: true } }],
   });
+
   config.plugins.push(new webpack.DefinePlugin({
     'process.env.__NEXT_IMAGE_OPTS': JSON.stringify({
       deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -23,13 +28,6 @@ module.exports = ({ config }) => {
       loader: 'default',
     }),
   }));
-  return {
-    ...config,
-    resolve: {
-      ...config.resolve,
-      alias: {
-        '~': path.resolve(__dirname, '../src'),
-      },
-    },
-  };
+
+  return config;
 };

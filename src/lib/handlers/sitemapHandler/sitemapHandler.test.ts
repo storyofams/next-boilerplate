@@ -1,5 +1,5 @@
 import { createMocks } from 'node-mocks-http';
-import { sitemapHandler } from '~/lib/handlers';
+import { sitemapHandler } from '~lib/handlers';
 
 describe('[handlers] sitemapHandler', () => {
   it('should return a sitemap', async () => {

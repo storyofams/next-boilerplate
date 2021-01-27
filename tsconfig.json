@@ -20,7 +20,7 @@
     "inlineSources": true,
     "sourceRoot": "/",
     "paths": {
-      "~/*": ["src/*"],
+      "~*": ["src/*"],
       "test-utils": ["src/lib/test-utils"]
     }
   },

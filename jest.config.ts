@@ -7,7 +7,7 @@ export default {
     '^.+\\.tsx?$': 'babel-jest',
   },
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1',
+    '^~(.*)$': '<rootDir>/src/$1',
   },
   moduleDirectories: [
     'node_modules',
