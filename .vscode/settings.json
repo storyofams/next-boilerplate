@@ -4,31 +4,42 @@
     "storybook-static": true
   },
   "files.exclude": {
-    "**/storybook-static": true,
+    // Folders we don't need ever
+    "**/coverage": true,
+    "**/node_modules": true,
     "**/.next": true,
+    "**/storybook-static": true,
     "**/yarn-error.log": true,
-    "**/.cache": true,
-    // "**/.github": true,
-    "**/.babelrc": true,
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
+    // Files we don't need all the time
+    ".babelrc": true,
+    ".cz-config.js": true,
+    ".eslintignore": true,
+    ".gitignore": true,
+    ".prettierignore": true,
+    ".releaserc.json": true,
+    "jest.config.ts": true,
   },
   "search.exclude": {
     "**/.next": true,
     "storybook-static": true
   },
-  // These are all my auto-save configs
+  // general auto-save formatting
   "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
+  // turn it off for JS
   "[javascript]": {
     "editor.formatOnSave": false
   },
+  // turn it off for JSX
   "[javascriptreact]": {
     "editor.formatOnSave": false
   },
+  // turn it off for TS
   "[typescript]": {
     "editor.formatOnSave": false
   },
+  // turn it off for TSX
   "[typescriptreact]": {
     "editor.formatOnSave": false
   },
