@@ -6,6 +6,7 @@
   "files.exclude": {
     // Folders we don't need ever
     "**/coverage": true,
+    "**/coverage-ts": true,
     "**/node_modules": true,
     "**/.next": true,
     "**/storybook-static": true,
@@ -26,7 +27,7 @@
     "storybook-static": true
   },
   // general auto-save formatting
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   // turn it off for JS
   "[javascript]": {
     "editor.formatOnSave": false

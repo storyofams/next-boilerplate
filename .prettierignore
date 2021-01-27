@@ -2,6 +2,7 @@ node_modules/*
 public/*
 .next
 .next/*
-dist 
+dist
 coverage
+coverage-ts
 storybook-static/*
