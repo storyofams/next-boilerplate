@@ -4,7 +4,6 @@
     "storybook-static": true
   },
   "files.exclude": {
-    // Folders we don't need ever
     "**/coverage": true,
     "**/coverage-ts": true,
     "**/node_modules": true,
@@ -13,7 +12,6 @@
     "**/yarn-error.log": true,
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
-    // Files we don't need all the time
     ".babelrc": true,
     ".cz-config.js": true,
     ".eslintignore": true,
@@ -26,28 +24,21 @@
     "**/.next": true,
     "storybook-static": true
   },
-  // general auto-save formatting
   "editor.formatOnSave": false,
-  // turn it off for JS
   "[javascript]": {
     "editor.formatOnSave": false
   },
-  // turn it off for JSX
   "[javascriptreact]": {
     "editor.formatOnSave": false
   },
-  // turn it off for TS
   "[typescript]": {
     "editor.formatOnSave": false
   },
-  // turn it off for TSX
   "[typescriptreact]": {
     "editor.formatOnSave": false
   },
-  // tell the ESLint plugin to run on save
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
   "prettier.disableLanguages": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
