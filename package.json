@@ -13,16 +13,17 @@
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md|mdx)\"",
     "storybook": "start-storybook -s ./public/static -p 6006",
     "build-storybook": "build-storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^10.0.6",
     "@reach/alert": "0.12.1",
     "@rebass/forms": "4.0.6",
     "@sentry/browser": "6.0.0",
     "@sentry/integrations": "6.0.0",
     "@sentry/node": "6.0.0",
     "@storyofams/react-helpers": "0.3.6",
-    "@storyofams/react-ui": "1.0.3",
     "@styled-system/css": "5.1.5",
     "@styled-system/props": "5.1.5",
     "@svgr/webpack": "5.5.0",
