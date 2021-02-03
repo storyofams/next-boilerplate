@@ -3,12 +3,13 @@ const path = require('path');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
-const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 
+const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 // const withOffline = require('next-offline')
 // Use the hidden-source-map option when you don't want the source maps to be
 // publicly available on the servers, only to the error reporting
 const withSourceMaps = require('@zeit/next-source-maps');
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const {
@@ -33,7 +34,10 @@ module.exports = withBundleAnalyzer(
       NEXT_PUBLIC_COMMIT_SHA: CI_COMMIT_SHA,
     },
     webpack(config, options) {
-      config.resolve.alias['~'] = path.join(__dirname, 'src');
+      config.resolve.plugins = [
+        new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
+      ];
+      
       config.module.rules.push({
         test: /\.svg$/,
         use: [

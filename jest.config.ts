@@ -1,19 +1,18 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+export default {
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
   transform: {
     '^.+\\.tsx?$': 'babel-jest',
   },
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1',
+    '^~(.*)$': '<rootDir>/src/$1',
   },
   moduleDirectories: [
     'node_modules',
     'src/lib', // a utility folder
     __dirname, // the root directory
   ],
-  setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    './jest.setup.js',
-  ],
-};
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+} as Config.InitialOptions;

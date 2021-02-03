@@ -19,7 +19,7 @@ export const parameters = {
   options: {
     storySort: {
         method: 'alphabetical',
-        order: ['components'],
+        order: ['intro', 'components'],
     },
   },
 };
