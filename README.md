@@ -1,6 +1,6 @@
 <p align="center">
   <a aria-label="Story of AMS logo" href="https://storyofams.com/" target="_blank" align="center">
-    <img src="https://storyofams.com/blog/story-of-ams-logo-small@3x.png" alt="Story of AMS" width="120">
+    <img src="https://storyofams.com/public/story-of-ams-logo-small@3x.png" alt="Story of AMS" width="120">
   </a>
   <h1 align="center">next-boilerplate</h1>
 </p>
@@ -19,18 +19,18 @@
 
 ## Whats included?
 
-- Project structure with eslint, prettier, husky, alias, storybook, sentry, fontfaceobserver and all other bells and whistles
-- A bunch of base components that make it easy to get going
-- A theme file and css normalizer
-- A bunch of hooks and utils
+- Project structure with linting, husky, typescript, storybook, sentry, fontfaceobserver, sitemaphandler and more.
+- UI library for the most commonly used components
+- Helper library for most commonly used hooks and helpers
+- Styling with a theme file and css normalizer
 
 ## Theme
 
-Basic theming is located in `src/styles/theme` folder. It also includes themed Rebass components (<https://rebassjs.org/theming>). Theme well at the start of the project and then you can forget about it.
+Basic theming is located in `src/styles/theme` folder. It also includes themed Rebass components (<https://rebassjs.org/theming>).
 
 ## Variants
 
-Sometimes its good to have multiple variations (or `variants`) of a single component. In this case use the `variant` prop: <https://rebassjs.org/variants>. Put the variant in the component folder/file or in `src/styles/theme/variants.ts`, that's under your discretion.
+Sometimes its good to have multiple variations (or `variants`) of a single component. In this case use the `variant` prop: <https://rebassjs.org/variants>. You can add or override variants in the component folder/file or in `src/styles/theme/variants.ts`.
 
 ## The CSS function
 
@@ -109,8 +109,8 @@ This is an alternative to manually uploading the source maps and is disabled in 
 
 ## Missing something?
 
-Open an issue on the repo with your proposed change.
+[Open an issue](https://github.com/storyofams/next-boilerplate/issues/new/choose) with your proposed change.
 
-## Contributing
+## Wanna help out?
 
-Please see our [contributing.md](https://github.com/storyofams/next-boilerplate/blob/master/.github/CONTRIBUTING.md).
+See [contributing.md](https://github.com/storyofams/next-boilerplate/blob/master/.github/CONTRIBUTING.md) to see how you can get started.

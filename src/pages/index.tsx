@@ -1,4 +1,3 @@
-import React from 'react';
 import { NextSeo } from 'next-seo';
 import { Flex, Text, Heading, Box } from 'rebass/styled-components';
 

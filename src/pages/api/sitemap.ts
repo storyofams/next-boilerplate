@@ -1,4 +1,4 @@
-import { sitemapHandler, SitemapHandlerDataFetcher } from '~/lib/handlers';
+import { sitemapHandler, SitemapHandlerDataFetcher } from '~lib/handlers';
 
 /**
  * Also make sure to implement the change in next.config.js for the sitemap redirect.

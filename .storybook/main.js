@@ -1,5 +1,11 @@
 module.exports = {
-  stories: ['../src/**/*.stories.tsx'],
+  refs: {
+    ["react-ui"]: {
+      title: "@storyofams/react-ui",
+      url: "https://react-ui.storyofams.vercel.app/"
+    }
+  },
+  stories: ['../src/docs/*.stories.@(mdx)', '../src/**/*.stories.tsx'],
   addons: [
     {
       name: '@storybook/addon-docs',
@@ -12,4 +18,3 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
 };
-
