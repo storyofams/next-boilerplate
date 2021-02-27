@@ -41,4 +41,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          config: 'baseUrl=${{ steps.deployment.outputs.deployment }}'
+          config: 'baseUrl=${{ steps.waitFor200.outputs.url }}'
