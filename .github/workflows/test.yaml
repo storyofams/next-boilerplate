@@ -19,6 +19,7 @@ jobs:
 
       - name: Cache yarn dependencies
         uses: actions/cache@v2
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -27,6 +28,7 @@ jobs:
 
       - name: Install modules
         run: yarn --prefer-offline --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
 
       - name: Run tests
         run: yarn test
