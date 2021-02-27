@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install modules
-        run: yarn
+        run: yarn --prefer-offline
 
       - name: Run tests
         run: yarn test
