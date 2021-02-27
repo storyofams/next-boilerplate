@@ -38,9 +38,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Make artifact dir
-        uses: actions/checkout@master
-        run: mkdir /tmp/artifacts
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
 
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
