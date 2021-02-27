@@ -32,11 +32,11 @@ jobs:
         run: yarn test
 
       - name: Get deployment URL
-        id: deployment
-        uses: dorshinar/get-deployment-url@v1.0.0
-        timeout-minutes: 5
+        uses: patrickedqvist/wait-for-vercel-preview@master
+        id: waitFor200
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
