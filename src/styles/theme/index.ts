@@ -12,6 +12,7 @@ const theme = {
     secondary400: '#984EF9',
     secondary500: '#862EF7',
     white: '#fff',
+    black: '#111',
     grey100: '#F9F9F8',
     grey200: '#E2E2E0',
     grey300: '#bdbdbd',

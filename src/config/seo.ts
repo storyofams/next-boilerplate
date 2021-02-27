@@ -11,11 +11,11 @@ const defaultSeo = {
     handle: '@Boilerplate',
     cardType: 'summary_large_image',
   },
-  titleTemplate: `%s | ${siteTitle}`,
+  titleTemplate: `%s - ${siteTitle}`,
 };
 
 if (process.env.NODE_ENV === 'development') {
-  defaultSeo.titleTemplate = `%s | dev-${siteTitle}`;
+  defaultSeo.titleTemplate = `DEV: %s - ${siteTitle}`;
 }
 
 export default defaultSeo;
