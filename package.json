@@ -14,7 +14,10 @@
     "storybook": "start-storybook -s ./public/static -p 6006",
     "build-storybook": "build-storybook",
     "semantic-release": "semantic-release",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "cy:install": "cypress install",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.6",
@@ -64,6 +67,7 @@
     "@storybook/addons": "6.1.14",
     "@storybook/react": "6.1.14",
     "@storyofams/eslint-config-ams": "1.1.2",
+    "@testing-library/cypress": "^7.0.4",
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.3",
     "@types/jest": "26.0.20",
@@ -82,10 +86,13 @@
     "babel-loader": "8.2.2",
     "babel-plugin-styled-components": "1.12.0",
     "babel-preset-react-app": "10.0.0",
+    "cypress": "^6.5.0",
+    "cypress-hmr-restarter": "^2.0.1",
     "cz-customizable": "git+https://github.com/storyofams/cz-customizable.git#6.3.1",
     "eslint": "7.18.0",
     "eslint-config-prettier": "7.1.0",
     "eslint-import-resolver-alias": "1.1.2",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-mdx": "1.8.2",
