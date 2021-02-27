@@ -27,7 +27,7 @@ jobs:
 
       - name: Install modules
         run: yarn --prefer-offline --frozen-lockfile
-        if: steps.yarn-dep-cache.outputs.cache-hit != 'true'
+        if: steps.yarn-cache-dir-path.outputs.cache-hit != 'true'
 
       - name: Run tests
         run: yarn test
