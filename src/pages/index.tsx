@@ -1,26 +1,22 @@
 import { NextSeo } from 'next-seo';
-import { Flex, Heading, Text } from 'rebass/styled-components';
+import { Heading, Box } from 'rebass/styled-components';
+import { Background } from '~components/home';
 
 const Home = () => (
-  <div>
-    <NextSeo title="Home" description="This is a Home page" />
-    <Flex bg="grey100" p={2} width="100%" height="100vh" variant="center">
-      <Flex
-        bg="grey800"
-        minHeight="50vh"
-        minWidth="50%"
-        variant="center"
-        sx={{ borderRadius: 'lg', boxShadow: 'sm' }}
+  <>
+    <NextSeo title="Home" description="What will your Story be?" />
+    <Background />
+    <Box pt="50vh" sx={{ position: 'relative' }}>
+      <Heading
+        fontSize={[6, 9]}
+        color="white"
+        textAlign="center"
+        sx={{ transform: 'translateY(-50%)' }}
       >
-        <Heading textAlign="center" px={3} py={4} variant="h2" color="white">
-          What will your Story be
-          <Text display="inline-block" color="primary500">
-            ?
-          </Text>
-        </Heading>
-      </Flex>
-    </Flex>
-  </div>
+        What will your Story be?
+      </Heading>
+    </Box>
+  </>
 );
 
 export default Home;

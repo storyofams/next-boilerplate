@@ -1,47 +1,46 @@
-import { Flex, Text } from 'rebass/styled-components';
+import { NextSeo } from 'next-seo';
+import { Button, Flex, Link, Text } from 'rebass/styled-components';
 
 const getError = ({ res, err }) => {
-  let statusCode = 404;
-
-  if (res) {
-    statusCode = res?.statusCode || err?.statusCode || 500;
-  }
-
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
 
 const getContent = ({ statusCode }) => {
-  let content = "Even we don't know what happened 🤯";
-
-  if (statusCode === 404)
-    content = 'We could not find the page you were looking for 🛰'; // not found
-
-  if (statusCode === 500)
-    content = 'Our server had some trouble processing that request 🔥'; // internal
-
-  if (statusCode === 401)
-    content = "It looks like you're not supposed to be here 👀"; // unAuthorized
-
-  return content;
+  switch (statusCode) {
+    case 401:
+      return "It looks like you're not supposed to be here 👀";
+    case 404:
+      return 'We could not find the page you were looking for 🛰';
+    case 500:
+      return 'Our server had some trouble processing that request 🔥';
+    default:
+      return "Even we don't know what happened 🤯";
+  }
 };
 
 const Error = ({ statusCode }) => {
+  const content = getContent({ statusCode });
+
   return (
-    <Flex
-      flex={1}
-      height="100vh"
-      backgroundColor="grey900"
-      justifyContent=""
-      alignItems="center"
-      flexDirection="column"
-    >
-      <Text fontFamily="mono" fontSize={8} color="grey800">
-        {statusCode}
-      </Text>
-      <Text fontFamily="mono" color="white">
-        {getContent({ statusCode })}
-      </Text>
-    </Flex>
+    <>
+      <NextSeo title={statusCode} description={content} />
+      <Flex
+        height="100vh"
+        backgroundColor="black"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Text fontFamily="mono" fontSize={9} color="white">
+          {statusCode}
+        </Text>
+        <Text color="white">{content}</Text>
+        <Link href="/">
+          <Button mt={3}>Take me home</Button>
+        </Link>
+      </Flex>
+    </>
   );
 };
 
