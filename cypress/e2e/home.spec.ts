@@ -4,7 +4,7 @@ beforeEach(() => {
 
 describe('Home page general', () => {
   it('should have valid seo tags', () => {
-    cy.title().should('contain', 'Home |');
+    cy.title().should('contain', 'Home -');
   });
 });
 
