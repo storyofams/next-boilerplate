@@ -1,9 +1,11 @@
 name: CI
+
 on: [pull_request]
+
 jobs:
-  test:
-    name: 'Test'
+  run-tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -15,12 +17,16 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Cache yarn dependencies
         uses: actions/cache@v2
+        id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            node_modules
+            */*/node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
@@ -31,6 +37,12 @@ jobs:
       - name: Run tests
         run: yarn test
 
+  run-cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
       - name: Get deployment URL
         uses: patrickedqvist/wait-for-vercel-preview@master
         id: waitFor200
@@ -38,8 +50,38 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 300
 
-      - uses: actions/checkout@master
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          config: 'baseUrl=${{ steps.waitFor200.outputs.url }}'
+
+      # screenshots are only created on failure, thus we use the "failure()" condition
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      # videos are always created, thus we use the "always()" condition
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+  run-lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
       - run: mkdir /tmp/artifacts
+
+      - name: Get deployment URL
+        uses: patrickedqvist/wait-for-vercel-preview@master
+        id: waitFor200
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
 
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
