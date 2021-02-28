@@ -1,9 +1,11 @@
 name: CI
+
 on: [pull_request]
+
 jobs:
-  test:
-    name: 'Test'
+  run-tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -35,6 +37,10 @@ jobs:
       - name: Run tests
         run: yarn test
 
+  run-cypress:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Get deployment URL
         uses: patrickedqvist/wait-for-vercel-preview@master
         id: waitFor200
@@ -46,18 +52,15 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config: 'baseUrl=${{ steps.waitFor200.outputs.url }}'
-      # after the test run completes
-      # store videos and any screenshots
-      # NOTE: screenshots will be generated only if E2E test failed
-      # thus we store screenshots only on failures
-      # Alternative: create and commit an empty cypress/screenshots folder
-      # to always have something to upload
+
+      # screenshots are only created on failure, thus we use the "failure()" condition
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-      # Test run video was always captured, so this action uses "always()" condition
+
+      # videos are always created, thus we use the "always()" condition
       - uses: actions/upload-artifact@v1
         if: always()
         with:
