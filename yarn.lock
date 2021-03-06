@@ -2936,10 +2936,10 @@
   resolved "https://registry.yarnpkg.com/@storyofams/eslint-config-ams/-/eslint-config-ams-1.1.2.tgz#baf795250e358df0a57526e611deda83714efbe9"
   integrity sha512-z6FZwU5ycl5aDat2QUeyxPvN4VppfQe+vEN/dhoiKGCSC5Essap0jKpjQpUgSu3J0beZT2dmVj5d3R2fKraJDQ==
 
-"@storyofams/next-api-decorators@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@storyofams/next-api-decorators/-/next-api-decorators-1.1.6.tgz#1a47eea24dc1eaeb33f26321051f633484d950cf"
-  integrity sha512-4UuRONZhW4FN/wrbVD9MXDS2mtUAwdPdimOQpHAi/B7M2oQGYLQlS8XWmAcmDldAkFxpTyBXOlFXfxO9uWyJUA==
+"@storyofams/next-api-decorators@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@storyofams/next-api-decorators/-/next-api-decorators-1.2.0.tgz#2929b835e4d694ca04786de849129c74289e2eea"
+  integrity sha512-0O2QPTgRbcPOMXchdHwqJgxyzqvzyzFCnaGWDYKgxu5f1f5ONMmdwkAcX3fG3ETCS3V8u65QYsRhnK9XCzRMtQ==
   dependencies:
     reflect-metadata "^0.1.13"
 

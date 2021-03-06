@@ -23,7 +23,7 @@
     "@sentry/browser": "6.0.0",
     "@sentry/integrations": "6.0.0",
     "@sentry/node": "6.0.0",
-    "@storyofams/next-api-decorators": "^1.1.6",
+    "@storyofams/next-api-decorators": "1.2.0",
     "@storyofams/react-helpers": "0.3.6",
     "@storyofams/react-ui": "1.0.3",
     "@styled-system/css": "5.1.5",
