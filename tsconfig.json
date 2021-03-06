@@ -19,6 +19,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "sourceRoot": "/",
+    "experimentalDecorators": true,
     "paths": {
       "~*": ["src/*"],
       "test-utils": ["src/lib/test-utils"]
