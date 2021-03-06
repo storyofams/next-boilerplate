@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { createMocks } from 'node-mocks-http';
-import sitemapHandler, { Sitemap } from './sitemap';
+import sitemapHandler, { Sitemap } from '~pages/api/sitemap';
 
 describe('[api] sitemap', () => {
   it('should return a sitemap', async (done) => {
