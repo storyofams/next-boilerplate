@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox" />
   </a>
   <a aria-label="Stars" href="https://github.com/storyofams/next-boilerplate/stargazers/">
-    <img src="https://img.shields.io/github/stars/storyofams/next-boilerplate.svg?style=social&label=Star&maxAge=2592000" />
+    <img src="https://img.shields.io/github/stars/storyofams/next-boilerplate.svg?style=social&label=Star&maxAge=86400" />
   </a>
 </p>
 
