@@ -1,4 +1,4 @@
-import { Button, Box, Flex, Text } from '@storyofams/react-ui';
+import { Button, Box, Flex, Heading, Text } from '@storyofams/react-ui';
 import { NextSeo } from 'next-seo';
 
 import { Background } from '~components/home/background';
@@ -34,9 +34,9 @@ const Error = ({ statusCode }) => {
           flexDirection="column"
           transform="translateY(-50%)"
         >
-          <Text fontFamily="mono" fontSize={8} color="white">
+          <Heading fontFamily="mono" fontSize={8} color="white">
             {statusCode}
-          </Text>
+          </Heading>
           <Text color="white">{content}</Text>
           <Button as="a" variant="link" to="/" mt={2} color="white">
             Take me home
