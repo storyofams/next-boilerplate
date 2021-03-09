@@ -68,3 +68,29 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+
+  run-lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir /tmp/artifacts
+
+      - name: Get deployment URL
+        uses: patrickedqvist/wait-for-vercel-preview@master
+        id: waitFor200
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
+
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          outputDirectory: /tmp/artifacts
+          urls: '${{ steps.waitFor200.outputs.url }}'
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
