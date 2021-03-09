@@ -1,5 +1,7 @@
+import { Button, Box, Flex, Text } from '@storyofams/react-ui';
 import { NextSeo } from 'next-seo';
-import { Button, Flex, Link, Text } from 'rebass/styled-components';
+
+import { Background } from '~components/home/background';
 
 const getError = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
@@ -25,21 +27,22 @@ const Error = ({ statusCode }) => {
   return (
     <>
       <NextSeo title={statusCode} description={content} />
-      <Flex
-        height="100vh"
-        backgroundColor="black"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-      >
-        <Text fontFamily="mono" fontSize={9} color="white">
-          {statusCode}
-        </Text>
-        <Text color="white">{content}</Text>
-        <Link href="/">
-          <Button mt={3}>Take me home</Button>
-        </Link>
-      </Flex>
+      <Background />
+      <Box pt={'50vh' as any} position="relative">
+        <Flex
+          variant="center"
+          flexDirection="column"
+          transform="translateY(-50%)"
+        >
+          <Text fontFamily="mono" fontSize={8} color="white">
+            {statusCode}
+          </Text>
+          <Text color="white">{content}</Text>
+          <Button as="a" variant="link" to="/" mt={2} color="white">
+            Take me home
+          </Button>
+        </Flex>
+      </Box>
     </>
   );
 };

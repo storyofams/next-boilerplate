@@ -1,5 +1,5 @@
 import { Stack } from '@storyofams/react-ui';
-import { Box } from 'rebass/styled-components';
+import { Box } from '@storyofams/react-ui';
 
 import { Image, ImageProps } from '~components';
 
