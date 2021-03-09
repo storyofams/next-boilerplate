@@ -1,9 +1,10 @@
-import { Flex } from '@storyofams/react-ui';
+import { Flex, css } from '@storyofams/react-ui';
+
 import { CrossPattern } from './CrossPattern';
 
 export const Background = () => (
   <Flex
-    backgroundColor={'black' as any}
+    display="flex"
     flexWrap="wrap"
     alignContent="start"
     justifyContent="space-evenly"
@@ -14,17 +15,21 @@ export const Background = () => (
     right={0}
     bottom={0}
     left={0}
+    css={css({
+      backgroundColor: 'black',
+      color: 'blue',
+      '&::after': {
+        content: '""',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        background:
+          'radial-gradient(circle, rgba(0,0,0,0.75) 0%, rgba(0,0,0,75) 80%);',
+      },
+    })}
   >
-    <Flex
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      bottom={0}
-      background={
-        'radial-gradient(circle, rgba(0,0,0,0.75) 0%, rgba(0,0,0,75) 80%)' as any
-      }
-    />
     <CrossPattern />
   </Flex>
 );
