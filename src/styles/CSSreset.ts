@@ -3,8 +3,8 @@ import { createGlobalStyle, css } from 'styled-components';
 const themeStyles = ({ theme }) => css`
   html {
     font-size: ${theme.fontSizes.root}px;
-
     font-weight: ${theme.fontWeights.regular};
+
     /* outline only when the user is using tab */
     &:not(.user-is-tabbing) {
       a[href],

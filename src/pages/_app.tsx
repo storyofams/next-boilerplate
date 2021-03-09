@@ -6,7 +6,6 @@ import { Providers } from '~components';
 import { seo } from '~config';
 import { initSentry } from '~lib';
 import CSSreset from '~styles/CSSreset';
-import fonts from '~styles/fonts';
 
 import '../../public/static/fonts/stylesheet.css';
 
@@ -17,7 +16,6 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
 export default class MyApp extends App {
   componentDidMount() {
     objectFitImages();
-    fonts();
   }
 
   render() {
