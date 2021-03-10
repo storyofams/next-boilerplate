@@ -12,7 +12,7 @@
     "**/yarn-error.log": true,
     "**/next-env.d.ts": true,
     "**/yarn.lock": true,
-    ".babelrc": true,
+    // ".babelrc": true,
     ".cz-config.js": true,
     ".eslintignore": true,
     ".gitignore": true,

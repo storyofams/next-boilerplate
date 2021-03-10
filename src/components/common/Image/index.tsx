@@ -1,10 +1,6 @@
+import { Box, System } from '@storyofams/react-ui';
 import { pick, omit } from '@styled-system/props';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import {
-  Box,
-  BoxProps,
-  BoxProps as RebassBoxProps,
-} from 'rebass/styled-components';
 import { HeightProps, WidthProps } from 'styled-system';
 
 const getHighestValue = (value: any): number | string => {
@@ -29,7 +25,7 @@ const getHighestValue = (value: any): number | string => {
 };
 
 export type ImageProps = Omit<NextImageProps, 'layout' | 'width' | 'height'> &
-  Omit<BoxProps, 'width' | 'height'> &
+  Omit<System, 'width' | 'height'> &
   (
     | {
         layout: 'fill';
@@ -53,18 +49,18 @@ export const Image = (props: ImageProps) => {
     NextImageProps,
     'width' | 'height'
   >;
-  const rebassImageProps = pick(props) as RebassBoxProps;
+  const imageProps = pick(props);
 
   if (props.layout === 'fill') {
     return (
-      <Box {...rebassImageProps} sx={{ position: 'relative' }}>
+      <Box {...imageProps} sx={{ position: 'relative' }}>
         <NextImage layout="fill" {...nextImageProps} />
       </Box>
     );
   }
 
   return (
-    <Box {...rebassImageProps}>
+    <Box {...imageProps}>
       <NextImage
         height={getHighestValue(props.width)}
         width={getHighestValue(props.width)}

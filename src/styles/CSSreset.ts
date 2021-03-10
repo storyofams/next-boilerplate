@@ -1,24 +1,10 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const themeStyles = ({ theme }) => css`
-  /* typograhpy */
-  body.font-loaded {
-    font-family: ${theme.fonts.body};
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: ${theme.fontSizes.heading};
-      font-family: ${theme.fonts.heading};
-    }
-  }
   html {
-    font-size: ${theme.fontSizes.root};
-
+    font-size: ${theme.fontSizes.root}px;
     font-weight: ${theme.fontWeights.regular};
+
     /* outline only when the user is using tab */
     &:not(.user-is-tabbing) {
       a[href],
@@ -268,8 +254,7 @@ const CSSreset = createGlobalStyle(
     h4,
     h5,
     h6 {
-      font-size: inherit;
-      font-weight: inherit;
+      font-family: ${theme.fonts.heading};
     }
     a {
       color: inherit;

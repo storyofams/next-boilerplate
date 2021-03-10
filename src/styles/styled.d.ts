@@ -1,5 +1,5 @@
 import 'styled-components';
-interface Breakpoints extends Array<string> {
+export interface Breakpoints extends Array<string> {
   sm?: string;
   md?: string;
   lg?: string;

@@ -5,7 +5,6 @@ import objectFitImages from 'object-fit-images';
 import { Providers } from '~components';
 import { seo } from '~config';
 import { initSentry } from '~lib';
-
 import CSSreset from '~styles/CSSreset';
 
 import '../../public/static/fonts/stylesheet.css';
