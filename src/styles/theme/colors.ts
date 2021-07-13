@@ -1,12 +1,35 @@
-const neutrals = {
+export default {
+  primary50: '#F0F9FF',
+  primary100: '#E0F2FE',
+  primary200: '#BAE6FD',
+  primary300: '#7DD3FC',
+  primary400: '#38BDF8',
+  primary500: '#0EA5E9',
+  primary600: '#0284C7',
+  primary700: '#0369A1',
+  primary800: '#075985',
+  primary900: '#083853',
+  secondary50: '#F5F3FF',
+  secondary100: '#EDE9FE',
+  secondary200: '#DDD6FE',
+  secondary300: '#C4B5FD',
+  secondary400: '#A78BFA',
+  secondary500: '#8B5CF6',
+  secondary600: '#7C3AED',
+  secondary700: '#6D28D9',
+  secondary800: '#541EAA',
+  secondary900: '#3C137B',
   white: '#ffffff',
-  grey100: '#F5F6F6',
-  grey200: '#EEF0F0',
-  grey300: '#D0D3D2',
-  grey500: '#939A99',
-  grey700: '#575B5B',
-  grey800: '#3B403F',
-  grey900: '#151817',
+  grey50: '#FAFAFA',
+  grey100: '#F4F4F5',
+  grey200: '#E4E4E7',
+  grey300: '#D4D4D8',
+  grey400: '#A1A1AA',
+  grey500: '#71717A',
+  grey600: '#52525B',
+  grey700: '#3F3F46',
+  grey800: '#27272A',
+  grey900: '#18181B',
   warning50: '#FEFCE8',
   warning100: '#FEF08A',
   warning300: '#FACC15',
@@ -19,72 +42,8 @@ const neutrals = {
   success800: '#14532D',
   error50: '#FEF2F2',
   error100: '#FEE2E2',
-  error300: '#F66754',
+  error300: '#F87171',
   error600: '#DC2626',
   error800: '#7F1D1D',
   transparent: 'rgba(255, 255, 255, 0);',
 };
-
-const primary = {
-  primary100: '#F4F6F5',
-  primary200: '#CAD1CD',
-  primary400: '#97A49D',
-  primary600: '#62776B',
-  primary800: '#2E493A',
-};
-
-const green = {
-  green100: '#FBFCFA',
-  green200: '#EEF2E6',
-  green400: '#DEE6CF',
-  green600: '#CDD9B6',
-  green800: '#BCCC9E',
-};
-
-const yellow = {
-  yellow100: '#FEFCFA',
-  yellow200: '#FAF3E5',
-  yellow400: '#F5E7CC',
-  yellow600: '#F0DBB2',
-  yellow800: '#EBCF98',
-};
-
-const brown = {
-  brown100: '#FDFDFC',
-  brown200: '#F8F5F0',
-  brown400: '#F3ECE1',
-  brown600: '#ECE2D2',
-  brown800: '#E6D8C3',
-};
-
-const pink = {
-  pink100: '#FEFCFB',
-  pink200: '#FAEFED',
-  pink400: '#F7E0DB',
-  pink600: '#F2D1C9',
-  pink800: '#EEC1B7',
-};
-
-const blue = {
-  blue100: '#FCFDFD',
-  blue200: '#F0F7F6',
-  blue400: '#E2F1EE',
-  blue600: '#D4E9E5',
-  blue800: '#C5E2DC',
-};
-
-const variants = {
-  ...green,
-  ...yellow,
-  ...brown,
-  ...pink,
-  ...blue,
-};
-
-const colors = {
-  ...primary,
-  ...variants,
-  ...neutrals,
-};
-
-export default colors;
