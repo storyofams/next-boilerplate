@@ -5,16 +5,15 @@ import space from './space';
 const theme = {
   colors,
   fontWeights: {
-    light: 300,
     regular: 400,
     medium: 500,
     semiBold: 600,
     bold: 700,
   },
   fonts: {
-    heading: `Recoleta, Georgia, serif`,
-    body: `InternationalPro, Arial, Helvetica, sans-serif`,
-    mono: `SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+    heading: `Domaine Disp`,
+    body: `Inter`,
+    mono: `SFMono-Regular, Menlo, Monaco,C onsolas, "Liberation Mono", "Courier New", monospace`,
   },
   fontSizes: {
     1.25: space['1.25'],
@@ -47,7 +46,7 @@ const theme = {
     mobileGutter: space['2'],
   },
   sizes: {
-    maxWidth: 1232,
+    maxWidth: 1140,
   },
   breakpoints: ['768px', '1024px', '1280px', '1440px'] as Breakpoints,
   zIndices: {
@@ -82,9 +81,6 @@ const theme = {
     sm: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     md: '0px 2px 0px rgba(0, 0, 0, 0.1), 0px 5px 10px rgba(0, 0, 0, 0.05)',
     lg: '0px 2px 4px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.1)',
-    nav: '0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)',
-    toast:
-      '0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)',
     none: 'none',
   },
 };
