@@ -6,9 +6,9 @@ const Home = () => (
   <>
     <NextSeo title="Home" description="What will your Story be?" />
     <Background />
-    <Box pt={'50vh' as any} position="relative">
+    <Box pt="50vh" position="relative">
       <Heading
-        fontSize={[6, 8]}
+        variant="h2"
         color="white"
         textAlign="center"
         transform="translateY(-50%)"
