@@ -3303,10 +3303,10 @@
   resolved "https://registry.yarnpkg.com/@storyofams/react-helpers/-/react-helpers-0.3.8.tgz#5fe074b13540ed4b7d5b2a2520ac1df035036740"
   integrity sha512-VSwPy45stOTTZaoRLy1sxPYTTieWimAntpYef7J1ZYhsB+Ih2MpvgZSvep1FlQtXi2I64nxkneBfMwwiW6iKjw==
 
-"@storyofams/react-ui@1.2.0-beta.17":
-  version "1.2.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storyofams/react-ui/-/react-ui-1.2.0-beta.17.tgz#66b46a8daeee19ff28b67d982f73618dd27a01a4"
-  integrity sha512-lBaiaKlqYRq8mDj0elVzFXk9H/++DnHFBTHdtjQ5eQUABf4JkwNVdxxPoZPQzQ/A7ik1teTQgx5N9OjzzMyQZg==
+"@storyofams/react-ui@1.2.0-beta.18":
+  version "1.2.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@storyofams/react-ui/-/react-ui-1.2.0-beta.18.tgz#9761636ef32399fee212480c5f5b772d6a11b1d7"
+  integrity sha512-K2vyZd15qqERLR1E8co0cMVIM3Vqp6GpLZ8KnIIKCYdproa0ED6DpcX8c996GC0ufiLf37ZMJ/JVAA1ameuyYg==
   dependencies:
     react-polymorphic-types "1.1.0"
 
