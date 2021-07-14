@@ -46,4 +46,4 @@ export default {
   error600: '#DC2626',
   error800: '#7F1D1D',
   transparent: 'rgba(255, 255, 255, 0);',
-};
+} as const;

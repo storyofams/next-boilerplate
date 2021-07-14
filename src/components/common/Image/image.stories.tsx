@@ -29,14 +29,14 @@ export const LazyLoadStressTest = (args) => (
       The dimensions must be specified for this to work. So either height+width,
       flex-basis etc.. or a placeholder with the same dimensions
     </h1>
-    <Stack space={3} flexDirection="column" mt={2}>
+    <Stack space={3} flexDirection="column" mt={'$1'}>
       {array.map((i) => (
         <Image
           key={i}
           width="80px"
           height="100%"
           src="https://res.cloudinary.com/demo/image/upload/w_1500/woman.png"
-          placeholder="https://res.cloudinary.com/demo/image/upload/w_20/woman.png"
+          placeholder="blur"
         />
       ))}
     </Stack>

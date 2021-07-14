@@ -23,6 +23,6 @@ const space = {
   16: 128,
   18: 144,
   20: 160,
-};
+} as const;
 
 export default space;

@@ -4,7 +4,7 @@ export default {
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
   transform: {
-    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
   moduleNameMapper: {
     '^~(.*)$': '<rootDir>/src/$1',
@@ -14,5 +14,6 @@ export default {
     'src/lib', // a utility folder
     __dirname, // the root directory
   ],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['./setup-jest.ts'],
+  coverageDirectory: './coverage',
 } as Config.InitialOptions;
