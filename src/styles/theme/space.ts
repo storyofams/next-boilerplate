@@ -18,8 +18,11 @@ const space = {
   8: 64,
   9: 72,
   10: 80,
+  12: 96,
   15: 120,
+  16: 128,
+  18: 144,
   20: 160,
-};
+} as const;
 
 export default space;

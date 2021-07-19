@@ -6,13 +6,9 @@ import {
 } from '@storyofams/next-api-decorators';
 import { SitemapStream } from 'sitemap';
 
-// Also make sure to implement the change in next.config.js for the sitemap redirect.
-
 export class Sitemap {
   private async fetchMySitemapData() {
-    const res = (await fetch('http://localhost:3000/api/test').then((res) =>
-      res.json(),
-    )) as any[];
+    const res = (await fetch('/myapi').then((res) => res.json())) as any[];
     return res.map((item) => ({
       lastmod: new Date(item.publishedAt).toISOString(),
       img: item.imageSrc,

@@ -1,13 +1,16 @@
-import 'styled-components';
-export interface Breakpoints extends Array<string> {
+export type Breakpoints = {
   sm?: string;
   md?: string;
   lg?: string;
   xl?: string;
-}
+};
+
+type StyledTheme = typeof import('./theme').default;
+
 declare module 'styled-components' {
-  type Theme = typeof import('./theme').default;
-  export interface DefaultTheme extends Theme {
-    breakpoints: Breakpoints;
-  }
+  export interface DefaultTheme extends StyledTheme {}
+}
+
+declare module 'system-props' {
+  export interface Theme extends StyledTheme {}
 }

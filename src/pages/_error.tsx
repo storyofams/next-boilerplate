@@ -28,17 +28,17 @@ const Error = ({ statusCode }) => {
     <>
       <NextSeo title={statusCode} description={content} />
       <Background />
-      <Box pt={'50vh' as any} position="relative">
+      <Box pt="50vh" position="relative">
         <Flex
           variant="center"
           flexDirection="column"
           transform="translateY(-50%)"
         >
-          <Heading fontFamily="mono" fontSize={8} color="white">
+          <Heading fontFamily="mono" color="white">
             {statusCode}
           </Heading>
           <Text color="white">{content}</Text>
-          <Button as="a" variant="link" to="/" mt={2} color="white">
+          <Button as="a" variant="link" to="/" mt="" color="white">
             Take me home
           </Button>
         </Flex>

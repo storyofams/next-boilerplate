@@ -1,5 +1,3 @@
-const path = require('path');
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -37,7 +35,7 @@ module.exports = withBundleAnalyzer(
       config.resolve.plugins = [
         new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
       ];
-      
+
       config.module.rules.push({
         test: /\.svg$/,
         use: [

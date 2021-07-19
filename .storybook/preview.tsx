@@ -4,7 +4,7 @@ import ProviderDecorator from "./ProviderDecorator";
 import { viewPorts } from './viewports';
 import * as nextImage from 'next/image';
 import "../public/static/fonts/stylesheet.css";
-import { Box } from 'rebass/styled-components';
+import { Box } from '@storyofams/react-ui';
 
 export const decorators = [ProviderDecorator]
 

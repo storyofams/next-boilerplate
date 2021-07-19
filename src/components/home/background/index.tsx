@@ -15,10 +15,10 @@ export const Background = () => (
     right={0}
     bottom={0}
     left={0}
+    backgroundColor="black"
+    color="blue"
     css={css({
-      backgroundColor: 'black',
-      color: 'blue',
-      '&::after': {
+      '::after': {
         content: '""',
         position: 'fixed',
         top: 0,
