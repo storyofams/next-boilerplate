@@ -28,6 +28,7 @@
     "@sentry/integrations": "6.9.0",
     "@sentry/node": "6.9.0",
     "@storyofams/next-api-decorators": "1.5.5",
+    "@storyofams/next-password-protect": "^1.5.8",
     "@storyofams/react-helpers": "0.3.8",
     "@storyofams/react-ui": "1.2.0",
     "@styled-system/css": "5.1.5",

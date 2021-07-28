@@ -1,3 +1,4 @@
+import { withPasswordProtect } from '@storyofams/next-password-protect';
 import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
 import objectFitImages from 'object-fit-images';
@@ -13,7 +14,7 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   initSentry();
 }
 
-export default class MyApp extends App {
+class MyApp extends App {
   componentDidMount() {
     objectFitImages();
   }
@@ -29,3 +30,8 @@ export default class MyApp extends App {
     );
   }
 }
+
+// Before: export default App;
+export default process.env.PASSWORD_PROTECT
+  ? withPasswordProtect(MyApp)
+  : MyApp;
