@@ -1,3 +1,4 @@
+import { withPasswordProtect } from '@storyofams/next-password-protect';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -13,15 +14,15 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   initSentry();
 }
 
-const MyApp = ({ pageProps, Component }: AppProps) => {
-  return (
-    <Providers pageProps={pageProps}>
-      <CSSreset />
-      <DefaultSeo {...seo} />
-      <Component {...pageProps} />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </Providers>
-  );
-};
+const MyApp = ({ pageProps, Component }: AppProps) => (
+  <Providers pageProps={pageProps}>
+    <CSSreset />
+    <DefaultSeo {...seo} />
+    <Component {...pageProps} />
+    <ReactQueryDevtools initialIsOpen={false} />
+  </Providers>
+);
 
-export default MyApp;
+export default process.env.PASSWORD_PROTECT
+  ? withPasswordProtect(MyApp)
+  : MyApp;
