@@ -43,6 +43,7 @@
 | [storybook](https://storybook.js.org/)                                                                 | Storybook is an open source tool for building UI components and pages in isolation. It streamlines UI development, testing, and documentation.                                                                               |
 | [SWR](https://swr.vercel.app/)                                                                         | For all your data-handling needs (might get replaced by react-query in the near future)                                                                                                                                      |
 | [typescript](https://www.typescriptlang.org/docs/)                                                     | Because building a javascript in this day and age git just doesn't feel right without it                                                                                                                                     |
+| [gtag](https://developers.google.com/analytics/devguides/collection/gtagjs)                            | Ready to-go tracking implementation enabled by setting a simple env variable.                                                                                                                                                |
 
 ## Getting started
 *While we are working on a fancy generator* to get the generics bits inserted for you, the easiest thing to do is to **clone the repo**.
