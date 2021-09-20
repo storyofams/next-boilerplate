@@ -11,7 +11,7 @@ import { Providers, UserAgent } from '~components';
 import { seo } from '~config';
 import { initSentry } from '~lib';
 import useDetectKeyboard from '~hooks/useDetectKeyboard';
-import { track, pageview } from '~lib/gtag';
+import { pageview } from '~lib/gtag';
 import CSSreset from '~styles/CSSreset';
 
 import 'nprogress/nprogress.css';
@@ -22,45 +22,11 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   initSentry();
 }
 
-let qualifiedTimer;
-
 const MyApp = ({ pageProps, Component }: AppProps) => {
   const router = useRouter();
   const progressTimer = useRef<any>(null);
-  const isTrackingQualified = useRef(false);
 
   useDetectKeyboard();
-
-  const clearQualifiedTrackers = () => {
-    if (qualifiedTimer) {
-      clearTimeout(qualifiedTimer);
-    }
-
-    document.removeEventListener('click', setQualified);
-    document.removeEventListener('scroll', setQualified);
-  };
-
-  const setQualified = () => {
-    if (isTrackingQualified.current) {
-      return;
-    }
-
-    isTrackingQualified.current = true;
-
-    clearQualifiedTrackers();
-
-    track({
-      userType: 'Qualified',
-    });
-  };
-
-  useEffect(() => {
-    qualifiedTimer = setTimeout(setQualified, 10000);
-    document.addEventListener('click', setQualified, { passive: true });
-    document.addEventListener('scroll', setQualified, { passive: true });
-
-    return clearQualifiedTrackers;
-  }, []);
 
   useEffect(() => {
     const startProgress = () => {
