@@ -1,80 +1,86 @@
-<p align="center">
-  <a aria-label="Story of AMS logo" href="https://storyofams.com/" target="_blank" align="center">
-    <img src="https://storyofams.com/public/story-of-ams-logo-small@3x.png" alt="Story of AMS" width="120">
-  </a>
-  <h1 align="center">next-boilerplate</h1>
-</p>
+<div align="center">
+  <p align="center">
+    <a aria-label="Story of AMS logo" href="https://storyofams.com/" target="_blank" align="center">
+      <img src="https://avatars.githubusercontent.com/u/19343504" alt="Story of AMS" width="100">
+    </a>
+    <h1 align="center">next-boilerplate</h1>
+  </p>
+  <p align="center">
+    <a aria-label="Releases" href="https://GitHub.com/storyofams/next-boilerplate/releases/">
+      <img src="https://img.shields.io/github/release/storyofams/next-boilerplate.svg" />
+    </a>
+    <a aria-label="Codesandbox" href="https://githubbox.com/storyofams/next-boilerplate">
+      <img src="https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox" />
+    </a>
+    <a aria-label="Stars" href="https://github.com/storyofams/next-boilerplate/stargazers/">
+      <img src="https://img.shields.io/github/stars/storyofams/next-boilerplate.svg?style=social&label=Star&maxAge=86400" />
+    </a>
+  </p>
+</div>
 
-<p align="center">
-  <a aria-label="Releases" href="https://GitHub.com/storyofams/next-boilerplate/releases/">
-    <img src="https://img.shields.io/github/release/storyofams/next-boilerplate.svg" />
-  </a>
-  <a aria-label="Codesandbox" href="https://githubbox.com/storyofams/next-boilerplate">
-    <img src="https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox" />
-  </a>
-  <a aria-label="Stars" href="https://github.com/storyofams/next-boilerplate/stargazers/">
-    <img src="https://img.shields.io/github/stars/storyofams/next-boilerplate.svg?style=social&label=Star&maxAge=86400" />
-  </a>
-</p>
+---
 
-## Whats included?
+<div align="center">
+  Boilerplate to enable teams to build production grade, highly scalable and flexible react applications with Next.js
+</div>
 
-- Project structure with linting, husky, typescript, storybook, sentry, fontfaceobserver, sitemaphandler and more.
-- UI library for the most commonly used components
-- Helper library for most commonly used hooks and helpers
-- Styling with a theme file and css normalizer
+---
 
-## Theme
+# What's included? ([preview deployment](https://next-boilerplate-storyofams.vercel.app/))
 
-Basic theming is located in `src/styles/theme` folder. It also includes themed Rebass components (<https://rebassjs.org/theming>).
+| Name                                                                                                   | description                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@storyofams/next-api-decorators](https://github.com/storyofams/next-api-decorators)                   | Collection of decorators to create typed Next.js API routes, with easy request validation and transformation. [View docs](https://next-api-decorators.vercel.app/)                                                           |
+| [@storyofams/react-ui](https://github.com/storyofams/react-ui)                                         | Collection of UI components build to create a production grade front-end experience. [View components](https://react-ui-storyofams.vercel.app/)                                                                              |
+| [@storyofams/next-password-protect](https://github.com/storyofams/next-password-protect)               | Password protect your Next.js deployments. [View demo (Password is secret)](https://next-boilerplate-ten.vercel.app/)                                                                                                        |
+| [cypress](https://www.cypress.io/)                                                                     | [cypress-testing-library](https://testing-library.com/docs/cypress-testing-library/intro/) implemented throughout. Be sure to have a look at [their docs](https://testing-library.com/docs/cypress-testing-library/intro/)   |
+| [date-fns](https://date-fns.org/)                                                                      | Enabling data manipulation in a comprehensive, yet humanly understandable fashion                                                                                                                                            |
+| [eslint](https://github.com/eslint/eslint)                                                             | Ensures best practices are top of mind. Uses [@storyofams/eslint-config-ams](https://github.com/storyofams/eslint-config-ams) to get up and running quickly.                                                                 |
+| [husky](https://github.com/typicode/husky)                                                             | Used to trigger specific actions on commit (linting files and commit messages)                                                                                                                                               |
+| [jest](https://jestjs.io/)                                                                             | [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) implemented throughout. Be sure to have a look at [their docs](https://testing-library.com/docs/react-testing-library/example-intro/) |
+| [sentry](https://sentry.io/welcome/)                                                                   | Integration to toggle the sentry implementation on or off without the hassle                                                                                                                                                 |
+| [sitemap-handler](https://github.com/storyofams/next-boilerplate/blob/master/src/pages/api/sitemap.ts) | Simple implementation for xml-sitemap creation.                                                                                                                                                                              |
+| [storybook](https://storybook.js.org/)                                                                 | Storybook is an open source tool for building UI components and pages in isolation. It streamlines UI development, testing, and documentation.                                                                               |
+| [SWR](https://swr.vercel.app/)                                                                         | For all your data-handling needs (might get replaced by react-query in the near future)                                                                                                                                      |
+| [typescript](https://www.typescriptlang.org/docs/)                                                     | Because building a javascript in this day and age git just doesn't feel right without it                                                                                                                                     |
 
-## Variants
+## Getting started
+*While we are working on a fancy generator* to get the generics bits inserted for you, the easiest thing to do is to **clone the repo**.
 
-Sometimes its good to have multiple variations (or `variants`) of a single component. In this case use the `variant` prop: <https://rebassjs.org/variants>. You can add or override variants in the component folder/file or in `src/styles/theme/variants.ts`.
+Replace the theme file with your own and go through the files and folders to replace "Story of AMS" references with your own.
 
-## The CSS function
+### Theme
 
-Sometimes you need to only add props from the theme, in those cases its often easier to use the `css` utility:
+Basic theming is located in `src/styles/theme` folder.
 
-```js
-import styled from 'styled-components'
-import css from '@styled-system/css'
-
-const Button = styled.button(css({
-  color: 'grey400',
-  borderRadius: 'sm',
-  p: [1,2,3], // can take responsive arrays just like styled-system
-  d: 'inline-flex'
-}))
-```
-
-This will automatically create a styled component that takes its properties from the theme.
+For more information on theming and styling see [@storyofams/react-ui](https://github.com/storyofams/react-ui).
 
 ## File structure
 
 ```md
-|- src
-  |- components
-    |- common // for all shared components
-      |- List
-        |- list.test.tsx
-        |- list.stories.tsx
-        |- index.tsx // actual component lives here
-    |- landing // components specific to the landing page
-  |- config
-  |- hooks
-  |- lib // utils, helpers, etc
-  |- pages
-  |- styles
+ - src
+  - components
+    - home // components specific to the home page
+    - common // for all shared components
+      - List
+        - list.test.tsx
+        - list.stories.tsx
+        - index.tsx // actual component lives here
+  - config // constants & env variable export
+  - hooks // custom hooks
+  - lib // utils, helpers, etc
+  - pages
+  - styles // theme folder location (& css-reset + typesript)
 ```
 
 ## SEO
 
-Uses [next-seo](https://github.com/garmeeh/next-seo). Utilizes a default config to get up and running quickly (see `src/config`).
+Uses [next-seo](https://github.com/garmeeh/next-seo).
 
+Utilizes a default config to get up and running quickly (see `src/config`).
 Always include a `<NextSeo />` tag with minimal information included on page level.
 
-## Crash feedback
+## Sentry
 
 This project comes out of the box with a sample implementation of [Sentry](https://sentry.io/welcome/) (including sourcemaps).
 
