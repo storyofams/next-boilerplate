@@ -34,7 +34,7 @@
     "@styled-system/props": "5.1.5",
     "@svgr/webpack": "5.5.0",
     "@zeit/next-source-maps": "0.0.3",
-    "axios": "0.21.1",
+    "axios": "0.21.2",
     "date-fns": "2.22.1",
     "fontfaceobserver": "2.1.0",
     "framer-motion": "4.1.17",
