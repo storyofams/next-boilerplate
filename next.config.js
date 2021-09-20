@@ -30,6 +30,8 @@ module.exports = withBundleAnalyzer(
       // marked for the release they belong to. It may be undefined if running
       // outside of Vercel
       NEXT_PUBLIC_COMMIT_SHA: CI_COMMIT_SHA,
+      // Protect staging with a password
+      PASSWORD_PROTECT: process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging',
     },
     webpack(config, options) {
       config.resolve.plugins = [

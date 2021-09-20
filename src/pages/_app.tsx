@@ -1,6 +1,7 @@
+import { withPasswordProtect } from '@storyofams/next-password-protect';
 import { DefaultSeo } from 'next-seo';
-import App from 'next/app';
-import objectFitImages from 'object-fit-images';
+import { AppProps } from 'next/app';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { Providers } from '~components';
 import { seo } from '~config';
@@ -17,19 +18,15 @@ if (process.env.NEXT_PUBLIC_GTM) {
   initGtag();
 }
 
-export default class MyApp extends App {
-  componentDidMount() {
-    objectFitImages();
-  }
+const MyApp = ({ pageProps, Component }: AppProps) => (
+  <Providers pageProps={pageProps}>
+    <CSSreset />
+    <DefaultSeo {...seo} />
+    <Component {...pageProps} />
+    <ReactQueryDevtools initialIsOpen={false} />
+  </Providers>
+);
 
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <Providers>
-        <CSSreset />
-        <DefaultSeo {...seo} />
-        <Component {...pageProps} />
-      </Providers>
-    );
-  }
-}
+export default process.env.PASSWORD_PROTECT
+  ? withPasswordProtect(MyApp)
+  : MyApp;
