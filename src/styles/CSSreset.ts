@@ -291,6 +291,25 @@ const CSSreset = createGlobalStyle(
       max-width: 100%;
       height: auto;
     }
+
+    #nprogress {
+      z-index: 9999999;
+
+      .bar {
+        z-index: 9999999;
+        background: ${theme.colors.primary500};
+      }
+
+      .peg {
+        box-shadow: 0 0 10px ${theme.colors.primary500},
+          0 0 5px ${theme.colors.primary500};
+      }
+
+      .spinner {
+        display: none;
+      }
+    }
+
     ${themeStyles}
   `,
 );
